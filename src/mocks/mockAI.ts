@@ -40,13 +40,13 @@ function sleep(ms: number, signal: AbortSignal): Promise<void> {
 /** 把一段完整文本切成若干小块,模拟 token 级流式输出 */
 function splitIntoChunks(text: string): string[] {
   const chunks: string[] = []
-  // 按 2~4 个字符切,中英文混排都能有"逐字吐出"的视觉效果
-  let i = 0
-  while (i < text.length) {
-    const size = 2 + Math.floor(Math.random() * 3)
-    chunks.push(text.slice(i, i + size))
-    i += size
+  const chunkSize = 3
+
+  // 固定分片让同一输入的输出过程可复现,便于演示和调试。
+  for (let i = 0; i < text.length; i += chunkSize) {
+    chunks.push(text.slice(i, i + chunkSize))
   }
+
   return chunks
 }
 
