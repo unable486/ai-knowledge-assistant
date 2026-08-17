@@ -91,7 +91,8 @@ app.post('/api/chat', async (req: Request, res: Response) => {
   res.setHeader('Connection', 'keep-alive')
   res.flushHeaders()
 
-  const client = new Anthropic({ apiKey })
+  const baseURL = process.env.ANTHROPIC_BASE_URL?.trim()
+  const client = new Anthropic(baseURL ? { apiKey, baseURL } : { apiKey })
   const stream = client.messages.stream({
     model: process.env.ANTHROPIC_MODEL?.trim() || 'claude-opus-5',
     max_tokens: 16_000,

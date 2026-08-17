@@ -9,13 +9,17 @@ npm install
 copy .env.example .env
 ```
 
-编辑 `.env`，填入服务端密钥：
+编辑 `.env`，填入密钥；如果使用中转站，同时填写中转站地址：
 
 ```dotenv
-ANTHROPIC_API_KEY=你的 Anthropic API Key
-# 可选：ANTHROPIC_MODEL=claude-opus-5
+ANTHROPIC_API_KEY=你的中转站 Key
+ANTHROPIC_BASE_URL=https://your-relay.example.com
+# 可选：中转站若使用不同模型名，在这里填写
+# ANTHROPIC_MODEL=claude-opus-5
 # 可选：PORT=8787
 ```
+
+`ANTHROPIC_BASE_URL` 不要带末尾 `/v1`；官方直连时可以留空。
 
 启动开发环境：
 
