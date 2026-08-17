@@ -41,14 +41,14 @@ async function retry(message: ChatMessage) {
         <h1>AI 知识库助手</h1>
         <p>用对话练习前端原理、工程实践与项目排查</p>
       </div>
-      <span class="mock-badge">前端 Mock</span>
+      <span class="mock-badge">Claude 实时对话</span>
     </header>
 
     <section ref="scroller" class="message-scroller" @scroll="handleScroll">
       <div v-if="!props.messages.length" class="welcome">
         <div class="welcome-icon">知</div>
         <h2>从一个问题开始</h2>
-        <p>试试问我 Vue 响应式、Nginx 缓存、Token 鉴权，或者输入“模拟错误”看看异常处理。</p>
+        <p>试试问我 Vue 响应式、Nginx 缓存、Token 鉴权，回复会通过 Claude 实时生成。</p>
         <div class="suggestions">
           <button type="button" @click="emit('send', 'Vue 2 和 Vue 3 的响应式有什么区别？')">Vue 响应式区别</button>
           <button type="button" @click="emit('send', '前端发布后为什么要清缓存？')">Nginx 缓存排查</button>

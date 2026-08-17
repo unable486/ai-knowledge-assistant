@@ -57,7 +57,7 @@ function handleKeydown(event: KeyboardEvent) {
       <span aria-hidden="true">↑</span>
     </button>
   </form>
-  <p class="composer-hint">Enter 发送 · Shift + Enter 换行 · 输入“模拟错误”测试异常分支</p>
+  <p class="composer-hint">Enter 发送 · Shift + Enter 换行 · 回复由 Claude 实时生成</p>
 </template>
 
 <style scoped>

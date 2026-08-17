@@ -36,7 +36,7 @@ export interface Conversation {
   updatedAt: number
 }
 
-/** Mock 层产出的流式片段 */
+/** 与旧 Mock 兼容的流片段类型,真实流由 services/chatApi.ts 消费 */
 export interface StreamChunk {
   delta: string
 }

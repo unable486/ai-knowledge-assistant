@@ -1,6 +1,7 @@
 import { onScopeDispose, ref } from 'vue'
-import { streamMockReply } from '../mocks/mockAI'
+import { streamChatReply, type ChatRequestMessage } from '../services/chatApi'
 import { useChatStore } from '../stores/chat'
+import type { Conversation } from '../types/chat'
 
 /**
  * 对话请求编排。
@@ -20,14 +21,30 @@ export function useChat() {
     controller.value = null
   }
 
+  /** 只把已经完成的文本消息发给模型,避免把空占位消息或失败草稿发上去 */
+  function buildHistory(conversation: Conversation, beforeMessageId?: string): ChatRequestMessage[] {
+    const endIndex = beforeMessageId
+      ? conversation.messages.findIndex((message) => message.id === beforeMessageId)
+      : conversation.messages.length
+    const messages = conversation.messages.slice(0, endIndex === -1 ? conversation.messages.length : endIndex)
+
+    return messages
+      .filter((message) => message.status === 'done' && message.content.trim())
+      .map((message) => ({ role: message.role, content: message.content }))
+  }
+
   /** 发送和重试共用的流消费逻辑 */
-  async function runStream(conversationId: string, replyId: string, question: string) {
+  async function runStream(
+    conversationId: string,
+    replyId: string,
+    history: ChatRequestMessage[]
+  ) {
     const ac = new AbortController()
     controller.value = ac
 
     try {
-      for await (const chunk of streamMockReply(question, ac.signal)) {
-        store.appendDelta(conversationId, replyId, chunk.delta)
+      for await (const delta of streamChatReply(history, ac.signal)) {
+        store.appendDelta(conversationId, replyId, delta)
       }
       store.setMessageStatus(conversationId, replyId, 'done')
     } catch (err) {
@@ -51,31 +68,28 @@ export function useChat() {
     // 空输入和"上一条还在生成"都直接拦掉,避免并发写同一条消息
     if (!input || store.isStreaming) return
 
-    const conversationId = store.ensureConversation().id
-
-    store.appendMessage(conversationId, { role: 'user', content: input, status: 'done' })
+    const conversation = store.ensureConversation()
+    store.appendMessage(conversation.id, { role: 'user', content: input, status: 'done' })
 
     // 先占位一条空的 assistant 消息,UI 立刻能显示"正在思考",
     // 不用等首字节到达才渲染气泡
-    const reply = store.appendMessage(conversationId, {
+    const reply = store.appendMessage(conversation.id, {
       role: 'assistant',
       content: '',
       status: 'pending'
     })
 
-    await runStream(conversationId, reply.id, input)
+    await runStream(conversation.id, reply.id, buildHistory(conversation))
   }
 
   /** 重试失败的回复:复用同一条消息,不新增用户提问 */
   async function retry(messageId: string) {
-    const conversationId = store.activeConversation?.id
-    if (!conversationId || store.isStreaming) return
+    const conversation = store.activeConversation
+    if (!conversation || store.isStreaming) return
 
-    const question = store.findPrecedingQuestion(conversationId, messageId)
-    if (!question) return
-
-    store.resetMessage(conversationId, messageId)
-    await runStream(conversationId, messageId, question)
+    const history = buildHistory(conversation, messageId)
+    store.resetMessage(conversation.id, messageId)
+    await runStream(conversation.id, messageId, history)
   }
 
   // 组件销毁时中止在飞的请求,否则回调里还会往已卸载的 store 写数据
