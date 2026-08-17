@@ -1,8 +1,13 @@
 import Anthropic from '@anthropic-ai/sdk'
-import 'dotenv/config'
+import dotenv from 'dotenv'
 import express, { type Request, type Response } from 'express'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+
+const currentFile = fileURLToPath(import.meta.url)
+const currentDirectory = path.dirname(currentFile)
+const projectRoot = path.resolve(currentDirectory, '..')
+dotenv.config({ path: path.join(projectRoot, '.env') })
 
 const app = express()
 const port = Number(process.env.PORT ?? 8787)
@@ -126,9 +131,6 @@ app.post('/api/chat', async (req: Request, res: Response) => {
   }
 })
 
-const currentFile = fileURLToPath(import.meta.url)
-const currentDirectory = path.dirname(currentFile)
-const projectRoot = path.resolve(currentDirectory, '..')
 const distDirectory = path.join(projectRoot, 'dist')
 
 if (process.env.NODE_ENV === 'production') {
