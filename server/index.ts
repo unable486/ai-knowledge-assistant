@@ -69,6 +69,15 @@ function errorStatus(error: unknown): number | undefined {
   return typeof status === 'number' ? status : undefined
 }
 
+/** 非正常结束时给前端一句可直接展示的说明；正常结束返回 null。 */
+function incompleteNotice(stopReason: string | null): string | null {
+  if (stopReason === 'max_tokens') return '回复因达到长度上限被截断。'
+  if (stopReason === 'refusal') return '模型拒绝了本次请求。'
+  if (stopReason === 'model_context_window_exceeded') return '对话过长，已超出模型上下文窗口。'
+  if (stopReason === null || stopReason === 'end_turn' || stopReason === 'stop_sequence') return null
+  return `回复未正常结束（${stopReason}）。`
+}
+
 function publicErrorMessage(error: unknown): string {
   const status = errorStatus(error)
   if (status === 401) return 'Anthropic API Key 无效，请检查服务端 .env 配置。'
@@ -116,9 +125,13 @@ app.post('/api/chat', async (req: Request, res: Response) => {
       if (!disconnected) sendSse(res, 'delta', { text })
     })
 
-    await stream.finalMessage()
+    const finalMessage = await stream.finalMessage()
     if (!disconnected) {
-      sendSse(res, 'done', {})
+      // 只有 end_turn 才是真正的正常收尾；截断和拒绝都要让前端可区分。
+      sendSse(res, 'done', {
+        stopReason: finalMessage.stop_reason,
+        notice: incompleteNotice(finalMessage.stop_reason)
+      })
       res.end()
     }
   } catch (error) {
