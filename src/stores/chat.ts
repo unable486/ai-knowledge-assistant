@@ -24,6 +24,17 @@ export const useChatStore = defineStore('chat', () => {
     messages.value.some((m) => m.status === 'pending' || m.status === 'streaming')
   )
 
+  /**
+   * 用持久化快照整体替换当前状态。
+   *
+   * 只在应用启动时调用一次。数据的合法性由 chatStorage 保证,这里假定传进来的
+   * 已经是校验过的结构;store 不重复做一遍校验,否则职责会糊在一起。
+   */
+  function hydrate(snapshot: { conversations: Conversation[]; activeId: string }) {
+    conversations.value = snapshot.conversations
+    activeId.value = snapshot.activeId
+  }
+
   function createConversation(): Conversation {
     const now = Date.now()
     const conv: Conversation = {
@@ -141,6 +152,7 @@ export const useChatStore = defineStore('chat', () => {
     activeConversation,
     messages,
     isStreaming,
+    hydrate,
     createConversation,
     ensureConversation,
     switchConversation,

@@ -4,10 +4,17 @@ import AppSidebar from './components/AppSidebar.vue'
 import ChatPanel from './components/ChatPanel.vue'
 import type { ChatMessage } from './types/chat'
 import { useChat } from './composables/useChat'
+import { useChatPersistence } from './composables/useChatPersistence'
 import { useChatStore } from './stores/chat'
 
 const store = useChatStore()
 const { send, retry, abort } = useChat()
+const persistence = useChatPersistence()
+
+// 顺序有讲究:先恢复历史,再补一个空会话(没历史时才会真的建),
+// 最后才开始监听。反过来的话,hydrate 本身会触发一次写入。
+persistence.restore()
+persistence.start()
 
 onMounted(() => {
   store.ensureConversation()
