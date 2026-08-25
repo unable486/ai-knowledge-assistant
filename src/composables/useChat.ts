@@ -43,8 +43,12 @@ export function useChat() {
     controller.value = ac
 
     try {
-      for await (const delta of streamChatReply(history, ac.signal)) {
-        store.appendDelta(conversationId, replyId, delta)
+      for await (const event of streamChatReply(history, ac.signal)) {
+        if (event.kind === 'sources') {
+          store.setMessageSources(conversationId, replyId, event.sources)
+        } else {
+          store.appendDelta(conversationId, replyId, event.text)
+        }
       }
       store.setMessageStatus(conversationId, replyId, 'done')
     } catch (err) {

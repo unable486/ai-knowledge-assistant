@@ -6,8 +6,10 @@ import type { ChatMessage } from './types/chat'
 import { useChat } from './composables/useChat'
 import { useChatPersistence } from './composables/useChatPersistence'
 import { useChatStore } from './stores/chat'
+import { useKnowledgeStore } from './stores/knowledge'
 
 const store = useChatStore()
+const knowledgeStore = useKnowledgeStore()
 const { send, retry, abort } = useChat()
 const persistence = useChatPersistence()
 
@@ -18,6 +20,8 @@ persistence.start()
 
 onMounted(() => {
   store.ensureConversation()
+  // 知识库列表在服务端，只能异步拉。失败不阻塞对话，store 里存了 error 文案。
+  void knowledgeStore.load()
 })
 
 function handleCreate() {

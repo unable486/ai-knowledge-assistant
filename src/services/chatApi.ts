@@ -1,9 +1,37 @@
 import { httpClient } from './http/client'
 import { readSseFrames } from './http/sse'
 
+import type { MessageSource } from '../types/chat'
+
 export interface ChatRequestMessage {
   role: 'user' | 'assistant'
   content: string
+}
+
+/**
+ * 流里现在有两种东西:文本增量和引用来源。
+ * 用可辨识联合而不是两个回调,调用方一个 for-await 就能全处理,
+ * 顺序也天然保持和服务端一致。
+ */
+export type ChatStreamEvent =
+  | { kind: 'delta'; text: string }
+  | { kind: 'sources'; sources: MessageSource[] }
+
+function readSources(payload: unknown): MessageSource[] {
+  if (!payload || typeof payload !== 'object' || !('sources' in payload)) return []
+  const raw = (payload as { sources: unknown }).sources
+  if (!Array.isArray(raw)) return []
+
+  return raw.flatMap((item) => {
+    if (!item || typeof item !== 'object') return []
+    const { documentTitle, heading, score } = item as Record<string, unknown>
+    if (typeof documentTitle !== 'string') return []
+    return [{
+      documentTitle,
+      heading: typeof heading === 'string' ? heading : '',
+      score: typeof score === 'number' ? score : 0
+    }]
+  })
 }
 
 function readText(payload: unknown): string | null {
@@ -36,7 +64,7 @@ function readNotice(payload: unknown): string | null {
 export async function* streamChatReply(
   messages: ChatRequestMessage[],
   signal: AbortSignal
-): AsyncGenerator<string, void, void> {
+): AsyncGenerator<ChatStreamEvent, void, void> {
   const response = await httpClient.postJson('/api/chat', { messages }, signal)
 
   let completed = false
@@ -52,7 +80,12 @@ export async function* streamChatReply(
 
     if (frame.event === 'delta') {
       const text = readText(payload)
-      if (text !== null) yield text
+      if (text !== null) yield { kind: 'delta', text }
+      continue
+    }
+
+    if (frame.event === 'sources') {
+      yield { kind: 'sources', sources: readSources(payload) }
       continue
     }
 

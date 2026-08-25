@@ -32,6 +32,13 @@ const isAssistant = computed(() => props.message.role === 'assistant')
         <i /><i /><i />
       </div>
 
+      <div v-if="message.sources?.length" class="sources">
+        <span class="sources-label">参考</span>
+        <span v-for="(source, index) in message.sources" :key="index" class="source-chip">
+          {{ source.documentTitle }}<template v-if="source.heading"> · {{ source.heading }}</template>
+        </span>
+      </div>
+
       <div v-if="message.status === 'error'" class="error-box">
         <span>{{ message.error }}</span>
         <button type="button" class="retry-button" @click="emit('retry')">重试</button>
@@ -112,6 +119,29 @@ const isAssistant = computed(() => props.message.role === 'assistant')
 
 .typing-indicator i:nth-child(2) { animation-delay: 0.12s; }
 .typing-indicator i:nth-child(3) { animation-delay: 0.24s; }
+
+.sources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.sources-label {
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.source-chip {
+  padding: 2px 7px;
+  border: 1px solid #ccfbf1;
+  border-radius: 10px;
+  color: #0f766e;
+  background: #f0fdfa;
+  font-size: 11px;
+}
 
 .error-box {
   display: flex;

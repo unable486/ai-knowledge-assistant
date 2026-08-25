@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
-import type { ChatMessage, Conversation, MessageStatus } from '../types/chat'
+import type { ChatMessage, Conversation, MessageSource, MessageStatus } from '../types/chat'
 import { createId } from '../utils/id'
 
 /**
@@ -124,6 +124,18 @@ export const useChatStore = defineStore('chat', () => {
     message.error = status === 'error' ? error : undefined
   }
 
+  /** 记录本次回复参考了知识库的哪些片段 */
+  function setMessageSources(
+    conversationId: string,
+    messageId: string,
+    sources: MessageSource[]
+  ) {
+    const message = findMessage(conversationId, messageId)
+    if (!message) return
+
+    message.sources = sources.length > 0 ? sources : undefined
+  }
+
   /** 重试前把消息清回初始态,复用同一条消息而不是新建,避免界面里留下失败残影 */
   function resetMessage(conversationId: string, messageId: string) {
     const message = findMessage(conversationId, messageId)
@@ -132,6 +144,8 @@ export const useChatStore = defineStore('chat', () => {
     message.content = ''
     message.status = 'pending'
     message.error = undefined
+    // 来源也要清:重试会重新检索,旧来源和新回答对不上
+    message.sources = undefined
   }
 
   /** 找到某条 assistant 消息对应的用户提问,用于重试 */
@@ -160,6 +174,7 @@ export const useChatStore = defineStore('chat', () => {
     appendMessage,
     appendDelta,
     setMessageStatus,
+    setMessageSources,
     resetMessage,
     findPrecedingQuestion
   }

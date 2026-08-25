@@ -17,6 +17,13 @@ export type MessageRole = 'user' | 'assistant'
  */
 export type MessageStatus = 'pending' | 'streaming' | 'done' | 'aborted' | 'error'
 
+/** 一条回复引用了知识库里的哪一块 */
+export interface MessageSource {
+  documentTitle: string
+  heading: string
+  score: number
+}
+
 export interface ChatMessage {
   id: string
   role: MessageRole
@@ -25,6 +32,8 @@ export interface ChatMessage {
   status: MessageStatus
   /** 失败时的用户可读原因,status !== 'error' 时为 undefined */
   error?: string
+  /** 本次回复参考的知识库片段,没检索到时为 undefined */
+  sources?: MessageSource[]
   createdAt: number
 }
 

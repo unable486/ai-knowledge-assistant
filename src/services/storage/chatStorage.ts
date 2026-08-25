@@ -12,7 +12,7 @@
  *    QuotaExceededError。失败不能影响正在进行的对话，所以一律降级成「不存」。
  */
 
-import type { ChatMessage, Conversation, MessageStatus } from '../../types/chat'
+import type { ChatMessage, Conversation, MessageSource, MessageStatus } from '../../types/chat'
 
 const storageKey = 'ai-knowledge-assistant:chat'
 const schemaVersion = 1
@@ -52,6 +52,24 @@ function readTimestamp(value: unknown): number | null {
   return typeof value === 'number' && Number.isFinite(value) ? value : null
 }
 
+/** 引用来源同样按不可信输入校验，坏的整条丢掉（它只是展示用，缺了不影响对话）。 */
+function reviveSources(value: unknown): MessageSource[] | undefined {
+  if (!Array.isArray(value)) return undefined
+
+  const sources = value.flatMap((item) => {
+    if (!isRecord(item)) return []
+    const title = readString(item.documentTitle)
+    if (title === null) return []
+    return [{
+      documentTitle: title,
+      heading: readString(item.heading) ?? '',
+      score: readTimestamp(item.score) ?? 0
+    }]
+  })
+
+  return sources.length > 0 ? sources : undefined
+}
+
 /**
  * 校验并规整一条消息，无法修复时返回 null 由调用方丢弃。
  *
@@ -85,7 +103,7 @@ function reviveMessage(value: unknown): ChatMessage | null {
 
   const error = status === 'error' ? (readString(value.error) ?? '请求失败。') : undefined
 
-  return { id, role, content, status, error, createdAt }
+  return { id, role, content, status, error, sources: reviveSources(value.sources), createdAt }
 }
 
 function reviveConversation(value: unknown): Conversation | null {
