@@ -7,3 +7,8 @@ dist-ssr
 !.env.example
 .DS_Store
 .vite
+
+# embedding 权重（24MB，见 docs/rag.md 的下载脚本）
+server/rag/models
+# 向量索引，内容是用户自己的文档
+data

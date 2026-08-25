@@ -1,8 +1,13 @@
 import Anthropic from '@anthropic-ai/sdk'
 import dotenv from 'dotenv'
 import express, { type Request, type Response } from 'express'
+import { existsSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { warmUpEmbedder } from './rag/embedder.ts'
+import { ingestDocument } from './rag/ingest.ts'
+import { retrieve } from './rag/retriever.ts'
+import { listDocuments, loadIndex, removeDocument } from './rag/vectorStore.ts'
 
 const currentFile = fileURLToPath(import.meta.url)
 const currentDirectory = path.dirname(currentFile)
@@ -15,7 +20,8 @@ const maxMessages = 40
 const maxMessageCharacters = 20_000
 const maxConversationCharacters = 120_000
 
-app.use(express.json({ limit: '256kb' }))
+// 1MB 是为文档上传留的余量;对话本身远用不到这么多。
+app.use(express.json({ limit: '1mb' }))
 
 interface ChatRequestMessage {
   role: 'user' | 'assistant'
@@ -86,6 +92,50 @@ function publicErrorMessage(error: unknown): string {
   return error instanceof Error ? error.message : '对话服务暂时不可用，请稍后重试。'
 }
 
+const maxDocumentCharacters = 200_000
+
+app.get('/api/documents', (_req: Request, res: Response) => {
+  res.json({ documents: listDocuments() })
+})
+
+app.post('/api/documents', async (req: Request, res: Response) => {
+  const body: unknown = req.body
+  const title = typeof (body as { title?: unknown })?.title === 'string'
+    ? ((body as { title: string }).title).trim()
+    : ''
+  const text = typeof (body as { text?: unknown })?.text === 'string'
+    ? (body as { text: string }).text
+    : ''
+
+  if (!text.trim()) {
+    sendJsonError(res, 400, '文档内容不能为空。')
+    return
+  }
+  if (text.length > maxDocumentCharacters) {
+    sendJsonError(res, 413, `文档过长，上限 ${maxDocumentCharacters} 字符。`)
+    return
+  }
+
+  try {
+    const result = await ingestDocument(title || '未命名文档', text)
+    res.status(201).json({ document: result.document })
+  } catch (error) {
+    sendJsonError(res, 500, error instanceof Error ? error.message : '文档入库失败。')
+  }
+})
+
+app.delete('/api/documents/:id', async (req: Request, res: Response) => {
+  // Express 5 把 params 值类型放宽成 string | string[],取第一个即可
+  const rawId = req.params.id
+  const id = Array.isArray(rawId) ? rawId[0] : rawId
+  const removed = await removeDocument(id)
+  if (!removed) {
+    sendJsonError(res, 404, '文档不存在。')
+    return
+  }
+  res.status(204).end()
+})
+
 app.post('/api/chat', async (req: Request, res: Response) => {
   const messages = readMessages(req.body)
   if (!messages) {
@@ -99,17 +149,38 @@ app.post('/api/chat', async (req: Request, res: Response) => {
     return
   }
 
+  // 检索必须在发响应头之前:一旦 flushHeaders(),状态码就定死 200,
+  // 后面失败只能在流里发 error 事件。检索失败属于"还没开始对话就出问题",
+  // 应该用正常的 HTTP 错误码返回。
+  //
+  // 只用最后一条用户消息做检索,不拼整个历史——早几轮的话题会稀释
+  // 当前问题的语义。
+  const question = [...messages].reverse().find((m) => m.role === 'user')?.content ?? ''
+  let retrieval: Awaited<ReturnType<typeof retrieve>> = null
+  try {
+    retrieval = question ? await retrieve(question) : null
+  } catch (error) {
+    sendJsonError(res, 500, error instanceof Error ? error.message : '知识库检索失败。')
+    return
+  }
+
   res.status(200)
   res.setHeader('Content-Type', 'text/event-stream; charset=utf-8')
   res.setHeader('Cache-Control', 'no-cache, no-transform')
   res.setHeader('Connection', 'keep-alive')
   res.flushHeaders()
 
+  // 先把引用来源发给前端,让它在回答生成前就能显示"参考了哪些文档"
+  if (retrieval) {
+    sendSse(res, 'sources', { sources: retrieval.sources })
+  }
+
   const baseURL = process.env.ANTHROPIC_BASE_URL?.trim()
   const client = new Anthropic(baseURL ? { apiKey, baseURL } : { apiKey })
   const stream = client.messages.stream({
     model: process.env.ANTHROPIC_MODEL?.trim() || 'claude-opus-5',
     max_tokens: 16_000,
+    ...(retrieval ? { system: retrieval.systemPrompt } : {}),
     messages
   })
 
@@ -135,6 +206,8 @@ app.post('/api/chat', async (req: Request, res: Response) => {
       res.end()
     }
   } catch (error) {
+    // 服务端记完整原因,发给前端的仍是脱敏文案
+    console.error('[chat] 上游调用失败:', error)
     if (!disconnected) {
       sendSse(res, 'error', { message: publicErrorMessage(error) })
       res.end()
@@ -147,12 +220,30 @@ app.post('/api/chat', async (req: Request, res: Response) => {
 const distDirectory = path.join(projectRoot, 'dist')
 
 if (process.env.NODE_ENV === 'production') {
+  // 生产模式忘了先 build 的话，这里直接说清楚，不然只会看到一堆 404
+  if (!existsSync(path.join(distDirectory, 'index.html'))) {
+    console.warn(`[server] 未找到 ${distDirectory}/index.html，请先执行 npm run build`)
+  }
   app.use(express.static(distDirectory))
   app.get(/^(?!\/api(?:\/|$)).*/, (_req, res) => {
     res.sendFile(path.join(distDirectory, 'index.html'))
   })
 }
 
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log(`API server listening on http://localhost:${port}`)
+  // 打出实际生效的模型名:环境变量会覆盖 .env,排查上游 4xx/5xx 时第一个要确认的就是这个
+  console.log(`[chat] 使用模型: ${process.env.ANTHROPIC_MODEL?.trim() || 'claude-opus-5'}`)
+
+  await loadIndex()
+
+  // 预热把 24MB 权重的加载成本从首个请求挪到启动阶段。
+  // 失败不影响普通对话——只是知识库功能不可用,所以只警告不退出。
+  try {
+    const started = Date.now()
+    await warmUpEmbedder()
+    console.log(`[rag] embedding 模型就绪（${Date.now() - started}ms）`)
+  } catch (error) {
+    console.warn('[rag] embedding 模型加载失败，知识库功能不可用:', error)
+  }
 })

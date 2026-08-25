@@ -7,6 +7,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "noEmit": true,
+    // tsx 直接跑 TS,运行时就是按 .ts 解析的,所以显式放行
+    "allowImportingTsExtensions": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
