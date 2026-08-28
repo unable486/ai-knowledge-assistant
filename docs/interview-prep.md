@@ -8,6 +8,10 @@
 > 是「这人的东西不可信」—— 比没这个项目更糟。所以第二部分（把代码变成真的会）
 > 是所有其他事情的前置条件。
 
+> **看不懂 RAG / Function Calling / MCP 这些词的话，先读
+> [ai-for-frontend.md](ai-for-frontend.md)** —— 用前端已有的概念解释这些名词，
+> 不需要任何 AI 背景。读完再回来看本文档的 JD 10 那节。
+
 对着「资深前端开发」JD 的十条要求逐条核对。每条分三段：
 **要能讲什么**（仓库里有、值得学的）、**会被深挖什么**（答不上来的风险点）、**缺口**（仓库里也没有的）。
 
@@ -73,7 +77,7 @@ AI 那两条不会，损失的是加分项；工程化不会，是硬伤。
   localStorage 写满时逐步减半保留的会话数再试，"存最近的比一条都不存有用"。
 - **中文输入法组字时 Enter 不发送** —— [MessageInput.vue:24-31](../src/components/MessageInput.vue#L24-L31)。
   这条最能说明产品意识：只有真的用中文打过字的人会想到。
-- **引用来源先于回答发出** —— [index.ts:173-176](../../server/index.ts#L173-L176)。
+- **引用来源先于回答发出** —— [index.ts:173-176](../server/index.ts#L173-L176)。
   检索完就发 `sources` 事件，用户在答案生成前就知道"参考了哪些文档"，建立信任感。
 
 **会被深挖什么**：
@@ -96,8 +100,8 @@ AI 那两条不会，损失的是加分项；工程化不会，是硬伤。
 - **可辨识联合** —— [chatApi.ts:16-18](../src/services/chatApi.ts#L16-L18)。
   流里有 delta 和 sources 两种事件，用 `kind` 字段辨识，
   调用方一个 `for-await` 全处理完，顺序天然和服务端一致。比两个回调好在哪要能说清。
-- **类型守卫 / 类型谓词** —— [index.ts:31-38](../../server/index.ts#L31-L38) 的 `isChatRequestMessage`、
-  [vectorStore.ts:56](../../server/rag/vectorStore.ts#L56) 的 `reviveChunk`。
+- **类型守卫 / 类型谓词** —— [index.ts:31-38](../server/index.ts#L31-L38) 的 `isChatRequestMessage`、
+  [vectorStore.ts:56](../server/rag/vectorStore.ts#L56) 的 `reviveChunk`。
   边界上把 `unknown` 收窄成领域类型，不用 `as` 硬转。
 
 ### JS(ES6+) / DOM —— 强项
@@ -121,7 +125,7 @@ AI 那两条不会，损失的是加分项；工程化不会，是硬伤。
   重新组装出新 HTML，净化白做。这是个很好的考点，因为直觉上"先净化"感觉更安全。
 - **reverse tabnabbing** —— [markdown.ts:47-52](../src/utils/markdown.ts#L47-L52)，
   `afterSanitizeAttributes` 钩子给所有外链补 `rel="noopener noreferrer"`。
-- **间接 prompt 注入三层防护** —— [retriever.ts:1-12](../../server/rag/retriever.ts#L1-L12)。
+- **间接 prompt 注入三层防护** —— [retriever.ts:1-12](../server/rag/retriever.ts#L1-L12)。
   标签包裹 + 声明"标签内是数据不是指令"、转义尖括号防伪造闭合标签逃逸、
   输出侧 DOMPurify 兜底。关键论点是**第三层为什么必须存在**：
   system 的优先级是训练出来的倾向，不是硬性机制，前两层都可能被绕过。
@@ -148,9 +152,9 @@ AI 那两条不会，损失的是加分项；工程化不会，是硬伤。
 
 代码里有实践，但只覆盖了 SSE 相关的一小块：
 
-- SSE 响应头三件套 —— [index.ts:168-171](../../server/index.ts#L168-L171)：
+- SSE 响应头三件套 —— [index.ts:168-171](../server/index.ts#L168-L171)：
   `text/event-stream`、`no-cache, no-transform`（`no-transform` 是防中间代理压缩/缓冲）、`keep-alive`
-- `flushHeaders()` 之后状态码定死 200 —— [index.ts:152-165](../../server/index.ts#L152-L165)。
+- `flushHeaders()` 之后状态码定死 200 —— [index.ts:152-165](../server/index.ts#L152-L165)。
   所以检索必须在发头之前做，否则失败只能在流里发 error 事件。这是很好的 HTTP 生命周期理解。
 - 状态码用得准：400 校验失败、413 过长、503 未配置、500 上游失败、201 创建、204 删除无内容
 
@@ -236,7 +240,7 @@ utils/        纯函数（markdown 渲染、id 生成）
 边界上做类型收窄、失败路径都想过降级方案。
 
 **可扩展性有实证**：
-[vectorStore.ts:1-11](../../server/rag/vectorStore.ts#L1-L11) 明确写了
+[vectorStore.ts:1-11](../server/rag/vectorStore.ts#L1-L11) 明确写了
 "等到十万块量级再换带 HNSW/IVF 索引的实现，这个文件的对外接口不用变" ——
 这是接口设计意识，不是事后找的说法。
 
@@ -284,22 +288,22 @@ storage 只要一个 Storage 替身、store 不依赖网络和 Vue。详见第�
 
 **这条你已经满足了，但你自己没意识到。**这是本次评估最重要的一条纠正。
 
-[server/](../../server/) 是完整的 Express 5 + TypeScript 服务端，不是玩具：
+[server/](../server/) 是完整的 Express 5 + TypeScript 服务端，不是玩具：
 
-- **输入校验** —— [index.ts:40-61](../../server/index.ts#L40-L61)：
+- **输入校验** —— [index.ts:40-61](../server/index.ts#L40-L61)：
   条数上限、单条字符上限、总字符上限、role 白名单，逐层拦。
-- **流式代理 + 中止传播** —— [index.ts:187-192](../../server/index.ts#L187-L192)：
+- **流式代理 + 中止传播** —— [index.ts:187-192](../server/index.ts#L187-L192)：
   浏览器断开 → `res.on('close')` → `stream.abort()` 中止对上游的请求。
   不做这个，用户关页面后 Anthropic 那边还在生成，token 照计费。
-- **错误脱敏** —— [index.ts:87-93](../../server/index.ts#L87-L93)：
+- **错误脱敏** —— [index.ts:87-93](../server/index.ts#L87-L93)：
   服务端 `console.error` 记完整原因，发给前端的是分状态码的友好文案。
-- **原子写文件** —— [vectorStore.ts:134-137](../../server/rag/vectorStore.ts#L134-L137)：
+- **原子写文件** —— [vectorStore.ts:134-137](../server/rag/vectorStore.ts#L134-L137)：
   先写 `.tmp` 再 `rename`。崩在写一半不会留下坏索引。
-- **写盘串行化** —— [vectorStore.ts:49-50](../../server/rag/vectorStore.ts#L49-L50)：
+- **写盘串行化** —— [vectorStore.ts:49-50](../server/rag/vectorStore.ts#L49-L50)：
   用 promise 链把并发写排队，多个 ingest 同时写会写坏文件。
-- **启动预热** —— [index.ts:242-248](../../server/index.ts#L242-L248)：
+- **启动预热** —— [index.ts:242-248](../server/index.ts#L242-L248)：
   把 24MB 权重加载从首个请求挪到启动阶段，失败只警告不退出（降级：知识库不可用但对话正常）。
-- **生产模式静态托管** —— [index.ts:222-231](../../server/index.ts#L222-L231)，
+- **生产模式静态托管** —— [index.ts:222-231](../server/index.ts#L222-L231)，
   含 `/api` 前缀负向断言的 SPA fallback，和忘记 build 时的显式提示。
 
 **主动说的短板**（你第 26 节已列）：`/api/chat` 和 `/api/documents` 无鉴权无限流。
@@ -349,7 +353,7 @@ Docker / 部署、日志和监控。如果面试官深挖服务端，这几项�
 1. 持久化那块，AI 能很快写出 localStorage 读写，
    但"流式过程中不能每个 token 都写盘"这个约束，
    要理解 localStorage 是同步 API 才想得到 —— 不主动说，生成的代码就会卡渲染。
-2. [embedder.ts:12-13](../../server/rag/embedder.ts#L12-L13)：
+2. [embedder.ts:12-13](../server/rag/embedder.ts#L12-L13)：
    中转站只代理 Claude 生成端点，试过三个 embedding 模型全返回 503。
    这类环境约束 AI 完全不知道，只能自己试出来。
 
@@ -367,6 +371,9 @@ Docker / 部署、日志和监控。如果面试官深挖服务端，这几项�
 
 ## JD 10 · AI Agent 开发、大模型应用、Prompt Engineering、Function Calling、MCP、RAG、Workflow
 
+> 这些名词的含义见 [ai-for-frontend.md](ai-for-frontend.md)，那份是入门；
+> 本节假设你已经知道它们分别指什么。
+
 这条 JD 写的是"**优先**"，不是硬要求。而且从零到能被深挖不是一周的事。
 所以策略是：**先把仓库里已有的 RAG 部分学透（投入小、深度够），FC/MCP/Workflow 放到工程化之后。**
 学透 RAG 一条就够撑一轮 AI 相关的深挖了，不需要覆盖全部五个词。
@@ -376,25 +383,25 @@ Docker / 部署、日志和监控。如果面试官深挖服务端，这几项�
 不是"用了个向量库"的水平。下面这几个点学会了能直接把面试官问住，
 而且都能用第三部分的实验亲手验证（这是它们比其他 AI 话题更值得投入的原因）：
 
-- **bge 是非对称检索** —— [embedder.ts:37](../../server/rag/embedder.ts#L37)。
+- **bge 是非对称检索** —— [embedder.ts:37](../server/rag/embedder.ts#L37)。
   查询侧要加指令前缀 `为这个句子生成表示以用于检索相关文章：`，文档侧不加。
   **加错不会报错，只会让检索质量悄悄变差。**"静默失败"这个视角很值钱。
-- **pooling 必须是 cls 不是 mean** —— [embedder.ts:52-55](../../server/rag/embedder.ts#L52-L55)。
+- **pooling 必须是 cls 不是 mean** —— [embedder.ts:52-55](../server/rag/embedder.ts#L52-L55)。
   bge 用 `[CLS]` token 做句向量，用错了向量空间对不上，同样不报错。
-- **切块要带标题路径** —— [chunker.ts:140](../../server/rag/chunker.ts#L140)。
+- **切块要带标题路径** —— [chunker.ts:140](../server/rag/chunker.ts#L140)。
   标题拼进文本一起 embedding：标题里的词参与向量化提升命中率，
   也让模型只看到孤立一块时知道上下文。切块策略比换模型影响大。
-- **normalize 后余弦退化成点积** —— [vectorStore.ts:174-179](../../server/rag/vectorStore.ts#L174-L179)。
-- **为什么没用向量数据库** —— [vectorStore.ts:1-11](../../server/rag/vectorStore.ts#L1-L11)。
+- **normalize 后余弦退化成点积** —— [vectorStore.ts:174-179](../server/rag/vectorStore.ts#L174-L179)。
+- **为什么没用向量数据库** —— [vectorStore.ts:1-11](../server/rag/vectorStore.ts#L1-L11)。
   几百块规模下 512 维扫 1000 块是 50 万次乘加，亚毫秒级。
   引入依赖换不来可感知收益。**能说清"什么时候该换"才是判断力。**
 - **换模型会静默降质** —— 维度校验拦得住换维度，
-  但同维度换模型拦不住（[vectorStore.ts:117-122](../../server/rag/vectorStore.ts#L117-L122)）。
+  但同维度换模型拦不住（[vectorStore.ts:117-122](../server/rag/vectorStore.ts#L117-L122)）。
   你自己列在短板里，主动说。
 
 ### Prompt Engineering —— 有实践
 
-[retriever.ts:38-63](../../server/rag/retriever.ts#L38-L63) 的 `buildSystemPrompt`：
+[retriever.ts:38-63](../server/rag/retriever.ts#L38-L63) 的 `buildSystemPrompt`：
 资料用 `<reference>` 标签包裹、显式声明数据/指令边界、
 规则里要求"资料里没有的要明说，再补充并标注是补充"（防幻觉）、要求标注来源。
 `topK = 4` 和 6000 字符上限的取舍："少而准比多而杂好，塞太多会淹没关键信息。"
@@ -451,7 +458,7 @@ Docker / 部署、日志和监控。如果面试官深挖服务端，这几项�
    跑一遍看它报什么 —— 报出来的问题本身就是面试素材。
 2. **Vitest 单测**，挑可测性最好的四个模块，正好覆盖四类测试对象
    （**先自己写断言再跑**，写不出预期说明还不懂这个模块的行为）：
-   - [chunker.ts](../../server/rag/chunker.ts) —— 纯函数，输入输出直接断言（标题路径、重叠、短块合并）
+   - [chunker.ts](../server/rag/chunker.ts) —— 纯函数，输入输出直接断言（标题路径、重叠、短块合并）
    - [sse.ts](../src/services/http/sse.ts) 的 `parseSseFrames` —— 纯函数，
      重点测**帧被切断**的 case（这是你笔记里的"坑一"）
    - [chatStorage.ts](../src/services/storage/chatStorage.ts) —— 只需一个 Storage 替身，
@@ -478,7 +485,7 @@ CI 徽章和测试用例是面试时能直接给人看的东西。
 **不要新建项目**，就在这个 RAG 上加，因为仓库里已列的两个短板正好是它的用例：
 
 1. **把检索改成工具**。现在是无条件先检索
-   （[index.ts:158-165](../../server/index.ts#L158-L165)），改成给模型一个
+   （[index.ts:158-165](../server/index.ts#L158-L165)），改成给模型一个
    `search_knowledge_base` 工具，让它自己判断这一问要不要查。
    闲聊不查，省一次 embedding + 一次检索。这就是 Function Calling 的最小闭环。
 2. **查询改写**：多轮时先让模型把"它的性能怎么样"改写成独立问题再检索。
@@ -540,7 +547,7 @@ CI 徽章和测试用例是面试时能直接给人看的东西。
 
 ### 实验 1 · pooling 改成 mean（15 分钟，收益最高）
 
-[embedder.ts:55](../../server/rag/embedder.ts#L55) 把 `pooling: 'cls'` 改成 `'mean'`，
+[embedder.ts:55](../server/rag/embedder.ts#L55) 把 `pooling: 'cls'` 改成 `'mean'`，
 删掉 `data/rag-index.json` 重新入库一篇文档，问同样的问题，对比检索到的块。
 
 看到什么：**不报错**，但检索结果明显变差。
@@ -549,7 +556,7 @@ CI 徽章和测试用例是面试时能直接给人看的东西。
 
 ### 实验 2 · 去掉查询前缀（10 分钟）
 
-[embedder.ts:66](../../server/rag/embedder.ts#L66) 把 `${queryInstruction}${text}` 改成 `text`。
+[embedder.ts:66](../server/rag/embedder.ts#L66) 把 `${queryInstruction}${text}` 改成 `text`。
 同样重建索引再问。
 
 学到什么：bge 是非对称检索，查询侧和文档侧的处理方式不同。同样是静默失败。
@@ -655,8 +662,8 @@ CI 徽章和测试用例是面试时能直接给人看的东西。
 
 | 方向 | 主线 | 依据 | 怎么练会 |
 | --- | --- | --- | --- |
-| RAG | 静默失败的两个点 + 为什么不用向量库 | [embedder.ts](../../server/rag/embedder.ts)、[vectorStore.ts](../../server/rag/vectorStore.ts)、笔记第 17/22 节 | 实验 1、2 |
-| 安全 | XSS 顺序 + prompt 注入三层，第三层为什么必须有 | [markdown.ts](../src/utils/markdown.ts)、[retriever.ts](../../server/rag/retriever.ts)、笔记第 12/20 节 | 实验 5 |
+| RAG | 静默失败的两个点 + 为什么不用向量库 | [embedder.ts](../server/rag/embedder.ts)、[vectorStore.ts](../server/rag/vectorStore.ts)、笔记第 17/22 节 | 实验 1、2 |
+| 安全 | XSS 顺序 + prompt 注入三层，第三层为什么必须有 | [markdown.ts](../src/utils/markdown.ts)、[retriever.ts](../server/rag/retriever.ts)、笔记第 12/20 节 | 实验 5 |
 | 性能 | 双层节流的两个计时器为什么不能都重置 | [useChatPersistence.ts:50-59](../src/composables/useChatPersistence.ts#L50-L59)、笔记第 14 节 | 实验 4 |
 | 竞态 | AbortController 三处竞态，最关键是清理时校验身份 | [useChat.ts:62-67](../src/composables/useChat.ts#L62-L67)、笔记第 6 节 | 自问自答（快速点两次发送） |
 | 分层 | 两个 store 为什么故意不统一 | [chat.ts](../src/stores/chat.ts) vs [knowledge.ts](../src/stores/knowledge.ts)、笔记第 24 节 | 自问自答 |
