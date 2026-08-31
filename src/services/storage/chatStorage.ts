@@ -189,15 +189,36 @@ export function readSnapshot(): ChatSnapshot | null {
   return { conversations, activeId }
 }
 
+/**
+ * 剥掉只在运行时有意义的字段，目前是 retrievalTrace。
+ *
+ * 必须显式剥离，不能指望 trim 或 JSON.stringify —— 它们会把消息对象整个序列化。
+ * 一条 trace 大约 3KB（12 个候选 × 240 字预览），按单会话 200 条消息算就是
+ * 600KB，几个会话就能撑爆 5MB 配额，把真正该留的对话内容挤掉。
+ *
+ * 而且它存了也没用：reviveMessage 不读这个字段，读回来也是 undefined。
+ * 所以这里剥掉的是「纯粹的配额浪费」。trace 的价值是当场看这次检索为什么
+ * 这样，不是历史归档。
+ */
+function stripRuntimeFields(conversation: Conversation, messages: ChatMessage[]): Conversation {
+  return {
+    ...conversation,
+    messages: messages.map(({ retrievalTrace: _unused, ...message }) => message)
+  }
+}
+
 /** 按上限裁剪：先砍每个会话的消息，再砍会话总数（丢最旧的）。 */
 function trim(conversations: Conversation[], conversationLimit: number): Conversation[] {
   return [...conversations]
     .sort((a, b) => b.updatedAt - a.updatedAt)
     .slice(0, conversationLimit)
     .map((conversation) =>
-      conversation.messages.length > maxMessagesPerConversation
-        ? { ...conversation, messages: conversation.messages.slice(-maxMessagesPerConversation) }
-        : conversation
+      stripRuntimeFields(
+        conversation,
+        conversation.messages.length > maxMessagesPerConversation
+          ? conversation.messages.slice(-maxMessagesPerConversation)
+          : conversation.messages
+      )
     )
 }
 

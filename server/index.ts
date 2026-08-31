@@ -171,8 +171,15 @@ app.post('/api/chat', async (req: Request, res: Response) => {
   res.flushHeaders()
 
   // 先把引用来源发给前端,让它在回答生成前就能显示"参考了哪些文档"
+  //
+  // trace 和 sources 一起发,不做成"面板打开时按需拉取"的单独接口。
+  // 按需拉取有两条路,都比现在差:重跑一次检索要多花几十毫秒 embedding,
+  // 而且重跑的结果未必和这次回答用的一致(索引可能已经变了),那 trace 就
+  // 失去了解释力;缓存 trace 则多出一份要考虑过期和清理的状态。
+  // 代价是每次回答多传几 KB —— 相比流式文本本身的量,这个开销可以忽略。
   if (retrieval) {
     sendSse(res, 'sources', { sources: retrieval.sources })
+    sendSse(res, 'trace', { trace: retrieval.trace })
   }
 
   const baseURL = process.env.ANTHROPIC_BASE_URL?.trim()

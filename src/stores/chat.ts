@@ -1,6 +1,12 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
-import type { ChatMessage, Conversation, MessageSource, MessageStatus } from '../types/chat'
+import type {
+  ChatMessage,
+  Conversation,
+  MessageSource,
+  MessageStatus,
+  RetrievalTrace
+} from '../types/chat'
 import { createId } from '../utils/id'
 
 /**
@@ -136,6 +142,18 @@ export const useChatStore = defineStore('chat', () => {
     message.sources = sources.length > 0 ? sources : undefined
   }
 
+  /** 记录本次检索的过程,供可视化面板展示。不持久化,理由见 types/chat.ts */
+  function setMessageTrace(
+    conversationId: string,
+    messageId: string,
+    trace: RetrievalTrace
+  ) {
+    const message = findMessage(conversationId, messageId)
+    if (!message) return
+
+    message.retrievalTrace = trace
+  }
+
   /** 重试前把消息清回初始态,复用同一条消息而不是新建,避免界面里留下失败残影 */
   function resetMessage(conversationId: string, messageId: string) {
     const message = findMessage(conversationId, messageId)
@@ -144,8 +162,9 @@ export const useChatStore = defineStore('chat', () => {
     message.content = ''
     message.status = 'pending'
     message.error = undefined
-    // 来源也要清:重试会重新检索,旧来源和新回答对不上
+    // 来源和 trace 都要清:重试会重新检索,旧的和新回答对不上
     message.sources = undefined
+    message.retrievalTrace = undefined
   }
 
   /** 找到某条 assistant 消息对应的用户提问,用于重试 */
@@ -175,6 +194,7 @@ export const useChatStore = defineStore('chat', () => {
     appendDelta,
     setMessageStatus,
     setMessageSources,
+    setMessageTrace,
     resetMessage,
     findPrecedingQuestion
   }

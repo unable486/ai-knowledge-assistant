@@ -46,6 +46,8 @@ export function useChat() {
       for await (const event of streamChatReply(history, ac.signal)) {
         if (event.kind === 'sources') {
           store.setMessageSources(conversationId, replyId, event.sources)
+        } else if (event.kind === 'trace') {
+          store.setMessageTrace(conversationId, replyId, event.trace)
         } else {
           store.appendDelta(conversationId, replyId, event.text)
         }

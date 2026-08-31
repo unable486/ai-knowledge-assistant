@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import type { ChatMessage } from '../types/chat'
 import { renderMarkdown } from '../utils/markdown'
+import RetrievalTracePanel from './RetrievalTracePanel.vue'
 
 type Props = {
   message: ChatMessage
@@ -71,6 +72,8 @@ const renderedContent = computed(() =>
           {{ source.documentTitle }}<template v-if="source.heading"> · {{ source.heading }}</template>
         </span>
       </div>
+
+      <RetrievalTracePanel v-if="message.retrievalTrace" :trace="message.retrievalTrace" />
 
       <div v-if="message.status === 'error'" class="error-box">
         <span>{{ message.error }}</span>
