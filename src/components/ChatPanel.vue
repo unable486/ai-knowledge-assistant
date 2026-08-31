@@ -38,7 +38,7 @@ async function retry(message: ChatMessage) {
   <main class="chat-panel">
     <header class="topbar">
       <div>
-        <h1>AI 知识库助手</h1>
+        <h1>AI 知识答疑</h1>
         <p>用对话练习前端原理、工程实践与项目排查</p>
       </div>
       <span class="mock-badge">Claude 实时对话</span>

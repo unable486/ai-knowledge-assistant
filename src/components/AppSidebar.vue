@@ -19,7 +19,7 @@ const emit = defineEmits<{
     <div class="brand">
       <div class="brand-mark">知</div>
       <div>
-        <strong>知识库助手</strong>
+        <strong>知识答疑</strong>
         <span>AI 前端学习项目</span>
       </div>
     </div>
