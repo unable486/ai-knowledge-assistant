@@ -16,6 +16,9 @@ dotenv.config({ path: path.join(projectRoot, '.env') })
 
 const app = express()
 const port = Number(process.env.PORT ?? 8787)
+// 默认只绑本机:公网部署时 API 不带认证,绑 0.0.0.0 等于把 API Key 额度开放给全网。
+// 需要跨机访问就走 nginx 反代或 SSH 隧道;确实要监听公网时显式设 HOST=0.0.0.0。
+const host = process.env.HOST?.trim() || '127.0.0.1'
 const maxMessages = 40
 const maxMessageCharacters = 20_000
 const maxConversationCharacters = 120_000
@@ -237,8 +240,8 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-app.listen(port, async () => {
-  console.log(`API server listening on http://localhost:${port}`)
+app.listen(port, host, async () => {
+  console.log(`API server listening on http://${host}:${port}`)
   // 打出实际生效的模型名:环境变量会覆盖 .env,排查上游 4xx/5xx 时第一个要确认的就是这个
   console.log(`[chat] 使用模型: ${process.env.ANTHROPIC_MODEL?.trim() || 'claude-opus-5'}`)
 
