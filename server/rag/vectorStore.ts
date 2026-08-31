@@ -13,6 +13,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { Bm25Index, type Bm25Hit } from './bm25.ts'
 import { embeddingDimensions } from './embedder.ts'
 
 const currentDirectory = path.dirname(fileURLToPath(import.meta.url))
@@ -46,8 +47,48 @@ export interface SearchHit {
 let documents: StoredDocument[] = []
 let chunks: StoredChunk[] = []
 
+/**
+ * BM25 索引不落盘,每次 chunks 变化后从内存重建。
+ *
+ * 不落盘的理由:它是 chunks 的纯函数,存下来就多了一份要保持同步的状态。
+ * 漏同步的后果很隐蔽——删掉的文档还能被关键词检索到,但向量检索里已经
+ * 没有了,表现为"有时能搜到有时搜不到"。几百块规模下重建是毫秒级,
+ * 拿确定性换这点开销是划算的。
+ */
+const keywordIndex = new Bm25Index()
+
+function rebuildKeywordIndex(): void {
+  keywordIndex.build(chunks.map((chunk) => ({ id: chunk.id, text: chunk.text })))
+}
+
 /** 写盘串行化:多个 ingest 并发写同一个文件会写坏。 */
 let writeQueue: Promise<void> = Promise.resolve()
+
+/**
+ * 落盘开关。
+ *
+ * 评估脚本需要一个干净的、和用户真实知识库隔离的索引:它要灌入固定的
+ * 测试语料才能算出可复现的指标,而那些语料不该出现在用户的知识库里,
+ * 更不该把用户已有的 data/rag-index.json 覆盖掉。
+ *
+ * 做成开关而不是让评估脚本走另一套存储实现,是为了保证评估跑的是
+ * **同一条检索代码路径**——换一套存储就等于评估的不是线上行为了。
+ */
+let persistenceEnabled = true
+
+/**
+ * 切成纯内存模式并清空当前索引。只给评估脚本用。
+ *
+ * 调用后本进程内的所有写入都不落盘,已加载的索引也被丢弃。
+ * 因为存储是模块级单例,这个操作对整个进程生效——所以评估脚本必须
+ * 单独跑,不能和 API 服务同进程。
+ */
+export function useInMemoryIndex(): void {
+  persistenceEnabled = false
+  documents = []
+  chunks = []
+  rebuildKeywordIndex()
+}
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null
@@ -87,6 +128,10 @@ function reviveDocument(value: unknown): StoredDocument | null {
 }
 
 export async function loadIndex(): Promise<void> {
+  // 纯内存模式下读盘是没意义的:评估要的是只含测试语料的干净索引,
+  // 读进用户的真实文档会让指标随「用户装了什么文档」变化,不可复现。
+  if (!persistenceEnabled) return
+
   let raw: string
   try {
     raw = await fs.readFile(indexPath, 'utf8')
@@ -121,6 +166,8 @@ export async function loadIndex(): Promise<void> {
   // 清孤儿块:删文档时若残留,它们会继续参与检索
   chunks = revived.filter((chunk) => documentIds.has(chunk.documentId))
 
+  rebuildKeywordIndex()
+
   const dropped = rawChunks.length - chunks.length
   console.log(
     `[rag] 已加载 ${documents.length} 篇文档 / ${chunks.length} 块` +
@@ -138,6 +185,8 @@ async function persist(): Promise<void> {
 }
 
 function schedulePersist(): Promise<void> {
+  if (!persistenceEnabled) return Promise.resolve()
+
   writeQueue = writeQueue.then(persist).catch((error) => {
     console.error('[rag] 索引写盘失败:', error)
   })
@@ -158,6 +207,7 @@ export async function addDocument(
 ): Promise<void> {
   documents.push(document)
   chunks.push(...newChunks)
+  rebuildKeywordIndex()
   await schedulePersist()
 }
 
@@ -167,6 +217,7 @@ export async function removeDocument(id: string): Promise<boolean> {
   if (documents.length === before) return false
 
   chunks = chunks.filter((chunk) => chunk.documentId !== id)
+  rebuildKeywordIndex()
   await schedulePersist()
   return true
 }
@@ -178,10 +229,15 @@ function dotProduct(a: number[], b: number[]): number {
   return sum
 }
 
+function documentTitles(): Map<string, string> {
+  return new Map(documents.map((doc) => [doc.id, doc.title]))
+}
+
+/** 向量检索:全量扫描算点积,取前 topK。 */
 export function search(queryVector: number[], topK: number): SearchHit[] {
   if (chunks.length === 0) return []
 
-  const titles = new Map(documents.map((doc) => [doc.id, doc.title]))
+  const titles = documentTitles()
 
   return chunks
     .map((chunk) => ({
@@ -191,4 +247,29 @@ export function search(queryVector: number[], topK: number): SearchHit[] {
     }))
     .sort((a, b) => b.score - a.score)
     .slice(0, topK)
+}
+
+/**
+ * 关键词检索(BM25)。
+ *
+ * 返回的 score 和向量检索的 score **不可比**:这里是无上界的 BM25 分,
+ * 那边是 [-1,1] 的余弦。合并两路必须用 RRF(见 fusion.ts),不能直接比大小。
+ */
+export function searchKeywords(query: string, topK: number): SearchHit[] {
+  if (chunks.length === 0) return []
+
+  const titles = documentTitles()
+  const byId = new Map(chunks.map((chunk) => [chunk.id, chunk]))
+
+  return keywordIndex
+    .search(query, topK)
+    .flatMap((hit: Bm25Hit) => {
+      const chunk = byId.get(hit.id)
+      if (!chunk) return []
+      return [{
+        chunk,
+        documentTitle: titles.get(chunk.documentId) ?? '未命名文档',
+        score: hit.score
+      }]
+    })
 }
