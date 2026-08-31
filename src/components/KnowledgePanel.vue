@@ -21,13 +21,35 @@ async function submit() {
   }
 }
 
+/**
+ * 解码文本文件。不能直接用 file.text()——它固定按 UTF-8 解码，遇到 GBK
+ * 文件（Windows 记事本存「ANSI」就是）会把每个非法字节换成 U+FFFD，
+ * 整篇变乱码后再入库，向量和引用都跟着废掉。
+ */
+async function decodeTextFile(file: File): Promise<string> {
+  const buffer = await file.arrayBuffer()
+  try {
+    // fatal 模式遇到非法字节直接抛错，而不是静默替换。UTF-8 的字节结构
+    // 很严格，非 UTF-8 的中文文本几乎不可能整篇通过校验
+    return stripBom(new TextDecoder('utf-8', { fatal: true }).decode(buffer))
+  } catch {
+    // GBK 是 GB2312 的超集，中文 Windows 上最常见的落点
+    return stripBom(new TextDecoder('gbk').decode(buffer))
+  }
+}
+
+/** UTF-8 BOM 解码后会留下 U+FEFF，跟进正文会污染第一个标题。 */
+function stripBom(value: string): string {
+  return value.charCodeAt(0) === 0xfeff ? value.slice(1) : value
+}
+
 /** 只读纯文本类文件。PDF/Word 需要额外解析库，目前不支持。 */
 async function pickFile(event: Event) {
   const input = event.target as HTMLInputElement
   const file = input.files?.[0]
   if (!file) return
 
-  text.value = await file.text()
+  text.value = await decodeTextFile(file)
   if (!title.value.trim()) title.value = file.name.replace(/\.[^.]+$/, '')
   // 清掉 value，否则选同一个文件不会再触发 change
   input.value = ''
