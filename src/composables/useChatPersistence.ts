@@ -8,8 +8,8 @@ import { useChatStore } from '../stores/chat'
  * 分成「恢复」和「保存」两半,都放在这里而不是 store 里:store 只描述数据,
  * 一旦它自己去读写 localStorage,单测就得准备一个 Storage 替身才能跑。
  *
- * 写入时机是这个文件里唯一需要想清楚的事。流式过程中每个 token 都会改
- * store,如果原样跟着写,一次回复就是几百次 JSON.stringify + setItem,
+ * 写入时机是这个文件里唯一需要想清楚的事。流式过程中 store 会持续变更,
+ * 如果原样跟着写,一次回复就是几百次 JSON.stringify + setItem,
  * 而 localStorage 是同步 API,会直接卡住渲染。所以做两层节流:
  *
  * - 防抖 400ms:连续变更合并成一次写入
@@ -68,12 +68,10 @@ export function useChatPersistence() {
   }
 
   function start() {
-    // deep 是必须的:消息内容变更在数组元素内部,浅监听看不到。
-    // 代价是每次变更都要遍历整棵会话树,靠上面的节流把频率压下来。
+    // 用 store revision 捕获嵌套消息变更,避免 deep watch 每次都遍历整棵会话树。
     const stopWatch = watch(
-      () => [store.conversations, store.activeId],
-      schedule,
-      { deep: true }
+      () => [store.activeId, store.revision],
+      schedule
     )
 
     // pagehide 比 beforeunload 可靠:移动端 Safari 切后台不触发 beforeunload。

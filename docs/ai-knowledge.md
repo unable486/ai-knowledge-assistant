@@ -49,6 +49,10 @@ Connection: keep-alive
 
 发完响应头立刻 `res.flushHeaders()`，不然 Express 会等到第一次 `write` 才发，前端的 `fetch` 就要多等一个模型首字延迟。
 
+前端消费到的文本增量不会逐 token 写入响应式状态，而是以约 30ms 为窗口合并后再更新；自动滚动也限制为每个浏览器帧最多执行一次。否则长回复会反复触发组件更新、布局计算和滚动，表现为 token 到达了但页面逐渐变卡。
+
+会话保存使用 store 的变更版本监听，并通过防抖和最长等待时间合并 `localStorage` 写入，避免流式期间用 `deep watch` 遍历完整会话树。服务端同时发送 `X-Accel-Buffering: no`，部署在 Nginx 等反向代理后仍需保持 `/api/chat` 的 `text/event-stream` 不被缓存或缓冲。
+
 ## 3. SSE 帧解析的两个坑
 
 `src/services/http/sse.ts`，55 行，是整个项目最值得讲的一段。

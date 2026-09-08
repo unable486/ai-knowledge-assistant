@@ -171,6 +171,8 @@ app.post('/api/chat', async (req: Request, res: Response) => {
   res.setHeader('Content-Type', 'text/event-stream; charset=utf-8')
   res.setHeader('Cache-Control', 'no-cache, no-transform')
   res.setHeader('Connection', 'keep-alive')
+  // 反向代理（尤其是 Nginx）禁止缓存 SSE，否则多个 token 会被攒成一批才到浏览器。
+  res.setHeader('X-Accel-Buffering', 'no')
   res.flushHeaders()
 
   // 先把引用来源发给前端,让它在回答生成前就能显示"参考了哪些文档"

@@ -15,6 +15,10 @@ const BOTTOM_THRESHOLD = 40
  */
 export function useAutoScroll(container: Ref<HTMLElement | null>) {
   const pinnedToBottom = ref(true)
+  let scheduled = false
+  let forcePending = false
+  let pendingPromise: Promise<void> | null = null
+  let resolvePending: (() => void) | null = null
 
   function isNearBottom(el: HTMLElement): boolean {
     return el.scrollHeight - el.scrollTop - el.clientHeight <= BOTTOM_THRESHOLD
@@ -25,13 +29,35 @@ export function useAutoScroll(container: Ref<HTMLElement | null>) {
     if (el) pinnedToBottom.value = isNearBottom(el)
   }
 
-  /** 内容变化后调用。等 DOM 更新完再滚,否则 scrollHeight 还是旧值 */
-  async function scrollToBottom(force = false) {
-    if (!force && !pinnedToBottom.value) return
+  /** 内容变化后调用。每帧最多滚一次，避免流式增量触发布局风暴。 */
+  function scrollToBottom(force = false): Promise<void> {
+    if (!force && !pinnedToBottom.value) return Promise.resolve()
 
-    await nextTick()
-    const el = container.value
-    if (el) el.scrollTop = el.scrollHeight
+    forcePending ||= force
+    if (!pendingPromise) {
+      pendingPromise = new Promise((resolve) => {
+        resolvePending = resolve
+      })
+    }
+
+    if (!scheduled) {
+      scheduled = true
+      window.requestAnimationFrame(async () => {
+        scheduled = false
+        await nextTick()
+
+        const shouldScroll = forcePending || pinnedToBottom.value
+        forcePending = false
+        const el = container.value
+        if (shouldScroll && el) el.scrollTop = el.scrollHeight
+
+        resolvePending?.()
+        resolvePending = null
+        pendingPromise = null
+      })
+    }
+
+    return pendingPromise
   }
 
   onMounted(() => void scrollToBottom(true))

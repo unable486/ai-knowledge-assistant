@@ -18,6 +18,11 @@ import { createId } from '../utils/id'
 export const useChatStore = defineStore('chat', () => {
   const conversations = ref<Conversation[]>([])
   const activeId = ref<string>('')
+  const revision = ref(0)
+
+  function markChanged() {
+    revision.value += 1
+  }
 
   const activeConversation = computed(
     () => conversations.value.find((c) => c.id === activeId.value) ?? null
@@ -52,6 +57,7 @@ export const useChatStore = defineStore('chat', () => {
     }
     conversations.value.unshift(conv)
     activeId.value = conv.id
+    markChanged()
     return conv
   }
 
@@ -61,8 +67,9 @@ export const useChatStore = defineStore('chat', () => {
   }
 
   function switchConversation(id: string) {
-    if (conversations.value.some((c) => c.id === id)) {
+    if (id !== activeId.value && conversations.value.some((c) => c.id === id)) {
       activeId.value = id
+      markChanged()
     }
   }
 
@@ -76,6 +83,7 @@ export const useChatStore = defineStore('chat', () => {
       // 删掉当前会话后落到相邻的一个,而不是直接清空,减少跳变感
       activeId.value = conversations.value[Math.min(idx, conversations.value.length - 1)]?.id ?? ''
     }
+    markChanged()
   }
 
   function appendMessage(
@@ -98,6 +106,7 @@ export const useChatStore = defineStore('chat', () => {
       conv.title = payload.content.slice(0, 20) || '新对话'
     }
 
+    markChanged()
     return message
   }
 
@@ -115,6 +124,7 @@ export const useChatStore = defineStore('chat', () => {
     if (message.status === 'pending') {
       message.status = 'streaming'
     }
+    markChanged()
   }
 
   function setMessageStatus(
@@ -128,6 +138,7 @@ export const useChatStore = defineStore('chat', () => {
 
     message.status = status
     message.error = status === 'error' ? error : undefined
+    markChanged()
   }
 
   /** 记录本次回复参考了知识库的哪些片段 */
@@ -140,6 +151,7 @@ export const useChatStore = defineStore('chat', () => {
     if (!message) return
 
     message.sources = sources.length > 0 ? sources : undefined
+    markChanged()
   }
 
   /** 记录本次检索的过程,供可视化面板展示。不持久化,理由见 types/chat.ts */
@@ -165,6 +177,7 @@ export const useChatStore = defineStore('chat', () => {
     // 来源和 trace 都要清:重试会重新检索,旧的和新回答对不上
     message.sources = undefined
     message.retrievalTrace = undefined
+    markChanged()
   }
 
   /** 找到某条 assistant 消息对应的用户提问,用于重试 */
@@ -182,6 +195,7 @@ export const useChatStore = defineStore('chat', () => {
   return {
     conversations,
     activeId,
+    revision,
     activeConversation,
     messages,
     isStreaming,

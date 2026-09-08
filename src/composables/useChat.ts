@@ -42,18 +42,44 @@ export function useChat() {
     const ac = new AbortController()
     controller.value = ac
 
+    let pendingText = ''
+    let flushTimer: number | null = null
+
+    const flushDelta = () => {
+      if (flushTimer !== null) {
+        window.clearTimeout(flushTimer)
+        flushTimer = null
+      }
+      if (!pendingText) return
+      const text = pendingText
+      pendingText = ''
+      store.appendDelta(conversationId, replyId, text)
+    }
+
+    const scheduleDelta = (text: string) => {
+      pendingText += text
+      if (flushTimer === null) {
+        // 合并高频小块，避免每个 token 都触发一次 Vue 更新和布局。
+        flushTimer = window.setTimeout(flushDelta, 30)
+      }
+    }
+
     try {
       for await (const event of streamChatReply(history, ac.signal)) {
         if (event.kind === 'sources') {
+          flushDelta()
           store.setMessageSources(conversationId, replyId, event.sources)
         } else if (event.kind === 'trace') {
+          flushDelta()
           store.setMessageTrace(conversationId, replyId, event.trace)
         } else {
-          store.appendDelta(conversationId, replyId, event.text)
+          scheduleDelta(event.text)
         }
       }
+      flushDelta()
       store.setMessageStatus(conversationId, replyId, 'done')
     } catch (err) {
+      flushDelta()
       // 取消不是错误,单独分支:保留已收到的内容,标成 aborted
       if (err instanceof DOMException && err.name === 'AbortError') {
         store.setMessageStatus(conversationId, replyId, 'aborted')
