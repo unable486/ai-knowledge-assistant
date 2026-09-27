@@ -1,7 +1,9 @@
 import { onScopeDispose, ref } from 'vue'
 import { streamChatReply, type ChatRequestMessage } from '../services/chatApi'
 import { useChatStore } from '../stores/chat'
+import { useSkillStore } from '../stores/skills'
 import type { Conversation } from '../types/chat'
+import { readSkillSelection, type SkillSelection } from '../../shared/skills'
 
 /**
  * 对话请求编排。
@@ -14,6 +16,7 @@ import type { Conversation } from '../types/chat'
  */
 export function useChat() {
   const store = useChatStore()
+  const skillStore = useSkillStore()
   const controller = ref<AbortController | null>(null)
 
   function abort() {
@@ -37,7 +40,8 @@ export function useChat() {
   async function runStream(
     conversationId: string,
     replyId: string,
-    history: ChatRequestMessage[]
+    history: ChatRequestMessage[],
+    skillSelection: SkillSelection
   ) {
     const ac = new AbortController()
     controller.value = ac
@@ -65,13 +69,15 @@ export function useChat() {
     }
 
     try {
-      for await (const event of streamChatReply(history, ac.signal)) {
+      for await (const event of streamChatReply(history, ac.signal, skillSelection)) {
         if (event.kind === 'sources') {
           flushDelta()
           store.setMessageSources(conversationId, replyId, event.sources)
         } else if (event.kind === 'trace') {
           flushDelta()
           store.setMessageTrace(conversationId, replyId, event.trace)
+        } else if (event.kind === 'skills') {
+          store.setMessageSkillTrace(conversationId, replyId, event.trace)
         } else {
           scheduleDelta(event.text)
         }
@@ -101,6 +107,7 @@ export function useChat() {
     if (!input || store.isStreaming) return
 
     const conversation = store.ensureConversation()
+    const skillSelection: SkillSelection = readSkillSelection(skillStore.selection) ?? { mode: 'auto', ids: [] }
     store.appendMessage(conversation.id, { role: 'user', content: input, status: 'done' })
 
     // 先占位一条空的 assistant 消息,UI 立刻能显示"正在思考",
@@ -108,10 +115,11 @@ export function useChat() {
     const reply = store.appendMessage(conversation.id, {
       role: 'assistant',
       content: '',
-      status: 'pending'
+      status: 'pending',
+      skillSelection
     })
 
-    await runStream(conversation.id, reply.id, buildHistory(conversation))
+    await runStream(conversation.id, reply.id, buildHistory(conversation), skillSelection)
   }
 
   /** 重试失败的回复:复用同一条消息,不新增用户提问 */
@@ -119,9 +127,13 @@ export function useChat() {
     const conversation = store.activeConversation
     if (!conversation || store.isStreaming) return
 
+    const reply = conversation.messages.find((message) => message.id === messageId && message.role === 'assistant')
+    if (!reply) return
+    const skillSelection: SkillSelection = readSkillSelection(reply.skillSelection) ?? { mode: 'auto', ids: [] }
+
     const history = buildHistory(conversation, messageId)
     store.resetMessage(conversation.id, messageId)
-    await runStream(conversation.id, messageId, history)
+    await runStream(conversation.id, messageId, history, skillSelection)
   }
 
   // 组件销毁时中止在飞的请求,否则回调里还会往已卸载的 store 写数据

@@ -6,6 +6,8 @@
  * (既 loading 又 error),联合类型从类型层面就排除了这种可能。
  */
 
+import type { SkillSelection, SkillTrace } from '../../shared/skills'
+
 export type MessageRole = 'user' | 'assistant'
 
 /**
@@ -22,6 +24,42 @@ export interface MessageSource {
   documentTitle: string
   heading: string
   score: number
+  /** 新引用携带快照；旧会话可能只有标题、章节和检索分数。 */
+  citationId?: string
+  documentId?: string
+  chunkId?: string
+  /** 本次实际提供给模型的原始片段，按纯文本显示，不能再查当前文档来替换。 */
+  excerpt?: string
+}
+
+/** SSE 与历史快照使用同一边界校验；不截断原文，以免把改写后的文本当作证据。 */
+export function readMessageSources(value: unknown): MessageSource[] {
+  if (!Array.isArray(value)) return []
+
+  return value.slice(0, 20).flatMap((item) => {
+    if (!item || typeof item !== 'object' || Array.isArray(item)) return []
+    const raw = item as Record<string, unknown>
+    if (typeof raw.documentTitle !== 'string' || raw.documentTitle.length > 500) return []
+
+    const source: MessageSource = {
+      documentTitle: raw.documentTitle,
+      heading: typeof raw.heading === 'string' && raw.heading.length <= 1_000 ? raw.heading : '',
+      score: typeof raw.score === 'number' && Number.isFinite(raw.score) ? raw.score : 0
+    }
+    if (typeof raw.citationId === 'string' && /^S[1-9]\d{0,2}$/.test(raw.citationId)) {
+      source.citationId = raw.citationId
+    }
+    for (const key of ['documentId', 'chunkId'] as const) {
+      const id = raw[key]
+      if (typeof id === 'string' && id.length > 0 && id.length <= 200 && !/\s|[\u0000-\u001f\u007f]/.test(id)) {
+        source[key] = id
+      }
+    }
+    if (typeof raw.excerpt === 'string' && raw.excerpt.length > 0 && raw.excerpt.length <= 6_000) {
+      source.excerpt = raw.excerpt
+    }
+    return [source]
+  })
 }
 
 /**
@@ -56,6 +94,8 @@ export interface RetrievalCandidate {
  */
 export interface RetrievalTrace {
   question: string
+  query?: string
+  status?: 'matched' | 'insufficient'
   timings: {
     embed: number
     vector: number
@@ -86,6 +126,10 @@ export interface ChatMessage {
    * 刷新后为 undefined —— 面板会消失,但 sources 还在。
    */
   retrievalTrace?: RetrievalTrace
+  /** 发送时的技能选择快照；重试复用，旧会话缺省为 auto。 */
+  skillSelection?: SkillSelection
+  /** 本次技能使用过程，仅在内存保留，与知识库事实引用分开。 */
+  skillTrace?: SkillTrace
   createdAt: number
 }
 

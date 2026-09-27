@@ -8,6 +8,7 @@ import type {
   RetrievalTrace
 } from '../types/chat'
 import { createId } from '../utils/id'
+import { readSkillSelection, type SkillTrace } from '../../shared/skills'
 
 /**
  * 会话状态仓库。
@@ -88,7 +89,7 @@ export const useChatStore = defineStore('chat', () => {
 
   function appendMessage(
     conversationId: string,
-    payload: Pick<ChatMessage, 'role' | 'content' | 'status'>
+    payload: Pick<ChatMessage, 'role' | 'content' | 'status' | 'skillSelection'>
   ): ChatMessage {
     const conv = conversations.value.find((c) => c.id === conversationId)
     if (!conv) throw new Error(`会话不存在: ${conversationId}`)
@@ -96,7 +97,10 @@ export const useChatStore = defineStore('chat', () => {
     const message: ChatMessage = {
       id: createId('msg'),
       createdAt: Date.now(),
-      ...payload
+      ...payload,
+      skillSelection: payload.role === 'assistant'
+        ? readSkillSelection(payload.skillSelection) ?? { mode: 'auto', ids: [] }
+        : undefined
     }
     conv.messages.push(message)
     conv.updatedAt = message.createdAt
@@ -166,6 +170,11 @@ export const useChatStore = defineStore('chat', () => {
     message.retrievalTrace = trace
   }
 
+  function setMessageSkillTrace(conversationId: string, messageId: string, trace: SkillTrace) {
+    const message = findMessage(conversationId, messageId)
+    if (message) message.skillTrace = trace
+  }
+
   /** 重试前把消息清回初始态,复用同一条消息而不是新建,避免界面里留下失败残影 */
   function resetMessage(conversationId: string, messageId: string) {
     const message = findMessage(conversationId, messageId)
@@ -177,6 +186,7 @@ export const useChatStore = defineStore('chat', () => {
     // 来源和 trace 都要清:重试会重新检索,旧的和新回答对不上
     message.sources = undefined
     message.retrievalTrace = undefined
+    message.skillTrace = undefined
     markChanged()
   }
 
@@ -209,6 +219,7 @@ export const useChatStore = defineStore('chat', () => {
     setMessageStatus,
     setMessageSources,
     setMessageTrace,
+    setMessageSkillTrace,
     resetMessage,
     findPrecedingQuestion
   }

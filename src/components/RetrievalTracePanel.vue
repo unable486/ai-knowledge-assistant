@@ -32,6 +32,7 @@ const usedCount = computed(() => props.trace.candidates.filter((c) => c.used).le
 /** 摘要行:不展开也能看到最关键的三个数 */
 const summary = computed(() => {
   const { counts, timings } = props.trace
+  if (props.trace.status === 'insufficient') return `相关性不足，未使用候选资料，${Math.round(timings.total)}ms`
   return `向量 ${counts.vector} / 关键词 ${counts.keyword} → 融合 ${counts.fused} 去重候选，用了 ${usedCount.value} 块，${Math.round(timings.total)}ms`
 })
 
@@ -75,6 +76,8 @@ function formatMs(ms: number): string {
     </button>
 
     <div v-if="isOpen" class="trace-body">
+      <p v-if="trace.query && trace.query !== trace.question" class="footnote">本次检索的问题：{{ trace.query }}</p>
+      <p v-if="trace.status === 'insufficient'" class="footnote">候选资料相关性不足，未作为本次回答的依据。相似度仅用于粗筛，不能证明资料包含答案。</p>
       <!-- 耗时拆解:说明混合检索的成本几乎全在 embedding，BM25 本身可以忽略 -->
       <dl class="timings">
         <div>
@@ -156,7 +159,7 @@ function formatMs(ms: number): string {
       </div>
 
       <p class="footnote">
-        ● 表示这一块真的进了 prompt。排进前几名但没有 ● 的，是被参考资料的字符预算截掉了。
+        ● 表示这一块真的进了 prompt。没有 ● 的候选可能因相关性不足、排名或字符预算被排除。
         「余弦」和「BM25」两列<strong>不可比</strong>：前者在 [-1,1]，后者无上界，
         这也是融合用名次（RRF）而不是加权求和的原因。
       </p>

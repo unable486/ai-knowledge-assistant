@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
+import type { SkillSelection } from '../../shared/skills'
+import { useSkillStore } from '../stores/skills'
 
 const props = defineProps<{
   disabled?: boolean
@@ -13,6 +15,17 @@ const emit = defineEmits<{
 const input = ref('')
 const isComposing = ref(false)
 const canSubmit = computed(() => input.value.trim().length > 0 && !props.disabled)
+const skillStore = useSkillStore()
+const skillMode = computed({
+  get: () => skillStore.selection.mode,
+  set: (mode: SkillSelection['mode']) => skillStore.setSelection({ mode, ids: skillStore.selection.ids })
+})
+const selectedSkillIds = computed({
+  get: () => skillStore.selection.ids,
+  set: (ids: string[]) => skillStore.setSelection({ mode: 'manual', ids })
+})
+
+onMounted(() => { void skillStore.load() })
 
 function submit() {
   if (!canSubmit.value) return
@@ -32,6 +45,40 @@ function handleKeydown(event: KeyboardEvent) {
 </script>
 
 <template>
+  <div class="skill-controls">
+    <div class="skill-mode-row">
+      <label for="skill-mode">技能</label>
+      <select id="skill-mode" v-model="skillMode">
+        <option value="auto">自动</option>
+        <option value="manual">手动</option>
+        <option value="off">关闭</option>
+      </select>
+      <span class="skill-hint">更改从下次发送生效，重试沿用原选择</span>
+      <span v-if="skillStore.isLoading" role="status">加载中…</span>
+    </div>
+    <fieldset v-if="skillMode === 'manual' && skillStore.skills.length" class="skill-options">
+      <legend>选择本次使用的技能（可多选）</legend>
+      <label v-for="skill in skillStore.skills" :key="skill.id" :title="skill.description">
+        <input
+          v-model="selectedSkillIds"
+          type="checkbox"
+          :value="skill.id"
+          :disabled="selectedSkillIds.length >= 20 && !selectedSkillIds.includes(skill.id)"
+        />
+        {{ skill.name }}
+      </label>
+    </fieldset>
+    <p v-if="skillMode === 'manual' && !skillStore.skills.length && !skillStore.isLoading && !skillStore.error" class="skill-hint skill-empty">
+      当前没有可选技能，可继续普通聊天。
+    </p>
+    <p v-else-if="skillMode === 'manual' && !selectedSkillIds.length && !skillStore.isLoading" class="skill-hint skill-empty">
+      未选择技能，本次按普通聊天发送。
+    </p>
+    <p v-if="skillStore.error" class="skill-error" role="alert">
+      {{ skillStore.error }}
+      <button type="button" :disabled="skillStore.isLoading" @click="skillStore.load()">重新加载</button>
+    </p>
+  </div>
   <form class="composer" @submit.prevent="submit">
     <textarea
       v-model="input"
@@ -57,10 +104,24 @@ function handleKeydown(event: KeyboardEvent) {
       <span aria-hidden="true">↑</span>
     </button>
   </form>
-  <p class="composer-hint">Enter 发送 · Shift + Enter 换行 · 回复由 Claude 实时生成</p>
+  <p class="composer-hint">Enter 发送 · Shift + Enter 换行</p>
+  <p class="composer-hint">长对话会优先参考最近的内容；需要引用较早的信息时，请在问题中补充。</p>
 </template>
 
 <style scoped>
+.skill-controls { max-width: 820px; margin: 0 auto 9px; color: #475569; font-size: 12px; }
+.skill-mode-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.skill-mode-row > label { font-weight: 600; }
+.skill-mode-row select { padding: 3px 6px; border: 1px solid #cbd5e1; border-radius: 5px; color: #334155; background: #fff; font: inherit; }
+.skill-hint { color: #64748b; font-size: 11px; }
+.skill-options { display: flex; flex-wrap: wrap; gap: 7px 14px; max-height: 120px; overflow-y: auto; margin: 8px 0 0; padding: 8px 10px; border: 1px solid #e2e8f0; border-radius: 6px; }
+.skill-options legend { padding: 0 4px; color: #64748b; font-size: 11px; }
+.skill-options label { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.skill-options input { margin: 0; accent-color: #0f766e; }
+.skill-empty { margin: 7px 0 0; }
+.skill-error { margin: 7px 0 0; color: #b91c1c; overflow-wrap: anywhere; }
+.skill-error button { margin-left: 6px; padding: 2px 5px; border: 1px solid #fecaca; border-radius: 4px; color: inherit; background: #fff; font: inherit; cursor: pointer; }
+
 .composer {
   display: flex;
   align-items: flex-end;

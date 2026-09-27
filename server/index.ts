@@ -8,6 +8,12 @@ import { warmUpEmbedder } from './rag/embedder.ts'
 import { ingestDocument } from './rag/ingest.ts'
 import { retrieve } from './rag/retriever.ts'
 import { listDocuments, loadIndex, removeDocument } from './rag/vectorStore.ts'
+import { chatLimits, type ChatRequestMessage } from '../shared/chatContext.ts'
+import { buildRetrievalQuery, unknownCitationIds } from './rag/grounding.ts'
+import { ChunkingError } from './rag/chunker.ts'
+import { listSkills, prepareSkills, SkillError } from './skills/index.ts'
+import { readSkillSelection } from '../shared/skills.ts'
+import { planChatReply } from './chatPolicy.ts'
 
 const currentFile = fileURLToPath(import.meta.url)
 const currentDirectory = path.dirname(currentFile)
@@ -19,17 +25,10 @@ const port = Number(process.env.PORT ?? 8787)
 // 默认只绑本机:公网部署时 API 不带认证,绑 0.0.0.0 等于把 API Key 额度开放给全网。
 // 需要跨机访问就走 nginx 反代或 SSH 隧道;确实要监听公网时显式设 HOST=0.0.0.0。
 const host = process.env.HOST?.trim() || '127.0.0.1'
-const maxMessages = 40
-const maxMessageCharacters = 20_000
-const maxConversationCharacters = 120_000
+const { maxMessages, maxMessageCharacters, maxConversationCharacters } = chatLimits
 
 // 1MB 是为文档上传留的余量;对话本身远用不到这么多。
 app.use(express.json({ limit: '1mb' }))
-
-interface ChatRequestMessage {
-  role: 'user' | 'assistant'
-  content: string
-}
 
 function isChatRequestMessage(value: unknown): value is ChatRequestMessage {
   if (!value || typeof value !== 'object') return false
@@ -97,6 +96,15 @@ function publicErrorMessage(error: unknown): string {
 
 const maxDocumentCharacters = 200_000
 
+app.get('/api/skills', async (_req: Request, res: Response) => {
+  try {
+    res.json({ skills: await listSkills() })
+  } catch (error) {
+    sendJsonError(res, error instanceof SkillError ? error.status : 500,
+      error instanceof SkillError ? error.message : '技能目录加载失败，请检查服务端技能文件。')
+  }
+})
+
 app.get('/api/documents', (_req: Request, res: Response) => {
   res.json({ documents: listDocuments() })
 })
@@ -123,7 +131,12 @@ app.post('/api/documents', async (req: Request, res: Response) => {
     const result = await ingestDocument(title || '未命名文档', text)
     res.status(201).json({ document: result.document })
   } catch (error) {
-    sendJsonError(res, 500, error instanceof Error ? error.message : '文档入库失败。')
+    if (error instanceof ChunkingError) {
+      sendJsonError(res, 422, error.message)
+      return
+    }
+    console.error('[documents] 文档入库失败:', error)
+    sendJsonError(res, 500, '文档保存失败，请稍后重试。')
   }
 })
 
@@ -131,12 +144,17 @@ app.delete('/api/documents/:id', async (req: Request, res: Response) => {
   // Express 5 把 params 值类型放宽成 string | string[],取第一个即可
   const rawId = req.params.id
   const id = Array.isArray(rawId) ? rawId[0] : rawId
-  const removed = await removeDocument(id)
-  if (!removed) {
-    sendJsonError(res, 404, '文档不存在。')
-    return
+  try {
+    const removed = await removeDocument(id)
+    if (!removed) {
+      sendJsonError(res, 404, '文档不存在。')
+      return
+    }
+    res.status(204).end()
+  } catch (error) {
+    console.error('[documents] 文档删除失败:', error)
+    sendJsonError(res, 500, '文档删除失败，请稍后重试。')
   }
-  res.status(204).end()
 })
 
 app.post('/api/chat', async (req: Request, res: Response) => {
@@ -145,25 +163,49 @@ app.post('/api/chat', async (req: Request, res: Response) => {
     sendJsonError(res, 400, '请求消息格式无效或内容过长。')
     return
   }
-
-  const apiKey = process.env.ANTHROPIC_API_KEY?.trim()
-  if (!apiKey) {
-    sendJsonError(res, 503, '服务端尚未配置 ANTHROPIC_API_KEY。')
+  const skillSelection = readSkillSelection((req.body as Record<string, unknown>).skillSelection)
+  if (!skillSelection) {
+    sendJsonError(res, 400, '技能选择格式无效。')
     return
   }
 
+  const apiKey = process.env.ANTHROPIC_API_KEY?.trim()
   // 检索必须在发响应头之前:一旦 flushHeaders(),状态码就定死 200,
   // 后面失败只能在流里发 error 事件。检索失败属于"还没开始对话就出问题",
   // 应该用正常的 HTTP 错误码返回。
   //
-  // 只用最后一条用户消息做检索,不拼整个历史——早几轮的话题会稀释
-  // 当前问题的语义。
-  const question = [...messages].reverse().find((m) => m.role === 'user')?.content ?? ''
+  // 只为明确的指代追问补最近的用户问题，不把整段历史送去检索。
+  let questionIndex = messages.length - 1
+  while (questionIndex >= 0 && messages[questionIndex].role !== 'user') questionIndex -= 1
+  const question = messages[questionIndex]?.content ?? ''
   let retrieval: Awaited<ReturnType<typeof retrieve>> = null
+  let skills: Awaited<ReturnType<typeof prepareSkills>>
   try {
-    retrieval = question ? await retrieve(question) : null
+    const history = messages.slice(0, questionIndex)
+    const prepared = await Promise.all([
+      question ? retrieve(question, 'hybrid', history) : Promise.resolve(null),
+      prepareSkills(buildRetrievalQuery(question, history), skillSelection).catch((error: unknown) => {
+        // 自动技能不可用时仍保留普通聊天；用户明确选定或提及的技能不能静默跳过。
+        if (skillSelection.mode !== 'auto' || question.includes('$')) throw error
+        return {
+          systemPrompt: '',
+          trace: { mode: 'auto' as const, selected: [], warnings: [
+            `本次未能加载自动技能，按普通问答继续：${error instanceof Error ? error.message : '技能加载失败'}`
+          ] }
+        }
+      })
+    ])
+    retrieval = prepared[0]
+    skills = prepared[1]
   } catch (error) {
-    sendJsonError(res, 500, error instanceof Error ? error.message : '知识库检索失败。')
+    sendJsonError(res, error instanceof SkillError ? error.status : 500,
+      error instanceof Error ? error.message : '资料或技能加载失败。')
+    return
+  }
+
+  const replyPlan = planChatReply(retrieval, skills.systemPrompt)
+  if (!apiKey && !replyPlan.localReply) {
+    sendJsonError(res, 503, '服务端尚未配置 ANTHROPIC_API_KEY。')
     return
   }
 
@@ -174,6 +216,8 @@ app.post('/api/chat', async (req: Request, res: Response) => {
   // 反向代理（尤其是 Nginx）禁止缓存 SSE，否则多个 token 会被攒成一批才到浏览器。
   res.setHeader('X-Accel-Buffering', 'no')
   res.flushHeaders()
+
+  sendSse(res, 'skills', { trace: skills.trace })
 
   // 先把引用来源发给前端,让它在回答生成前就能显示"参考了哪些文档"
   //
@@ -187,12 +231,19 @@ app.post('/api/chat', async (req: Request, res: Response) => {
     sendSse(res, 'trace', { trace: retrieval.trace })
   }
 
+  if (replyPlan.localReply) {
+    sendSse(res, 'delta', { text: replyPlan.localReply })
+    sendSse(res, 'done', { stopReason: 'end_turn', notice: null })
+    res.end()
+    return
+  }
+
   const baseURL = process.env.ANTHROPIC_BASE_URL?.trim()
   const client = new Anthropic(baseURL ? { apiKey, baseURL } : { apiKey })
   const stream = client.messages.stream({
     model: process.env.ANTHROPIC_MODEL?.trim() || 'claude-opus-5',
     max_tokens: 16_000,
-    ...(retrieval ? { system: retrieval.systemPrompt } : {}),
+    ...(replyPlan.systemPrompt ? { system: replyPlan.systemPrompt } : {}),
     messages
   })
 
@@ -213,7 +264,12 @@ app.post('/api/chat', async (req: Request, res: Response) => {
       // 只有 end_turn 才是真正的正常收尾；截断和拒绝都要让前端可区分。
       sendSse(res, 'done', {
         stopReason: finalMessage.stop_reason,
-        notice: incompleteNotice(finalMessage.stop_reason)
+        notice: incompleteNotice(finalMessage.stop_reason) ?? (
+          retrieval && unknownCitationIds(
+            finalMessage.content.flatMap((block) => block.type === 'text' ? [block.text] : []).join(''),
+            retrieval.sources.map((source) => source.citationId)
+          ).length > 0 ? '回答中出现了未提供的引用编号，请核对资料后重试。' : null
+        )
       })
       res.end()
     }

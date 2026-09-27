@@ -1,16 +1,15 @@
 import { httpClient } from './http/client'
 import { readSseFrames } from './http/sse'
+import { selectChatContext, type ChatRequestMessage } from '../../shared/chatContext'
+import { readSkillSelection, readSkillTrace, type SkillSelection, type SkillTrace } from '../../shared/skills'
 
-import type { MessageSource, RetrievalCandidate, RetrievalTrace } from '../types/chat'
+import { readMessageSources, type MessageSource, type RetrievalCandidate, type RetrievalTrace } from '../types/chat'
 
-export interface ChatRequestMessage {
-  role: 'user' | 'assistant'
-  content: string
-}
+export type { ChatRequestMessage } from '../../shared/chatContext'
 
 /**
- * 流里现在有三种东西:文本增量、引用来源、检索过程记录。
- * 用可辨识联合而不是三个回调,调用方一个 for-await 就能全处理,
+ * 流里包含文本增量、引用来源、检索与技能使用过程。
+ * 用可辨识联合,调用方一个 for-await 就能全处理,
  * 顺序也天然保持和服务端一致。
  *
  * 加 trace 这一种时只动了这个联合和一个 case,调用方的 for-await 结构没变 ——
@@ -20,22 +19,11 @@ export type ChatStreamEvent =
   | { kind: 'delta'; text: string }
   | { kind: 'sources'; sources: MessageSource[] }
   | { kind: 'trace'; trace: RetrievalTrace }
+  | { kind: 'skills'; trace: SkillTrace }
 
 function readSources(payload: unknown): MessageSource[] {
   if (!payload || typeof payload !== 'object' || !('sources' in payload)) return []
-  const raw = (payload as { sources: unknown }).sources
-  if (!Array.isArray(raw)) return []
-
-  return raw.flatMap((item) => {
-    if (!item || typeof item !== 'object') return []
-    const { documentTitle, heading, score } = item as Record<string, unknown>
-    if (typeof documentTitle !== 'string') return []
-    return [{
-      documentTitle,
-      heading: typeof heading === 'string' ? heading : '',
-      score: typeof score === 'number' ? score : 0
-    }]
-  })
+  return readMessageSources(payload.sources)
 }
 
 /** null 和数字都要保留:null 表示"没进这一路的榜",和 0 分是完全不同的意思。 */
@@ -96,6 +84,8 @@ function readTrace(payload: unknown): RetrievalTrace | null {
 
   return {
     question: typeof record.question === 'string' ? record.question : '',
+    query: typeof record.query === 'string' ? record.query : undefined,
+    status: record.status === 'matched' || record.status === 'insufficient' ? record.status : undefined,
     timings: {
       embed: readNumber(timings.embed),
       vector: readNumber(timings.vector),
@@ -135,15 +125,19 @@ function readNotice(payload: unknown): string | null {
 }
 
 /**
- * 提交完整会话历史并消费后端转发的 SSE 文本流。
+ * 从会话历史选取预算内的最近上下文，并消费后端转发的 SSE 文本流。
  * HTTP 错误与网络异常由 httpClient 的拦截器统一处理；
  * API Key 只存在服务端，浏览器仅请求项目自己的 /api/chat。
  */
 export async function* streamChatReply(
   messages: ChatRequestMessage[],
-  signal: AbortSignal
+  signal: AbortSignal,
+  skillSelection?: SkillSelection
 ): AsyncGenerator<ChatStreamEvent, void, void> {
-  const response = await httpClient.postJson('/api/chat', { messages }, signal)
+  const context = selectChatContext(messages)
+  const selection = readSkillSelection(skillSelection)
+  if (!selection) throw new Error('技能选择无效，请重新选择后发送。')
+  const response = await httpClient.postJson('/api/chat', { messages: context, skillSelection: selection }, signal)
 
   let completed = false
   let notice: string | null = null
@@ -153,6 +147,7 @@ export async function* streamChatReply(
     try {
       payload = JSON.parse(frame.data)
     } catch {
+      if (frame.event === 'skills') continue
       throw new Error('对话服务返回了无法解析的流数据。')
     }
 
@@ -164,6 +159,12 @@ export async function* streamChatReply(
 
     if (frame.event === 'sources') {
       yield { kind: 'sources', sources: readSources(payload) }
+      continue
+    }
+
+    if (frame.event === 'skills') {
+      const trace = readSkillTrace(payload && typeof payload === 'object' && 'trace' in payload ? payload.trace : null)
+      if (trace) yield { kind: 'skills', trace }
       continue
     }
 

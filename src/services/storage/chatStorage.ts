@@ -12,7 +12,8 @@
  *    QuotaExceededError。失败不能影响正在进行的对话，所以一律降级成「不存」。
  */
 
-import type { ChatMessage, Conversation, MessageSource, MessageStatus } from '../../types/chat'
+import { readMessageSources, type ChatMessage, type Conversation, type MessageSource, type MessageStatus } from '../../types/chat'
+import { readSkillSelection } from '../../../shared/skills'
 
 const storageKey = 'ai-knowledge-assistant:chat'
 const schemaVersion = 1
@@ -41,7 +42,7 @@ interface StoredEnvelope {
 const terminalStatuses: readonly MessageStatus[] = ['done', 'aborted', 'error']
 
 function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === 'object' && value !== null
+  return typeof value === 'object' && value !== null && !Array.isArray(value)
 }
 
 function readString(value: unknown): string | null {
@@ -52,21 +53,9 @@ function readTimestamp(value: unknown): number | null {
   return typeof value === 'number' && Number.isFinite(value) ? value : null
 }
 
-/** 引用来源同样按不可信输入校验，坏的整条丢掉（它只是展示用，缺了不影响对话）。 */
+/** 兼容旧来源，并恢复本次引用的原文快照，不依赖文档当前是否存在。 */
 function reviveSources(value: unknown): MessageSource[] | undefined {
-  if (!Array.isArray(value)) return undefined
-
-  const sources = value.flatMap((item) => {
-    if (!isRecord(item)) return []
-    const title = readString(item.documentTitle)
-    if (title === null) return []
-    return [{
-      documentTitle: title,
-      heading: readString(item.heading) ?? '',
-      score: readTimestamp(item.score) ?? 0
-    }]
-  })
-
+  const sources = readMessageSources(value)
   return sources.length > 0 ? sources : undefined
 }
 
@@ -103,7 +92,10 @@ function reviveMessage(value: unknown): ChatMessage | null {
 
   const error = status === 'error' ? (readString(value.error) ?? '请求失败。') : undefined
 
-  return { id, role, content, status, error, sources: reviveSources(value.sources), createdAt }
+  const skillSelection = role === 'assistant'
+    ? readSkillSelection(value.skillSelection) ?? { mode: 'auto' as const, ids: [] }
+    : undefined
+  return { id, role, content, status, error, sources: reviveSources(value.sources), skillSelection, createdAt }
 }
 
 function reviveConversation(value: unknown): Conversation | null {
@@ -190,7 +182,7 @@ export function readSnapshot(): ChatSnapshot | null {
 }
 
 /**
- * 剥掉只在运行时有意义的字段，目前是 retrievalTrace。
+ * 剥掉只在运行时有意义的 retrievalTrace 和 skillTrace。
  *
  * 必须显式剥离，不能指望 trim 或 JSON.stringify —— 它们会把消息对象整个序列化。
  * 一条 trace 大约 3KB（12 个候选 × 240 字预览），按单会话 200 条消息算就是
@@ -203,7 +195,13 @@ export function readSnapshot(): ChatSnapshot | null {
 function stripRuntimeFields(conversation: Conversation, messages: ChatMessage[]): Conversation {
   return {
     ...conversation,
-    messages: messages.map(({ retrievalTrace: _unused, ...message }) => message)
+    messages: messages.map(({ retrievalTrace: _unused, skillTrace: _unusedSkillTrace, ...message }) => ({
+      ...message,
+      skillSelection: message.role === 'assistant'
+        ? readSkillSelection(message.skillSelection) ?? { mode: 'auto', ids: [] }
+        : undefined,
+      sources: reviveSources(message.sources)
+    }))
   }
 }
 

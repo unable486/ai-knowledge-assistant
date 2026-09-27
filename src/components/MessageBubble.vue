@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import type { ChatMessage } from '../types/chat'
 import { renderMarkdown } from '../utils/markdown'
 import RetrievalTracePanel from './RetrievalTracePanel.vue'
+import SkillTracePanel from './SkillTracePanel.vue'
 
 type Props = {
   message: ChatMessage
@@ -67,13 +68,26 @@ const renderedContent = computed(() =>
       </div>
 
       <div v-if="message.sources?.length" class="sources">
-        <span class="sources-label">参考</span>
-        <span v-for="(source, index) in message.sources" :key="index" class="source-chip">
-          {{ source.documentTitle }}<template v-if="source.heading"> · {{ source.heading }}</template>
-        </span>
+        <span class="sources-label">参考来源</span>
+        <template v-for="(source, index) in message.sources" :key="index">
+          <details v-if="source.excerpt" class="source-details">
+            <summary>
+              <span v-if="source.citationId" class="citation-id">[{{ source.citationId }}]</span>
+              {{ source.documentTitle }}<template v-if="source.heading"> · {{ source.heading }}</template>
+              <span class="source-action">查看原文</span>
+            </summary>
+            <p class="source-note">本次提供给模型的参考片段</p>
+            <div class="source-excerpt">{{ source.excerpt }}</div>
+          </details>
+          <div v-else class="source-chip">
+            <span v-if="source.citationId" class="citation-id">[{{ source.citationId }}]</span>
+            {{ source.documentTitle }}<template v-if="source.heading"> · {{ source.heading }}</template>
+          </div>
+        </template>
       </div>
 
       <RetrievalTracePanel v-if="message.retrievalTrace" :trace="message.retrievalTrace" />
+      <SkillTracePanel v-if="isAssistant && message.skillTrace" :trace="message.skillTrace" />
 
       <div v-if="message.status === 'error'" class="error-box">
         <span>{{ message.error }}</span>
@@ -168,13 +182,14 @@ const renderedContent = computed(() =>
 .sources {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   gap: 6px;
   margin-top: 10px;
 }
 
 .sources-label {
-  color: #94a3b8;
+  flex-basis: 100%;
+  color: #64748b;
   font-size: 11px;
   font-weight: 600;
 }
@@ -186,6 +201,63 @@ const renderedContent = computed(() =>
   color: #0f766e;
   background: #f0fdfa;
   font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.source-details {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #ccfbf1;
+  border-radius: 8px;
+  color: #0f766e;
+  background: #f0fdfa;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.source-details summary {
+  padding: 8px 10px;
+  cursor: pointer;
+  line-height: 1.6;
+}
+
+.source-details summary:hover {
+  background: #ccfbf1;
+}
+
+.source-details summary:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.citation-id {
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.source-action {
+  display: inline-block;
+  margin-left: 8px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.source-note {
+  margin: 0;
+  padding: 4px 10px 8px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.source-excerpt {
+  padding: 10px;
+  border-top: 1px solid #ccfbf1;
+  border-radius: 0 0 8px 8px;
+  color: #334155;
+  background: #fff;
+  line-height: 1.7;
+  white-space: pre-wrap;
 }
 
 .error-box {

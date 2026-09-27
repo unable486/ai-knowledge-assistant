@@ -11,8 +11,8 @@ import {
  * 知识库文档列表。
  *
  * 这个 store 和 chat store 的取舍不同:它直接调网络层,没有单独的
- * composable 编排。理由是这里的请求没有竞态可言——列表、上传、删除
- * 各自独立,没有流式,没有中止,不需要跨入口共享 controller。
+ * composable 编排。列表、上传、删除没有流式生命周期,不需要跨入口
+ * 共享 controller；写操作成功后基于当前列表更新，避免旧快照覆盖并发结果。
  * chat 那边分层是因为请求生命周期本身复杂,这里照搬只会增加间接层。
  */
 export const useKnowledgeStore = defineStore('knowledge', () => {
@@ -58,14 +58,11 @@ export const useKnowledgeStore = defineStore('knowledge', () => {
 
   async function remove(id: string) {
     error.value = null
-    // 乐观更新:先从列表移除,失败再拉回来。删除几乎不会失败,
-    // 等一个往返才消失会让界面显得迟钝。
-    const snapshot = documents.value
-    documents.value = documents.value.filter((doc) => doc.id !== id)
     try {
       await deleteDocument(id)
+      // 服务端确认写盘成功后再移除，失败时不回滚整张列表，避免覆盖并发上传。
+      documents.value = documents.value.filter((doc) => doc.id !== id)
     } catch (err) {
-      documents.value = snapshot
       error.value = readErrorMessage(err)
     }
   }
