@@ -12,3 +12,4 @@ dist-ssr
 server/rag/models
 # 向量索引，内容是用户自己的文档
 data
+reports

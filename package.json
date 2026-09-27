@@ -9,9 +9,12 @@
     "dev:client": "vite",
     "build": "npm run typecheck && vite build",
     "typecheck": "vue-tsc --noEmit && tsc -p tsconfig.server.json --noEmit",
+    "test": "tsx --test scripts/test-chat-context.ts scripts/test-vector-store.ts scripts/test-citations.ts scripts/test-grounding.ts scripts/test-chunker.ts scripts/test-skills.ts scripts/test-skill-client.ts scripts/test-chat-policy.ts",
     "start": "cross-env NODE_ENV=production tsx server/index.ts",
     "preview": "vite preview",
     "eval:retrieval": "tsx scripts/evaluate-retrieval.ts",
+    "eval:answers": "tsx scripts/evaluate-answers.ts",
+    "eval:skills": "tsx scripts/evaluate-skills.ts",
     "eval:injection": "tsx scripts/injection-test.ts"
   },
   "dependencies": {
@@ -23,7 +26,8 @@
     "highlight.js": "^11.10.0",
     "markdown-it": "^14.1.0",
     "pinia": "^2.2.2",
-    "vue": "^3.4.38"
+    "vue": "^3.4.38",
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
