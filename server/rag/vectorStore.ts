@@ -55,14 +55,21 @@ let chunks: StoredChunk[] = []
  * 没有了,表现为"有时能搜到有时搜不到"。几百块规模下重建是毫秒级,
  * 拿确定性换这点开销是划算的。
  */
-const keywordIndex = new Bm25Index()
+let keywordIndex = new Bm25Index()
 
 function rebuildKeywordIndex(): void {
   keywordIndex.build(chunks.map((chunk) => ({ id: chunk.id, text: chunk.text })))
 }
 
-/** 写盘串行化:多个 ingest 并发写同一个文件会写坏。 */
+/** ponytail: 单进程内串行修改和写盘;多进程共享索引时需文件锁或事务存储。 */
 let writeQueue: Promise<void> = Promise.resolve()
+
+function enqueueUpdate<T>(operation: () => Promise<T>): Promise<T> {
+  const result = writeQueue.then(operation)
+  // 调用者仍拿到本次失败;只恢复队列尾,让后续操作能继续。
+  writeQueue = result.then(() => undefined, () => undefined)
+  return result
+}
 
 /**
  * 落盘开关。
@@ -81,7 +88,7 @@ let persistenceEnabled = true
  *
  * 调用后本进程内的所有写入都不落盘,已加载的索引也被丢弃。
  * 因为存储是模块级单例,这个操作对整个进程生效——所以评估脚本必须
- * 单独跑,不能和 API 服务同进程。
+ * 单独跑,不能和 API 服务同进程,并在任何索引操作之前调用。
  */
 export function useInMemoryIndex(): void {
   persistenceEnabled = false
@@ -127,7 +134,12 @@ function reviveDocument(value: unknown): StoredDocument | null {
   }
 }
 
-export async function loadIndex(): Promise<void> {
+export function loadIndex(): Promise<void> {
+  // 启动时读盘也排队,避免读到旧快照后覆盖正在入库的新文档。
+  return enqueueUpdate(readIndex)
+}
+
+async function readIndex(): Promise<void> {
   // 纯内存模式下读盘是没意义的:评估要的是只含测试语料的干净索引,
   // 读进用户的真实文档会让指标随「用户装了什么文档」变化,不可复现。
   if (!persistenceEnabled) return
@@ -175,8 +187,8 @@ export async function loadIndex(): Promise<void> {
   )
 }
 
-async function persist(): Promise<void> {
-  const payload = JSON.stringify({ version: schemaVersion, documents, chunks })
+async function persist(nextDocuments: StoredDocument[], nextChunks: StoredChunk[]): Promise<void> {
+  const payload = JSON.stringify({ version: schemaVersion, documents: nextDocuments, chunks: nextChunks })
   await fs.mkdir(dataDirectory, { recursive: true })
   // 先写临时文件再原子重命名:崩在写一半不会留下坏索引
   const tempPath = `${indexPath}.tmp`
@@ -184,13 +196,13 @@ async function persist(): Promise<void> {
   await fs.rename(tempPath, indexPath)
 }
 
-function schedulePersist(): Promise<void> {
-  if (!persistenceEnabled) return Promise.resolve()
-
-  writeQueue = writeQueue.then(persist).catch((error) => {
-    console.error('[rag] 索引写盘失败:', error)
-  })
-  return writeQueue
+async function commitUpdate(nextDocuments: StoredDocument[], nextChunks: StoredChunk[]): Promise<void> {
+  // 先构建候选索引;构建或落盘失败时,当前三份读取状态都保持不变。
+  const nextKeywordIndex = new Bm25Index(nextChunks.map((chunk) => ({ id: chunk.id, text: chunk.text })))
+  if (persistenceEnabled) await persist(nextDocuments, nextChunks)
+  documents = nextDocuments
+  chunks = nextChunks
+  keywordIndex = nextKeywordIndex
 }
 
 export function listDocuments(): StoredDocument[] {
@@ -201,25 +213,21 @@ export function isEmpty(): boolean {
   return chunks.length === 0
 }
 
-export async function addDocument(
+export function addDocument(
   document: StoredDocument,
   newChunks: StoredChunk[]
 ): Promise<void> {
-  documents.push(document)
-  chunks.push(...newChunks)
-  rebuildKeywordIndex()
-  await schedulePersist()
+  return enqueueUpdate(() => commitUpdate([...documents, document], [...chunks, ...newChunks]))
 }
 
-export async function removeDocument(id: string): Promise<boolean> {
-  const before = documents.length
-  documents = documents.filter((doc) => doc.id !== id)
-  if (documents.length === before) return false
+export function removeDocument(id: string): Promise<boolean> {
+  return enqueueUpdate(async () => {
+    const nextDocuments = documents.filter((doc) => doc.id !== id)
+    if (nextDocuments.length === documents.length) return false
 
-  chunks = chunks.filter((chunk) => chunk.documentId !== id)
-  rebuildKeywordIndex()
-  await schedulePersist()
-  return true
+    await commitUpdate(nextDocuments, chunks.filter((chunk) => chunk.documentId !== id))
+    return true
+  })
 }
 
 /** 向量已归一化,余弦相似度就是点积。 */

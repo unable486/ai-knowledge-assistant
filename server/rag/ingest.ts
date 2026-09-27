@@ -2,7 +2,7 @@
 
 import { randomUUID } from 'node:crypto'
 import { chunkDocument } from './chunker.ts'
-import { embedPassages } from './embedder.ts'
+import { embedPassages, embeddingMaxTokens, getEmbeddingTokenCounter } from './embedder.ts'
 import { addDocument, type StoredChunk, type StoredDocument } from './vectorStore.ts'
 
 /** 一批的块数。太大占内存,太小浪费批处理的收益。 */
@@ -14,7 +14,8 @@ export interface IngestResult {
 }
 
 export async function ingestDocument(title: string, rawText: string): Promise<IngestResult> {
-  const pieces = chunkDocument(rawText)
+  const countTokens = await getEmbeddingTokenCounter()
+  const pieces = chunkDocument(rawText, { countTokens, maxTokens: embeddingMaxTokens })
   if (pieces.length === 0) {
     throw new Error('文档内容为空或无法切块。')
   }

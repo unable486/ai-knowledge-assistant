@@ -41,7 +41,20 @@
  *    nDCG 本来支持分级增益,这里简化成 0/1 了。
  */
 
-import { retrieve, type RetrievalMode } from './retriever.ts'
+import { retrieve, type RetrievalMode, type RetrievalSource } from './retriever.ts'
+
+/** 按证据片段评估；忽略切块产生的空白差异，同篇的其他章节不能算命中。 */
+export function evidenceRecall(
+  expected: readonly { documentTitle: string; quote: string }[],
+  sources: readonly RetrievalSource[]
+): number | null {
+  if (expected.length === 0) return null
+  const normalize = (text: string) => text.replace(/\s+/g, '')
+  const hits = expected.filter((item) => sources.some((source) =>
+    source.documentTitle === item.documentTitle && normalize(source.excerpt).includes(normalize(item.quote))
+  ))
+  return hits.length / expected.length
+}
 
 export interface EvalCase {
   /** 用户会怎么问 */
