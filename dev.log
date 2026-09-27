@@ -1,0 +1,226 @@
+npm warn Unknown user config "sass_binary_site". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> ai-knowledge-assistant@0.1.0 dev
+> concurrently -k "npm:dev:api" "npm:dev:client"
+
+[dev:client] npm warn Unknown env config "sass-binary-site". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[dev:api] npm warn Unknown env config "sass-binary-site". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[dev:api] npm warn Unknown user config "sass_binary_site". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[dev:client] npm warn Unknown user config "sass_binary_site". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[dev:api] 
+[dev:api] > ai-knowledge-assistant@0.1.0 dev:api
+[dev:api] > tsx watch server/index.ts
+[dev:api] 
+[dev:client] 
+[dev:client] > ai-knowledge-assistant@0.1.0 dev:client
+[dev:client] > vite
+[dev:client] 
+[dev:client] Re-optimizing dependencies because lockfile has changed
+[dev:client] 
+[dev:client]   [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m6777[22m[2m[0m ms[22m
+[dev:client] 
+[dev:client]   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+[dev:client] [2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[dev:api] ◇ injected env (1) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+[dev:api] API server listening on http://127.0.0.1:8787
+[dev:api] [chat] 使用模型: claude-opus-4-8
+[dev:api] [rag] 已加载 2 篇文档 / 3 块
+[dev:api] [rag] embedding 模型就绪（1085ms）
+[dev:api] [chat] 上游调用失败: AuthenticationError: 401 {"error":{"code":"","message":"Invalid token (request id: 202609270809572315301688268d9d6x63TUPHR)","type":"new_api_error"}}
+[dev:api]     at APIError.generate (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\core\error.ts:67:14)
+[dev:api]     at Anthropic.makeStatusError (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\client.ts:419:28)
+[dev:api]     at Anthropic.makeRequest (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\client.ts:654:24)
+[dev:api]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+[dev:api]   status: 401,
+[dev:api]   headers: Headers {
+[dev:api]     date: 'Sun, 27 Sep 2026 08:09:57 GMT',
+[dev:api]     'content-type': 'application/json; charset=utf-8',
+[dev:api]     'content-length': '124',
+[dev:api]     connection: 'keep-alive',
+[dev:api]     server: 'cloudflare',
+[dev:api]     'x-oneapi-request-id': '202609270809572315301688268d9d6x63TUPHR',
+[dev:api]     'x-content-type-options': 'nosniff',
+[dev:api]     'referrer-policy': 'no-referrer',
+[dev:api]     'strict-transport-security': 'max-age=15768000',
+[dev:api]     'x-frame-options': 'SAMEORIGIN',
+[dev:api]     'x-permitted-cross-domain-policies': 'none',
+[dev:api]     'cf-cache-status': 'DYNAMIC',
+[dev:api]     nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}',
+[dev:api]     'report-to': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=HqwyTrbc%2FKZV4AZMRBcmtd54Hp7s7S43YMHdhWQNqSMw%2FrCUiq0ySeiVjFIZpgCyQfWhuSJ4etGgu%2FPCDG2sUIM2itX4wFuyH9WFhX5cAWQ7EuUf8weTkJ9hwzgxP50iBCEGPw%3D%3D"}]}',
+[dev:api]     'cf-ray': 'a4190774288b4cbb-LAX',
+[dev:api]     'alt-svc': 'h3=":443"; ma=86400'
+[dev:api]   },
+[dev:api]   requestID: null,
+[dev:api]   error: {
+[dev:api]     error: {
+[dev:api]       code: '',
+[dev:api]       message: 'Invalid token (request id: 202609270809572315301688268d9d6x63TUPHR)',
+[dev:api]       type: 'new_api_error'
+[dev:api]     }
+[dev:api]   }
+[dev:api] }
+[dev:api] [chat] 上游调用失败: AuthenticationError: 401 {"error":{"code":"","message":"Invalid token (request id: 202609270810001111673818268d9d6sQKQRCtq)","type":"new_api_error"}}
+[dev:api]     at APIError.generate (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\core\error.ts:67:14)
+[dev:api]     at Anthropic.makeStatusError (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\client.ts:419:28)
+[dev:api]     at Anthropic.makeRequest (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\client.ts:654:24)
+[dev:api]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+[dev:api]   status: 401,
+[dev:api]   headers: Headers {
+[dev:api]     date: 'Sun, 27 Sep 2026 08:10:00 GMT',
+[dev:api]     'content-type': 'application/json; charset=utf-8',
+[dev:api]     'content-length': '124',
+[dev:api]     connection: 'keep-alive',
+[dev:api]     server: 'cloudflare',
+[dev:api]     'x-oneapi-request-id': '202609270810001111673818268d9d6sQKQRCtq',
+[dev:api]     'x-content-type-options': 'nosniff',
+[dev:api]     'referrer-policy': 'no-referrer',
+[dev:api]     'strict-transport-security': 'max-age=15768000',
+[dev:api]     'x-frame-options': 'SAMEORIGIN',
+[dev:api]     'x-permitted-cross-domain-policies': 'none',
+[dev:api]     'cf-cache-status': 'DYNAMIC',
+[dev:api]     nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}',
+[dev:api]     'report-to': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=7KbtcPdhmJEzeTVQtt52n79h%2BuGsnSQLM1spo1j5RVnw%2BcNsUa1PPgesYrrxvnbJLI7%2F7X0CJp7hqpf7OsPZx1hQUgLH1RBJhVq0KJBdo9bqNVUS4HcnI3li4smaAbiu%2BWdFHg%3D%3D"}]}',
+[dev:api]     'cf-ray': 'a41907862d2b4cbb-LAX',
+[dev:api]     'alt-svc': 'h3=":443"; ma=86400'
+[dev:api]   },
+[dev:api]   requestID: null,
+[dev:api]   error: {
+[dev:api]     error: {
+[dev:api]       code: '',
+[dev:api]       message: 'Invalid token (request id: 202609270810001111673818268d9d6sQKQRCtq)',
+[dev:api]       type: 'new_api_error'
+[dev:api]     }
+[dev:api]   }
+[dev:api] }
+[dev:api] [chat] 上游调用失败: AuthenticationError: 401 {"error":{"code":"","message":"Invalid token (request id: 202609270810022099419458268d9d6FqREQqZ1)","type":"new_api_error"}}
+[dev:api]     at APIError.generate (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\core\error.ts:67:14)
+[dev:api]     at Anthropic.makeStatusError (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\client.ts:419:28)
+[dev:api]     at Anthropic.makeRequest (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\client.ts:654:24)
+[dev:api]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+[dev:api]   status: 401,
+[dev:api]   headers: Headers {
+[dev:api]     date: 'Sun, 27 Sep 2026 08:10:02 GMT',
+[dev:api]     'content-type': 'application/json; charset=utf-8',
+[dev:api]     'content-length': '124',
+[dev:api]     connection: 'keep-alive',
+[dev:api]     server: 'cloudflare',
+[dev:api]     'x-oneapi-request-id': '202609270810022099419458268d9d6FqREQqZ1',
+[dev:api]     'x-content-type-options': 'nosniff',
+[dev:api]     'referrer-policy': 'no-referrer',
+[dev:api]     'strict-transport-security': 'max-age=15768000',
+[dev:api]     'x-frame-options': 'SAMEORIGIN',
+[dev:api]     'x-permitted-cross-domain-policies': 'none',
+[dev:api]     'cf-cache-status': 'DYNAMIC',
+[dev:api]     nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}',
+[dev:api]     'report-to': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=NezghNzFSMbZJq1ztAT2S%2F2RGYDOJQ2568O94RR3WVW%2BHHdI8Wo6WcCvcf9PBdXGw5wS15POLEmWCNugjnGOuI5q4Tt7XVyPCUwaX2rJhOg%2F0dOGssq%2BlBDO4byya7e9Gq%2F6Vw%3D%3D"}]}',
+[dev:api]     'cf-ray': 'a41907934cc24cbb-LAX',
+[dev:api]     'alt-svc': 'h3=":443"; ma=86400'
+[dev:api]   },
+[dev:api]   requestID: null,
+[dev:api]   error: {
+[dev:api]     error: {
+[dev:api]       code: '',
+[dev:api]       message: 'Invalid token (request id: 202609270810022099419458268d9d6FqREQqZ1)',
+[dev:api]       type: 'new_api_error'
+[dev:api]     }
+[dev:api]   }
+[dev:api] }
+[dev:api] [chat] 上游调用失败: AuthenticationError: 401 {"error":{"code":"","message":"Invalid token (request id: 202609270810410364057038268d9d602x3kA6D)","type":"new_api_error"}}
+[dev:api]     at APIError.generate (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\core\error.ts:67:14)
+[dev:api]     at Anthropic.makeStatusError (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\client.ts:419:28)
+[dev:api]     at Anthropic.makeRequest (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\client.ts:654:24)
+[dev:api]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+[dev:api]   status: 401,
+[dev:api]   headers: Headers {
+[dev:api]     date: 'Sun, 27 Sep 2026 08:10:41 GMT',
+[dev:api]     'content-type': 'application/json; charset=utf-8',
+[dev:api]     'content-length': '124',
+[dev:api]     connection: 'keep-alive',
+[dev:api]     server: 'cloudflare',
+[dev:api]     'x-oneapi-request-id': '202609270810410364057038268d9d602x3kA6D',
+[dev:api]     'x-content-type-options': 'nosniff',
+[dev:api]     'referrer-policy': 'no-referrer',
+[dev:api]     'strict-transport-security': 'max-age=15768000',
+[dev:api]     'x-frame-options': 'SAMEORIGIN',
+[dev:api]     'x-permitted-cross-domain-policies': 'none',
+[dev:api]     'cf-cache-status': 'DYNAMIC',
+[dev:api]     nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}',
+[dev:api]     'report-to': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=RGli%2FjXxKimqp5we8mB0Ar4OxP8QbO4K8gw9VPlU%2FVEkDnHFRMBbrFjf7ioHSnrlUTDqQ89oeFQF6Ap2gwER%2BiM5Lzi4lsPrWeo%2B%2FKq4Gu3pb4xamGrVs0FaBhWG1L32nHGCaA%3D%3D"}]}',
+[dev:api]     'cf-ray': 'a4190885efe0a708-LAX',
+[dev:api]     'alt-svc': 'h3=":443"; ma=86400'
+[dev:api]   },
+[dev:api]   requestID: null,
+[dev:api]   error: {
+[dev:api]     error: {
+[dev:api]       code: '',
+[dev:api]       message: 'Invalid token (request id: 202609270810410364057038268d9d602x3kA6D)',
+[dev:api]       type: 'new_api_error'
+[dev:api]     }
+[dev:api]   }
+[dev:api] }
+[dev:api] [chat] 上游调用失败: AuthenticationError: 401 {"error":{"code":"","message":"Invalid token (request id: 202609270811224693178688268d9d6Ki1AeLJL)","type":"new_api_error"}}
+[dev:api]     at APIError.generate (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\core\error.ts:67:14)
+[dev:api]     at Anthropic.makeStatusError (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\client.ts:419:28)
+[dev:api]     at Anthropic.makeRequest (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\client.ts:654:24)
+[dev:api]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+[dev:api]   status: 401,
+[dev:api]   headers: Headers {
+[dev:api]     date: 'Sun, 27 Sep 2026 08:11:22 GMT',
+[dev:api]     'content-type': 'application/json; charset=utf-8',
+[dev:api]     'content-length': '124',
+[dev:api]     connection: 'keep-alive',
+[dev:api]     server: 'cloudflare',
+[dev:api]     'x-oneapi-request-id': '202609270811224693178688268d9d6Ki1AeLJL',
+[dev:api]     'x-content-type-options': 'nosniff',
+[dev:api]     'referrer-policy': 'no-referrer',
+[dev:api]     'strict-transport-security': 'max-age=15768000',
+[dev:api]     'x-frame-options': 'SAMEORIGIN',
+[dev:api]     'x-permitted-cross-domain-policies': 'none',
+[dev:api]     'cf-cache-status': 'DYNAMIC',
+[dev:api]     nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}',
+[dev:api]     'report-to': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Nn%2FoDIG%2Bba5HXsU6mhFNpr7uiEsDf9log4q93xP1adguQit38k7jTM3Eoepwzl9h0suoKvF5ZkL55SQzpyPEgEmsJxAF%2BsY6kE%2FXIEF8uBXmZiQ%2FvjrMBnq6vq0jdFAil8QSDQ%3D%3D"}]}',
+[dev:api]     'cf-ray': 'a4190988e8e41418-LAX',
+[dev:api]     'alt-svc': 'h3=":443"; ma=86400'
+[dev:api]   },
+[dev:api]   requestID: null,
+[dev:api]   error: {
+[dev:api]     error: {
+[dev:api]       code: '',
+[dev:api]       message: 'Invalid token (request id: 202609270811224693178688268d9d6Ki1AeLJL)',
+[dev:api]       type: 'new_api_error'
+[dev:api]     }
+[dev:api]   }
+[dev:api] }
+[dev:api] [chat] 上游调用失败: AuthenticationError: 401 {"error":{"code":"","message":"Invalid token (request id: 202609271332195549918558268d9d6IjZm2WI4)","type":"new_api_error"}}
+[dev:api]     at APIError.generate (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\core\error.ts:67:14)
+[dev:api]     at Anthropic.makeStatusError (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\client.ts:419:28)
+[dev:api]     at Anthropic.makeRequest (D:\fontentDevelop\ai-knowledge-assistant\node_modules\@anthropic-ai\sdk\src\client.ts:654:24)
+[dev:api]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+[dev:api]   status: 401,
+[dev:api]   headers: Headers {
+[dev:api]     date: 'Sun, 27 Sep 2026 13:32:19 GMT',
+[dev:api]     'content-type': 'application/json; charset=utf-8',
+[dev:api]     'content-length': '124',
+[dev:api]     connection: 'keep-alive',
+[dev:api]     server: 'cloudflare',
+[dev:api]     'x-oneapi-request-id': '202609271332195549918558268d9d6IjZm2WI4',
+[dev:api]     'x-content-type-options': 'nosniff',
+[dev:api]     'referrer-policy': 'no-referrer',
+[dev:api]     'strict-transport-security': 'max-age=15768000',
+[dev:api]     'x-frame-options': 'SAMEORIGIN',
+[dev:api]     'x-permitted-cross-domain-policies': 'none',
+[dev:api]     'cf-cache-status': 'DYNAMIC',
+[dev:api]     nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}',
+[dev:api]     'report-to': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=hr%2Fwb1rtByjFY7HuKFR3sKJgNrE6yu3KtF6WNuKU9Mrjqrq0WyTKpYkUiJMVjDCjzl1yZoDH13dIxxeEmgjVvOTJt3Nk0MFwNksbbuUDrIAtEGjEolhmYHclg5hEufa1wduKhw%3D%3D"}]}',
+[dev:api]     'cf-ray': 'a41adfad88925578-LAX',
+[dev:api]     'alt-svc': 'h3=":443"; ma=86400'
+[dev:api]   },
+[dev:api]   requestID: null,
+[dev:api]   error: {
+[dev:api]     error: {
+[dev:api]       code: '',
+[dev:api]       message: 'Invalid token (request id: 202609271332195549918558268d9d6IjZm2WI4)',
+[dev:api]       type: 'new_api_error'
+[dev:api]     }
+[dev:api]   }
+[dev:api] }
