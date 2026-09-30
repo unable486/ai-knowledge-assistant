@@ -123,7 +123,7 @@ const emit = defineEmits<{
 }
 
 /* 会话列表和知识库共享剩余高度，各自内部滚动，避免一方把另一方挤没 */
-.conversation-list { min-height: 0; flex: 1 1 auto; overflow-y: auto; }
+.conversation-list { min-height: 200px; flex: 1 1 auto; overflow-y: auto; }
 .empty-list { padding: 12px 9px; color: #94a3b8; font-size: 12px; }
 .conversation-item { display: flex; align-items: center; border-radius: 6px; }
 .conversation-item.active { background: #e2e8f0; }
