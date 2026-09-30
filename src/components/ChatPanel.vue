@@ -104,7 +104,7 @@ async function retry(message: ChatMessage) {
 .suggestions { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .suggestions button { padding: 8px 11px; border: 1px solid #cbd5e1; border-radius: 6px; color: #475569; background: #fff; cursor: pointer; font: inherit; font-size: 12px; }
 .suggestions button:hover { border-color: #5eead4; color: #0f766e; background: #f0fdfa; }
-.composer-area { padding: 14px 24px 18px; border-top: 1px solid #f1f5f9; }
+.composer-area { padding: 16px 24px 18px; }
 
 @media (max-width: 700px) {
   .topbar { padding: 0 16px; }

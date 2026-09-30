@@ -1,0 +1,445 @@
+{
+  "testedAt": "2026-09-29T12:23:41.643Z",
+  "documents": 42,
+  "chunks": 1987,
+  "preservedDocuments": 1,
+  "maxTokens": 511,
+  "total": 12,
+  "passed": 9,
+  "manualReview": {
+    "semanticallyCovered": 10,
+    "total": 12,
+    "equivalentEvidence": "Python 可变默认参数题已由面试资料解释定义时求值，并给出 bucket=None 与函数内新建列表；严格用例限定 python-map 和 target=None，故自动判失败。",
+    "missingEvidence": ["Node 大文件背压：前四块未覆盖暂停写入、drain 或 pipeline", "Agent 重复动作：前四块未覆盖重复检测与步数、预算、超时上限"],
+    "scope": "仅检索证据核对，未调用在线生成模型。"
+  },
+  "results": [
+    {
+      "question": "Flex 里一段长文字把容器撑出了横向滚动条，该改哪里？",
+      "expectedTerms": [
+        "min-width: 0"
+      ],
+      "expectedSource": "frontend-map",
+      "rationale": "来自 htmlcss-layout 正文：flex 子项的 min-width 默认是 auto，修复示例明确设置 min-width: 0。验证能检索到具体 CSS 修复及代码示例。",
+      "status": "matched",
+      "sourceMatched": true,
+      "missingTerms": [],
+      "passed": true,
+      "sources": [
+        {
+          "title": "fqx · 前端知识体系 · HTML / CSS 与渲染管线",
+          "heading": "前端 > HTML / CSS 与渲染管线 > Flex 与 Grid：什么时候用哪个",
+          "excerpt": "【前端 > HTML / CSS 与渲染管线 > Flex 与 Grid：什么时候用哪个】\n这个坑非常常见——「为什么我的 flex 布局被一段长文本撑出横向滚动条」，答案就是 `min-width: 0` 没写。\n\n**Grid 的核心是命名和自适应**：\n\n```css\n.grid {\n  display: grid;\n  /* 自适应列数：能放几列放几列，最小 200px */\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 16px;\n}\n```\n\n"
+        },
+        {
+          "title": "fqx · 面试 01 · Vue / React / AI 前端交互",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 自动滚到底和用户手动上滑怎么共存",
+          "excerpt": "【面试 01 · Vue / React / AI 前端交互 > 自动滚到底和用户手动上滑怎么共存】\n**需求冲突**：流式输出时内容不断长出，默认要跟着滚到底；但用户往上翻看历史时，不能被强行拽回底部——这是聊天类产品最招人烦的 bug 之一。\n\n \n\n"
+        },
+        {
+          "title": "fqx · 面试 01 · Vue / React / AI 前端交互",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 自动滚到底和用户手动上滑怎么共存",
+          "excerpt": "【面试 01 · Vue / React / AI 前端交互 > 自动滚到底和用户手动上滑怎么共存】\n**更省事的现代做法**：容器用 `flex-direction: column-reverse`，或者 CSS 的 `overflow-anchor` + `scroll-snap`，让浏览器帮忙维持底部锚定。但跨浏览器行为不完全一致（Safari 尤其），关键路径还是要有 JS 兜底。\n\n \n\n"
+        },
+        {
+          "title": "fqx · 前端知识体系 · HTML / CSS 与渲染管线",
+          "heading": "前端 > HTML / CSS 与渲染管线 > Flex 与 Grid：什么时候用哪个",
+          "excerpt": "【前端 > HTML / CSS 与渲染管线 > Flex 与 Grid：什么时候用哪个】\n**`flex: 1` 和 `flex: auto` 的差别就在 `flex-basis`**：想让几个子项等宽，用 `flex: 1`；想让它们按内容比例分，用 `flex: auto`。这是「为什么我写了 flex:1 还是不等宽」的答案——你写的可能是 `flex-grow: 1` 而 `flex-basis` 还是 `auto`。\n\n**flex 子项溢出问题**：`min-width` 默认是 `auto`，所以 flex 子项**不会缩小到内容最小宽度以下**。文字长的时候会撑破容器：\n\n```css\n.flex-child {\n  min-width: 0;        /* ✓ 允许缩到比内容更小 */\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n```\n\n"
+        }
+      ]
+    },
+    {
+      "question": "跨域请求成功了，前端为什么读不到响应头里的分页总数？",
+      "expectedTerms": [
+        "Access-Control-Expose-Headers",
+        "X-Total-Count"
+      ],
+      "expectedSource": "frontend-map",
+      "rationale": "来自 network-cors 正文：自定义响应头必须显式暴露，示例为 Access-Control-Expose-Headers: X-Total-Count, X-Request-Id，并直接解释分页总数拿不到的现象。",
+      "status": "matched",
+      "sourceMatched": true,
+      "missingTerms": [],
+      "passed": true,
+      "sources": [
+        {
+          "title": "fqx · 前端知识体系 · 网络与性能优化",
+          "heading": "前端 > 网络与性能优化 > 跨域：CORS 的完整流程和坑",
+          "excerpt": "【前端 > 网络与性能优化 > 跨域：CORS 的完整流程和坑】\n**带凭证（cookie）的三个硬性要求**，缺一个都失败：\n1. 前端设 `credentials: 'include'`（fetch）或 `withCredentials = true`（XHR）\n2. 服务端 `Access-Control-Allow-Credentials: true`\n3. 服务端 `Access-Control-Allow-Origin` **必须是具体域名，不能是 `*`**\n\n第 3 条是最常踩的——本地开发用 `*` 一切正常，加了 cookie 就报错。\n\n**能读到的响应头默认只有七个**（CORS-safelisted）。要读自定义头必须显式暴露：\n\n```\nAccess-Control-Expose-Headers: X-Total-Count, X-Request-Id\n```\n\n「分页总数拿不到」通常就是这个原因。\n\n"
+        },
+        {
+          "title": "fqx · 前端知识体系 · 网络与性能优化",
+          "heading": "前端 > 网络与性能优化 > 跨域：CORS 的完整流程和坑",
+          "excerpt": "【前端 > 网络与性能优化 > 跨域：CORS 的完整流程和坑】\n**同源 = 协议 + 域名 + 端口三者全同**。跨域限制是浏览器的行为，服务端之间互相请求没有这回事。\n\n**简单请求 vs 预检请求**：\n\n满足以下全部条件才是简单请求，直接发不预检：\n- 方法是 `GET` / `HEAD` / `POST`\n- `Content-Type` 只能是 `text/plain` / `multipart/form-data` / `application/x-www-form-urlencoded`\n- 没有自定义请求头\n\n"
+        },
+        {
+          "title": "fqx · 前端知识体系 · 网络与性能优化",
+          "heading": "前端 > 网络与性能优化 > 跨域：CORS 的完整流程和坑",
+          "excerpt": "【前端 > 网络与性能优化 > 跨域：CORS 的完整流程和坑】\n**所以 `Content-Type: application/json` 一定触发 OPTIONS 预检**——这是最常见的「为什么多了一个 OPTIONS 请求」的答案。\n\n```\nOPTIONS /api/data\nOrigin: https://app.example.com\nAccess-Control-Request-Method: POST\nAccess-Control-Request-Headers: content-type, authorization\n        ↓\nAccess-Control-Allow-Origin: https://app.example.com\nAccess-Control-Allow-Methods: POST, GET\nAccess-Control-Allow-Headers: content-type, authorization\nAccess-Control-Max-Age: 86400          ← 预检结果缓存一天，减少 OPTIONS\n```\n\n"
+        },
+        {
+          "title": "fqx · 前端知识体系 · 网络与性能优化",
+          "heading": "前端 > 网络与性能优化 > 跨域：CORS 的完整流程和坑",
+          "excerpt": "【前端 > 网络与性能优化 > 跨域：CORS 的完整流程和坑】\n**解决跨域的实际手段**（按推荐度）：\n1. **同源部署**——前后端在同一域名下，用路径区分。最省事，没有 CORS 问题\n2. **nginx 反向代理**——前端请求 `/api/`，nginx 转发到后端\n3. **正确配置 CORS**——服务端加响应头\n4. **dev 用构建工具的 proxy**——Vite `server.proxy`，只解决开发环境\n\n**JSONP 已经过时**——只支持 GET、有 XSS 风险、错误处理困难。面试提它可以，但要说明是历史方案。\n\n"
+        }
+      ]
+    },
+    {
+      "question": "Java 写财务业务时，金额和时间直接用 double、字符串存好吗？",
+      "expectedTerms": [
+        "BigDecimal",
+        "LocalDateTime"
+      ],
+      "expectedSource": "java-map",
+      "rationale": "来自 data-time 正文：时间优先用 LocalDate、LocalDateTime、Instant，金额用 BigDecimal，原因是避免精度和时区问题。验证 Java 基础图中简短正文的召回。",
+      "status": "matched",
+      "sourceMatched": true,
+      "missingTerms": [],
+      "passed": true,
+      "sources": [
+        {
+          "title": "fqx · Java 基础知识主线 · 常用数据与集合",
+          "heading": "Java > 常用数据与集合 > 时间与金额要用专门类型",
+          "excerpt": "【Java > 常用数据与集合 > 时间与金额要用专门类型】\n时间优先用 `LocalDate`、`LocalDateTime`、`Instant`，不要用字符串到处传。金额用 `BigDecimal`，不要用浮点数。\n\n原因相同：重要业务数据要用能表达规则的类型，避免精度和时区问题。\n"
+        },
+        {
+          "title": "fqx · Java 基础知识主线 · 常用数据与集合",
+          "heading": "Java > 常用数据与集合 > String：最常用的对象",
+          "excerpt": "【Java > 常用数据与集合 > String：最常用的对象】\n`String` 表示字符串，而且**不可变**：每次拼接都会产生新字符串。少量拼接直接用 `+`，循环中大量拼接用 `StringBuilder`。\n\n比较字符串内容要用 `equals`，不要用 `==`。\n\n"
+        },
+        {
+          "title": "fqx · SQL / 数据库知识体系 · 工程实践",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 工程实践 > 字段类型怎么选",
+          "excerpt": "【SQL（MySQL 8.0 / InnoDB） > 工程实践 > 字段类型怎么选】\n**`TIMESTAMP` 的 2038 年上限是硬伤**，新表不要用它存业务时间。**推荐 `DATETIME` + 应用层统一用 UTC**：时区转换放在应用层做，数据库里存的值永远确定，跨时区部署和数据迁移都不会变样。用 `TIMESTAMP` 的自动时区转换在多时区场景下会造成「同一行数据不同人看到不同时间」。\n\n**`VARCHAR(n)` 里的 n 是字符数不是字节数**（MySQL 4.1+）。`VARCHAR(255)` 这个习惯来自早期版本的索引限制，现在没有特殊意义。n 的实际影响有两处：一是**内部临时表和排序时按最大长度分配内存**，所以 `VARCHAR(4000)` 存短字符串会让排序变贵；二是索引前缀长度受限。**按业务真实上限给**，手机号 20、邮箱 128、标题 255，不要一律 255 也不要一律 65535。\n\n"
+        },
+        {
+          "title": "fqx · SQL / 数据库知识体系 · 工程实践",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 工程实践 > 字段类型怎么选",
+          "excerpt": "【SQL（MySQL 8.0 / InnoDB） > 工程实践 > 字段类型怎么选】\n**金额绝对不能用 `FLOAT` / `DOUBLE`。** 二进制浮点数表示不了精确小数，`0.1 + 0.2 != 0.3`。现象是对账差几分钱、同一笔金额存进去读出来不一样。两条正确路线：\n\n- `DECIMAL(18, 2)` —— 精确十进制，数据库层面支持运算\n- `BIGINT` 存**最小单位（分）** —— 更快、不可能忘记设精度，电商和收银系统常用\n\n**时间类型**：\n\n| 类型 | 范围 | 时区 |\n|---|---|---|\n| `DATETIME` | 1000~9999 年，8 字节（8.0 是 5 字节+小数位） | **不转换**，存什么读什么 |\n| `TIMESTAMP` | 1970~2038 年，4 字节 | 存 UTC，读按会话时区转换 |\n| `INT` 存 Unix 秒 | 2038 问题 | 自己管 |\n\n"
+        }
+      ]
+    },
+    {
+      "question": "Java 同一份编译结果为什么能在不同操作系统上运行？",
+      "expectedTerms": [
+        "字节码",
+        "JVM"
+      ],
+      "expectedSource": "java-map",
+      "rationale": "来自 start-jdk 正文：Java 能跨平台，是因为同一份字节码可以交给不同系统上的 JVM。问题改写为编译结果跨系统运行，避免复述节点标题。",
+      "status": "matched",
+      "sourceMatched": true,
+      "missingTerms": [],
+      "passed": true,
+      "sources": [
+        {
+          "title": "fqx · Java 基础知识主线 · 从代码到运行",
+          "heading": "Java > 从代码到运行 > JDK、JRE、JVM 是什么关系",
+          "excerpt": "【Java > 从代码到运行 > JDK、JRE、JVM 是什么关系】\n**JDK 是开发工具箱**，里面有编译器和运行环境；**JVM 是真正执行 Java 字节码的虚拟机**。\n\n可以记成：写代码用 JDK，运行代码靠 JVM。Java 能跨平台，是因为同一份字节码可以交给不同系统上的 JVM。\n\n"
+        },
+        {
+          "title": "fqx · 面试 07 · Vue 深挖",
+          "heading": "面试 07 · Vue 深挖 > Vue 3 编译期做了哪些优化，为什么比 Vue 2 快",
+          "excerpt": "【面试 07 · Vue 深挖 > Vue 3 编译期做了哪些优化，为什么比 Vue 2 快】\n性能提升主要来自**编译期**，不是运行时 diff 算法更聪明——这是很多人答错的地方。\n\n \n\n三个机制：\n\n \n\n**静态提升（hoistStatic）** —— 完全不变的节点被提到渲染函数外面，只创建一次 vnode，之后每次重渲染直接复用同一个引用。同时静态的 props 对象也会被提升，避免每次重建对象。\n\n \n\n**patch flag** —— 编译时就标出这个节点哪些部分是动态的。`<div :class=\"cls\">{{ text }}</div>` 会被标成「class 和 text 是动态的」（flag 是位运算组合），运行时 patch 只比对这两项，不做全属性遍历。\n\n \n\n"
+        },
+        {
+          "title": "fqx · Java 基础知识主线 · 从代码到运行",
+          "heading": "Java > 从代码到运行",
+          "excerpt": "【Java > 从代码到运行】\n先写一个类和 main 方法，再由 JDK 编译成字节码，最后交给 JVM 运行。后面的类型、对象、集合、线程，本质上都是在描述 JVM 里运行的数据和行为。\n\n"
+        },
+        {
+          "title": "fqx · Node.js 知识体系 · 模块系统与依赖",
+          "heading": "Node 20 / 22 > 模块系统与依赖 > 模块解析与 package.json 字段",
+          "excerpt": "【Node 20 / 22 > 模块系统与依赖 > 模块解析与 package.json 字段】\n**`import 'foo'` 的查找顺序**：从当前目录的 `node_modules` 开始，逐级往上找到根。所以同一个包可能在不同层级有多份不同版本——这是 `node_modules` 体积大和「为什么有两个 React 实例」的原因。\n\n"
+        }
+      ]
+    },
+    {
+      "question": "SQL 排除子查询中的 ID，本来有数据却一行也查不到，NULL 会导致这个问题吗？",
+      "expectedTerms": [
+        "NOT IN",
+        "NOT EXISTS"
+      ],
+      "expectedSource": "sql-map",
+      "rationale": "来自 basic-null 正文：NOT IN 子查询里有 NULL 会使结果集为空，并建议改用 NOT EXISTS 或 LEFT JOIN ... WHERE right.id IS NULL。验证能检索到故障原因与替代查询。",
+      "status": "matched",
+      "sourceMatched": true,
+      "missingTerms": [],
+      "passed": true,
+      "sources": [
+        {
+          "title": "fqx · SQL / 数据库知识体系 · 关系模型与查询基础",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > 子查询、EXISTS、IN",
+          "excerpt": "【SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > 子查询、EXISTS、IN】\n两者在现代 MySQL 里优化器经常能转成半连接，性能接近。真正的差别在 **NULL 和「有没有」语义**：EXISTS 只关心「至少有一行」，找到就停；IN 在子查询含 NULL 时有三值逻辑问题（见上一节）。**「排除」一律用 NOT EXISTS，不要用 NOT IN。**\n\n相关子查询（内部引用了外层的列）对每一行都跑一遍，数据量大时很慢。能改写成 JOIN 或派生表就改。判断依据：EXPLAIN 里子查询的 `select_type` 是 `DEPENDENT SUBQUERY` 就要警惕。\n\n"
+        },
+        {
+          "title": "fqx · SQL / 数据库知识体系 · 关系模型与查询基础",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > NULL 的三值逻辑",
+          "excerpt": "【SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > NULL 的三值逻辑】\n**`NOT IN` 遇到 NULL 是最阴的一个。** `WHERE id NOT IN (1, 2, NULL)` 整个谓词变成未知，**结果集为空**。子查询里只要有一行是 NULL，NOT IN 就整表丢数据，不报错。`IN` 遇到 NULL 只是 NULL 那一项匹配不上，没有这么严重。所以「排除某些值」用 `NOT EXISTS` 或 `LEFT JOIN ... WHERE right.id IS NULL`，不要用 `NOT IN (SELECT ...)`。\n\n"
+        },
+        {
+          "title": "fqx · 面试 09 · 数据库实战",
+          "heading": "面试 09 · 数据库实战 > 索引在什么情况下会失效",
+          "excerpt": "【面试 09 · 数据库实战 > 索引在什么情况下会失效】\n最左前缀那条的原理（B+ 树按列依次排序、范围之后的列失去有序性）在 `03-sql.md` 第 2 题，那边还讲了索引下推怎么减少回表，不重复。\n\n \n\n"
+        },
+        {
+          "title": "fqx · 面试 09 · 数据库实战",
+          "heading": "面试 09 · 数据库实战 > 索引在什么情况下会失效",
+          "excerpt": "【面试 09 · 数据库实战 > 索引在什么情况下会失效】\n**追问「`WHERE status != 'done'` 你说是优化器选择，那怎么让它必须走索引，或者说这需求根本不该这么写」**：先给判断依据——看**目标行占全表的比例**，超过大约 20%-30% 优化器就倾向全表扫，这个比例是决定性因素，不是 `!=` 这个符号。所以三种走法：一是把否定改成肯定的枚举，`status IN ('pending','running')`，命中比例小了优化器自然走索引；二是如果「未完成」是高频查询而未完成行永远只占极少数，建**部分索引**（PostgreSQL 的 `CREATE INDEX ... WHERE status <> 'done'`，MySQL 没有部分索引，用「只给未完成行写值、完成后置 NULL 的辅助列」模拟，因为 B+ 树索引不存全 NULL 条目）；三是承认这是队列型查询，本来就该用 `(status, created_at)` 复合索引配合明确的状态白名单。`FORCE INDEX` 是排查手段不是解法——它把优化器的成本判断永久钉死，数据分布一变就成了新的慢查询源。\n\n"
+        }
+      ]
+    },
+    {
+      "question": "MySQL 联合索引里模糊匹配用不上排序，为啥加上这个字段还是更快？",
+      "expectedTerms": [
+        "Using index condition",
+        "回表"
+      ],
+      "expectedSource": "sql-map",
+      "rationale": "来自 idx-fail-icp 正文：索引 (a, b) 中 b LIKE '%x%' 虽用不上索引排序，ICP 仍能在索引里过滤并减少回表；EXPLAIN 标志为 Using index condition。",
+      "status": "matched",
+      "sourceMatched": true,
+      "missingTerms": [],
+      "passed": true,
+      "sources": [
+        {
+          "title": "fqx · SQL / 数据库知识体系 · 索引原理与设计",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 索引失效的完整清单",
+          "excerpt": "【SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 索引失效的完整清单】\n现象：某个接口莫名慢，EXPLAIN 显示 `type: ALL`，而同样的语句手动带引号跑就快。**排查慢查询时先看每个条件的类型是否匹配**，这条的命中率很高。字符集不一致（JOIN 两个表的关联列一个 utf8mb4 一个 utf8）也会触发同样的问题。\n\n**三、前导模糊匹配。** `LIKE '%abc'` 和 `LIKE '%abc%'` 用不上索引（不知道从哪个前缀开始找），`LIKE 'abc%'` 可以。要做包含匹配，用全文索引或搜索引擎。\n\n"
+        },
+        {
+          "title": "fqx · SQL / 数据库知识体系 · 索引原理与设计",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 联合索引与最左前缀",
+          "excerpt": "【SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 联合索引与最左前缀】\n**条件的书写顺序不重要**，优化器会调整：`WHERE b = 2 AND a = 1` 照样能用。断的是「索引列的连续性」，不是「你写的顺序」。\n\n**范围条件后面的列用不上。** `WHERE a = 1 AND b > 10 AND c = 5`：a 精确、b 范围，到 b 就停了，c 只能在结果里过滤。原因还是顺序——b 一旦是范围，这些行的 c 就不再有序了。\n\n"
+        },
+        {
+          "title": "fqx · 面试 03 · SQL / 索引 / 向量检索",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 联合索引的最左前缀和索引下推",
+          "excerpt": "【面试 03 · SQL / 索引 / 向量检索 > 联合索引的最左前缀和索引下推】\n联合索引 `(a, b, c)` 的排序规则是：先按 a 排，a 相同再按 b，b 相同再按 c。所以**必须从最左边开始连续使用**才能利用有序性。\n\n \n\n```sql\n-- 索引 idx(a, b, c)\nwhere a = 1                      -- 用到 a\nwhere a = 1 and b = 2            -- 用到 a, b\nwhere a = 1 and b = 2 and c = 3  -- 全用到\nwhere b = 2                      -- 用不到（跳过了 a）\nwhere a = 1 and c = 3            -- 只用到 a（b 断了，c 用不上有序性）\nwhere a > 1 and b = 2            -- a 走范围后，b 用不上有序性\n```\n\n \n\n"
+        },
+        {
+          "title": "fqx · SQL / 数据库知识体系 · 索引原理与设计",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 索引失效的完整清单 > 索引下推（ICP）",
+          "excerpt": "【SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 索引失效的完整清单 > 索引下推（ICP）】\n**收益是减少回表次数**，a=1 有一万行、其中只有十行匹配 b 时，回表从一万次降到十次。\n\nEXPLAIN 的 Extra 里显示 **`Using index condition`** 就是用上了。注意和 `Using index`（覆盖索引，完全不回表）区分——前者还是要回表，只是少回。\n\nICP 是自动的，不用写什么。知道它的意义在于**解释「为什么这个用不上索引的条件放进联合索引里还是变快了」**，以及看懂 EXPLAIN 输出。它对覆盖索引无效（本来就不回表），对主键聚簇索引扫描也不适用。\n\n"
+        }
+      ]
+    },
+    {
+      "question": "Python 函数没传列表参数，第二次调用为什么还留着上次添加的元素？",
+      "expectedTerms": [
+        "函数定义时求值一次",
+        "target=None"
+      ],
+      "expectedSource": "python-map",
+      "rationale": "来自 core-binding-mutdefault 正文：默认参数在函数定义时求值一次，target=[] 被各次调用共享；修复代码改为 target=None 并在函数体内新建列表。",
+      "status": "matched",
+      "sourceMatched": false,
+      "missingTerms": [
+        "target=None"
+      ],
+      "passed": false,
+      "sources": [
+        {
+          "title": "fqx · 面试 13 · Python",
+          "heading": "面试 13 · Python > 可变默认参数为什么是坑",
+          "excerpt": "【面试 13 · Python > 可变默认参数为什么是坑】\n默认参数在**函数定义时求值一次**，不是每次调用都新建。所以 `def f(items=[])` 里那个列表在整个进程生命周期内是同一个对象，被反复复用。\n\n \n\n```python\ndef add(item, bucket=[]):\n    bucket.append(item)\n    return bucket\n\nadd('a')   # ['a']\nadd('b')   # ['a', 'b']  ← 不是 ['b']\n```\n\n \n\n现象是「第二个请求带上了第一个请求的数据」，在 Web 服务里表现为串数据，而且单元测试跑单次调用永远发现不了。\n\n \n\n"
+        },
+        {
+          "title": "fqx · 面试 03 · SQL / 索引 / 向量检索",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 什么情况下索引失效",
+          "excerpt": "【面试 03 · SQL / 索引 / 向量检索 > 什么情况下索引失效】\n第 2 条隐式转换特别值得强调：MySQL 的规则是**字符串和数字比较时，把字符串转成数字**，所以 `varchar` 列被转换了，索引失效。反过来（int 列传字符串）不会失效，因为转换发生在传入的常量上。ORM 里参数类型没对齐是这个问题的主要来源。\n\n \n\n另外一类不是「失效」而是「优化器主动不用」：**选择性太低**。比如 `where gender = 'M'` 命中一半数据，走索引要大量回表，优化器判断全表扫更快。这不是 bug。\n\n \n\n"
+        },
+        {
+          "title": "fqx · 面试 13 · Python",
+          "heading": "面试 13 · Python > 可变默认参数为什么是坑",
+          "excerpt": "【面试 13 · Python > 可变默认参数为什么是坑】\n正确写法是用 `None` 当哨兵，函数体里再新建：\n\n \n\n```python\ndef add(item, bucket=None):\n    if bucket is None:\n        bucket = []\n    bucket.append(item)\n    return bucket\n```\n\n \n\n同类问题不只列表 —— 字典、集合、以及任何在定义时执行的表达式（比如 `timestamp=time.time()` 会永远是导入那一刻的时间）都一样。\n\n \n\n**追问「这和 JS 的默认参数有什么区别」**：JS 的默认值是每次调用时求值的，`function f(a = [])` 每次都拿到新数组，所以从 TS 转过来的人天然不设防。说得出这个差异，比单纯背「用 None」更能证明你踩过。\n\n"
+        },
+        {
+          "title": "fqx · 面试 12 · 代码陷阱题",
+          "heading": "面试 12 · 代码陷阱题 > 这个 reduce 去重函数不传初始值会怎样",
+          "excerpt": "【面试 12 · 代码陷阱题 > 这个 reduce 去重函数不传初始值会怎样】\n前文：去掉那个 `[]`，`reduce` 就拿 `arr[0]` 当初始的 `acc`，从索引 1 开始迭代。实测五种输入：\n\n| 输入 | 结果 |\n| --- | --- |\n| `[]` | `TypeError: Reduce of empty array with no initial value` |\n| `[1, 1, 2]` | `TypeError: acc.includes is not a function`（acc 是数字 1） |\n| `['a','b','a']` | `TypeError: acc.push is not a function`（acc 是字符串，有 includes 没 push） |\n| `[7]` | 返回 `7` —— 单元素数组不迭代，直接返回 `arr[0]`，类型都变了 |\n| `[[1],[2],[1]]` | 返回 `[1,[2],[1]]`，**而且输入的 `arr[0]` 被原地改坏了** |\n\n"
+        }
+      ]
+    },
+    {
+      "question": "Python 异步任务取消后，清理异常时有什么坑会让超时保护失效？",
+      "expectedTerms": [
+        "CancelledError",
+        "wait_for"
+      ],
+      "expectedSource": "python-map",
+      "rationale": "来自 conc-asyncio-cancel 正文：不要吞掉 CancelledError，必须清理后重新抛出；wait_for 超时会取消内部任务，但内部吞掉取消会令超时保护失效。",
+      "status": "matched",
+      "sourceMatched": true,
+      "missingTerms": [],
+      "passed": true,
+      "sources": [
+        {
+          "title": "fqx · Python 知识体系 · 并发与异步",
+          "heading": "Python 3.11+ > 并发与异步 > asyncio：单线程并发 IO > 取消、超时与生命周期",
+          "excerpt": "【Python 3.11+ > 并发与异步 > asyncio：单线程并发 IO > 取消、超时与生命周期】\n`wait_for` 超时会**取消**内部任务。如果内部任务吞了取消，`wait_for` 会等到它自己结束——超时保护失效。又回到上一条：不要吞 CancelledError。\n\n**屏蔽取消**（清理阶段用）：\n\n```python\nasync def work():\n    try:\n        await do()\n    finally:\n        async with asyncio.timeout(1):\n            with asyncio.TaskGroup() as tg:     # 简化示意\n                pass\n        await asyncio.shield(flush())           # flush 不会被外层取消打断\n```\n\n"
+        },
+        {
+          "title": "fqx · Python 知识体系 · 并发与异步",
+          "heading": "Python 3.11+ > 并发与异步 > asyncio：单线程并发 IO > 取消、超时与生命周期",
+          "excerpt": "【Python 3.11+ > 并发与异步 > asyncio：单线程并发 IO > 取消、超时与生命周期】\n**吞掉 CancelledError 是个严重 bug**：调用方以为任务停了，实际还在跑，资源泄漏、重复执行都从这里来。3.8 之后 CancelledError 继承 BaseException 而不是 Exception，所以 `except Exception` 拦不住它——这是刻意的保护。**但 `except BaseException` 和裸 `except:` 仍然能吞掉。**\n\n**超时**：\n\n```python\nasync with asyncio.timeout(2):          # 3.11+，超时抛 TimeoutError\n    await fetch(url)\n\n# 3.11 之前\nawait asyncio.wait_for(fetch(url), timeout=2)\n```\n\n"
+        },
+        {
+          "title": "fqx · Python 知识体系 · 并发与异步",
+          "heading": "Python 3.11+ > 并发与异步 > asyncio：单线程并发 IO > 取消、超时与生命周期",
+          "excerpt": "【Python 3.11+ > 并发与异步 > asyncio：单线程并发 IO > 取消、超时与生命周期】\n**取消是协作式的**：`task.cancel()` 在下一次 await 时抛 `CancelledError`，任务必须让它传播才能真正停。\n\n```python\nasync def work():\n    try:\n        await asyncio.sleep(10)\n    except asyncio.CancelledError:\n        await cleanup()          # 清理可以 await\n        raise                    # 必须重新抛出！吞掉的话任务看起来取消了其实还在跑\n```\n\n"
+        },
+        {
+          "title": "fqx · Java 基础知识主线 · 线程与并发",
+          "heading": "Java > 线程与并发 > 异步不是更快，而是不原地等待",
+          "excerpt": "【Java > 线程与并发 > 异步不是更快，而是不原地等待】\n`CompletableFuture` 可以组合多个异步任务，但异常、超时和线程池必须明确处理。\n\n异步适合等待 IO；CPU 密集任务仍受 CPU 核数限制。不要把所有代码都改成异步。\n"
+        }
+      ]
+    },
+    {
+      "question": "Node 处理大文件时，下游写入太慢，怎么避免数据一直堆在内存里？",
+      "expectedTerms": [
+        "highWaterMark",
+        "drain"
+      ],
+      "expectedSource": "node-map",
+      "rationale": "来自 async-stream 正文：writable.write() 返回 false 表示缓冲超过 highWaterMark，应停止写入并等待 drain；pipeline 自动处理背压和错误传播。",
+      "status": "matched",
+      "sourceMatched": false,
+      "missingTerms": [
+        "highWaterMark",
+        "drain"
+      ],
+      "passed": false,
+      "sources": [
+        {
+          "title": "fqx · 面试 13 · Python",
+          "heading": "面试 13 · Python > 处理大文件怎么不把内存打满",
+          "excerpt": "【面试 13 · Python > 处理大文件怎么不把内存打满】\n核心是流式处理，别把整个文件读进内存。\n\n \n\n```python\n# 错：一次性读入\ndata = open('big.jsonl').readlines()       # 10GB 文件 → 内存爆\n\n# 对：逐行迭代，文件对象本身是迭代器\nwith open('big.jsonl') as f:\n    for line in f:                          # 每次只驻留一行\n        handle(json.loads(line))\n```\n\n \n\n"
+        },
+        {
+          "title": "fqx · 面试 13 · Python",
+          "heading": "面试 13 · Python > 处理大文件怎么不把内存打满",
+          "excerpt": "【面试 13 · Python > 处理大文件怎么不把内存打满】\n按场景的具体做法：\n\n \n\n- **文本按行**：直接迭代文件对象。\n- **二进制按块**：`while chunk := f.read(8192)`（海象运算符，3.8+）。\n- **大 JSON 数组**：标准库 `json.load` 必须读全量，用 `ijson` 流式解析，或者上游改成 JSONL（每行一个对象）—— 后者是更根本的解法。\n- **CSV / 表格**：`pandas.read_csv(chunksize=...)` 分块，或者换 `pyarrow` / `polars` 用列式 + 内存映射。\n- **上传下载**：`httpx` 用 `client.stream()` 逐块写盘，别 `r.content`。\n\n \n\n"
+        },
+        {
+          "title": "fqx · 面试 13 · Python",
+          "heading": "面试 13 · Python > 处理大文件怎么不把内存打满",
+          "excerpt": "【面试 13 · Python > 处理大文件怎么不把内存打满】\n在 RAG 的文档入库场景里，正确形态是「读一块 → 切分 → 嵌入 → 写库」的流水线，每一环都是生成器，全程内存恒定。写成「先全部读完、再全部切分、再全部嵌入」在文档量大时必然 OOM，而且中途失败要从头再来。\n\n \n\n配套要知道 `generator` + `itertools.islice` 做批处理：嵌入模型通常按批调用，需要把逐条的流攒成固定大小的批，但不能把整个流攒起来。\n\n \n\n**追问「怎么确认你的处理真是常数内存」**：用 `tracemalloc` 或 `memory_profiler` 实测峰值，而不是看代码猜。常见的隐藏泄漏是「流式读进来但把结果全 append 到一个 list」—— 输入是流式的，输出把内存吃光了。\n\n"
+        },
+        {
+          "title": "fqx · Java 基础知识主线 · 异常与输入输出",
+          "heading": "Java > 异常与输入输出 > 文件处理不要一次全读进内存",
+          "excerpt": "【Java > 异常与输入输出 > 文件处理不要一次全读进内存】\n小文件可以一次读取，大文件应使用缓冲和流式处理，否则文件多大就可能占用多少内存。\n\n这条规律也适用于网络响应和数据库结果：数据量不确定时，要分页或边读边处理。\n\n"
+        }
+      ]
+    },
+    {
+      "question": "Electron 页面要调用主进程能力，能把整个 ipcRenderer 暴露给页面吗？",
+      "expectedTerms": [
+        "contextBridge",
+        "窄接口"
+      ],
+      "expectedSource": "node-map",
+      "rationale": "来自 ops-electron 正文：preload 用 contextBridge 暴露窄接口，不要暴露 ipcRenderer 本身或通用 invoke；每个能力单独一个函数，主进程仍需校验参数。",
+      "status": "matched",
+      "sourceMatched": true,
+      "missingTerms": [],
+      "passed": true,
+      "sources": [
+        {
+          "title": "fqx · Node.js 知识体系 · 测试、调试与交付",
+          "heading": "Node 20 / 22 > 测试、调试与交付 > Electron：把 Web 应用变桌面端",
+          "excerpt": "【Node 20 / 22 > 测试、调试与交付 > Electron：把 Web 应用变桌面端】\n**暴露通用的 invoke 等于没有隔离**。每个能力单独一个函数，主进程侧再校验一遍参数——**渲染进程的输入同样不可信**（页面可能加载了第三方内容）。\n\n**几个实际的坑**（这些是踩过才知道的）：\n\n**ESM 主进程不能 `require`**。`\"type\": \"module\"` 的项目里主进程是 ESM，preload 却通常需要是 CJS（`.cjs` 扩展名）。混合的项目要小心两边的模块格式。\n\n"
+        },
+        {
+          "title": "fqx · Node.js 知识体系 · 测试、调试与交付",
+          "heading": "Node 20 / 22 > 测试、调试与交付 > Electron：把 Web 应用变桌面端",
+          "excerpt": "【Node 20 / 22 > 测试、调试与交付 > Electron：把 Web 应用变桌面端】\n**架构是两个进程**：主进程（Node 环境，管窗口和系统 API）和渲染进程（Chromium，跑你的页面）。它们通过 IPC 通信。\n\n**安全配置是不能省的**：\n\n```js\nnew BrowserWindow({\n  webPreferences: {\n    contextIsolation: true,        // 必须 true（默认）\n    nodeIntegration: false,        // 必须 false（默认）\n    sandbox: true,\n    preload: path.join(__dirname, 'preload.cjs'),\n  },\n});\n```\n\n"
+        },
+        {
+          "title": "fqx · Node.js 知识体系 · 测试、调试与交付",
+          "heading": "Node 20 / 22 > 测试、调试与交付 > Electron：把 Web 应用变桌面端",
+          "excerpt": "【Node 20 / 22 > 测试、调试与交付 > Electron：把 Web 应用变桌面端】\n**preload 是唯一的桥**，用 `contextBridge` 暴露**窄接口**：\n\n```js\n// preload.cjs\nconst { contextBridge, ipcRenderer } = require('electron');\ncontextBridge.exposeInMainWorld('api', {\n  createOrder: (input) => ipcRenderer.invoke('order:create', input),\n  // ✗ 不要暴露 ipcRenderer 本身，也不要暴露 (channel, args) => invoke(channel, args)\n});\n```\n\n"
+        },
+        {
+          "title": "fqx · Node.js 知识体系 · 测试、调试与交付",
+          "heading": "Node 20 / 22 > 测试、调试与交付 > Electron：把 Web 应用变桌面端",
+          "excerpt": "【Node 20 / 22 > 测试、调试与交付 > Electron：把 Web 应用变桌面端】\n**`nodeIntegration: true` 等于把 `require` 给了页面**——一旦有 XSS，攻击者能读文件、起进程。老教程里到处是这个配置，都不要照抄。\n\n"
+        }
+      ]
+    },
+    {
+      "question": "换了 embedding 模型，还能继续沿用旧索引吗？",
+      "expectedTerms": [
+        "新索引",
+        "alias"
+      ],
+      "expectedSource": "interview-prep/04-ai.html",
+      "rationale": "来自 AI 面试题 q12 原文：用更新时间和内容哈希检测变更，先写新块再删旧块；换 embedding 模型时建新索引切 alias。验证索引更新和模型变更证据能被召回。",
+      "status": "matched",
+      "sourceMatched": true,
+      "missingTerms": [],
+      "passed": true,
+      "sources": [
+        {
+          "title": "fqx · 面试 04 · RAG / Agent / 评估 / 成本 / 安全",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 文档更新后索引怎么增量同步",
+          "excerpt": "【面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 文档更新后索引怎么增量同步】\n用更新时间和内容哈希检测变更，先写新块再删旧块；换 embedding 模型时建新索引切 alias。\n\n \n\n**追问**：请结合真实项目说明一个失败现象、排查依据和取舍。\n\n"
+        },
+        {
+          "title": "fqx · 面试 05 · 系统设计 + 手写题",
+          "heading": "面试 05 · 系统设计 + 手写题 > 设计一个企业知识库问答系统（RAG 全链路：接入、切分、索引、检索、重排、生成、引用）",
+          "excerpt": "【面试 05 · 系统设计 + 手写题 > 设计一个企业知识库问答系统（RAG 全链路：接入、切分、索引、检索、重排、生成、引用）】\n**追问「知识库每天新增一万篇文档，你的索引怎么增量更新而不重建」**：日常增量靠三件事——内容哈希做变更检测（哈希没变直接跳过，一万篇里通常真正变了的只有几百篇）、chunk ID 由内容哈希派生（能精确算出哪些块要写、哪些要删）、删除走真删而不是标记（漏删的表现是用户查到上个季度已废止的政策，而且日志里毫无异常）。一万篇 × 7.5 块 ≈ 7.5 万次 embedding，按批量 64 条一次、并发 8，是分钟级的活儿，不需要重建。真正需要全量重建的只有两种情况：**换 embedding 模型或改切分策略**——此时向量空间变了，新旧向量不可比，必须新建一份索引灰度对比后切别名，原地改会出现同一个索引里两种向量共存，表现为召回莫名其妙地忽好忽坏。别名切换的代价是双倍存储，这个成本要提前说。\n\n"
+        },
+        {
+          "title": "fqx · 面试 03 · SQL / 索引 / 向量检索",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 什么情况下索引失效",
+          "excerpt": "【面试 03 · SQL / 索引 / 向量检索 > 什么情况下索引失效】\n第 2 条隐式转换特别值得强调：MySQL 的规则是**字符串和数字比较时，把字符串转成数字**，所以 `varchar` 列被转换了，索引失效。反过来（int 列传字符串）不会失效，因为转换发生在传入的常量上。ORM 里参数类型没对齐是这个问题的主要来源。\n\n \n\n另外一类不是「失效」而是「优化器主动不用」：**选择性太低**。比如 `where gender = 'M'` 命中一半数据，走索引要大量回表，优化器判断全表扫更快。这不是 bug。\n\n \n\n"
+        },
+        {
+          "title": "fqx · Python 知识体系 · 工程实践",
+          "heading": "Python 3.11+ > 工程实践 > 日志、配置与错误处理",
+          "excerpt": "【Python 3.11+ > 工程实践 > 日志、配置与错误处理】\n**用 `logging` 模块，不要 `print`**。print 没法分级、没法按模块过滤、没法输出 JSON 给采集器。\n\n```python\nimport logging\nlog = logging.getLogger(__name__)     # 用模块名，方便过滤\n\nlog.debug('细节')\nlog.info('正常进展')\nlog.warning('异常但还能继续')\nlog.error('失败')\nlog.exception('失败')                 # 只能在 except 里，自动带 traceback\n```\n\n"
+        }
+      ]
+    },
+    {
+      "question": "Agent 一直重复同一个工具动作，怎么让它及时停下来？",
+      "expectedTerms": [
+        "最大步数",
+        "重复动作检测"
+      ],
+      "expectedSource": "interview-prep/04-ai.html",
+      "rationale": "来自 AI 面试题 q16 原文：记录状态和工具调用，设置最大步数、重复动作检测、预算和超时，达到上限返回已完成部分。验证 Agent 执行约束相关证据的召回。",
+      "status": "matched",
+      "sourceMatched": true,
+      "missingTerms": [
+        "最大步数",
+        "重复动作检测"
+      ],
+      "passed": false,
+      "sources": [
+        {
+          "title": "fqx · Python 知识体系 · 并发与异步",
+          "heading": "Python 3.11+ > 并发与异步 > asyncio：单线程并发 IO > 取消、超时与生命周期",
+          "excerpt": "【Python 3.11+ > 并发与异步 > asyncio：单线程并发 IO > 取消、超时与生命周期】\n**取消是协作式的**：`task.cancel()` 在下一次 await 时抛 `CancelledError`，任务必须让它传播才能真正停。\n\n```python\nasync def work():\n    try:\n        await asyncio.sleep(10)\n    except asyncio.CancelledError:\n        await cleanup()          # 清理可以 await\n        raise                    # 必须重新抛出！吞掉的话任务看起来取消了其实还在跑\n```\n\n"
+        },
+        {
+          "title": "fqx · 面试 04 · RAG / Agent / 评估 / 成本 / 安全",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 上百个工具/Skills，怎么让模型选对",
+          "excerpt": "【面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 上百个工具/Skills，怎么让模型选对】\n不能全塞进 context —— 100 个工具的完整 schema 轻松上万 token，每轮都发一遍，而且选项越多模型越容易选错。\n\n \n\n"
+        },
+        {
+          "title": "fqx · Python 知识体系 · 并发与异步",
+          "heading": "Python 3.11+ > 并发与异步",
+          "excerpt": "【Python 3.11+ > 并发与异步】\nPython 的并发选择被 GIL 钉死：同一时刻只有一个线程在执行 Python 字节码。所以 IO 等待用线程或协程，CPU 计算用多进程。asyncio 看起来像 Node 的事件循环，但默认是单线程协作式，阻塞一次就卡住整个循环——这是从 Node 转过来最容易踩的坑。\n\n"
+        },
+        {
+          "title": "fqx · 面试 04 · RAG / Agent / 评估 / 成本 / 安全",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 上百个工具/Skills，怎么让模型选对",
+          "excerpt": "【面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 上百个工具/Skills，怎么让模型选对】\n**追问「工具数量从 20 涨到 100，选择准确率掉了多少」**：这题的价值在于承认存在退化。诚实的答案是「掉了，尤其是描述相近的那几个」，然后给出你的应对 —— 合并近似工具、重写触发词、或者按场景分组。回答「没影响」的候选人，通常是没测过。\n\n"
+        }
+      ]
+    }
+  ]
+}

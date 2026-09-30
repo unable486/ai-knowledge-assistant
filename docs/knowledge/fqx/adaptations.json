@@ -1,0 +1,2087 @@
+[
+  {
+    "sourceId": "interview-prep/01-frontend.html#q14",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q14",
+    "heading": "面试 01 · Vue / React / AI 前端交互 > 流式 Markdown 渲染的闪烁和性能问题怎么解",
+    "sourceSha256": "79fee24346938a6596c8ccb73123d41dc821244aad6c66a7e8b33a97e46ba75c",
+    "excerptCount": 7,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 68
+      },
+      {
+        "start": 72,
+        "end": 204
+      },
+      {
+        "start": 208,
+        "end": 224
+      },
+      {
+        "start": 228,
+        "end": 879
+      },
+      {
+        "start": 879,
+        "end": 979
+      },
+      {
+        "start": 983,
+        "end": 1258
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/01-frontend.html#q17",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q17",
+    "heading": "面试 01 · Vue / React / AI 前端交互 > 渲染模型输出，前端的安全边界在哪",
+    "sourceSha256": "9231514da994582c060b550a236191f671088087111438d5764206615cc2a1be",
+    "excerptCount": 6,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 123
+      },
+      {
+        "start": 127,
+        "end": 155
+      },
+      {
+        "start": 159,
+        "end": 1232
+      },
+      {
+        "start": 1232,
+        "end": 1332
+      },
+      {
+        "start": 1336,
+        "end": 1568
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/01-frontend.html#q20",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q20",
+    "heading": "面试 01 · Vue / React / AI 前端交互 > 你项目里的分包策略是怎么定的",
+    "sourceSha256": "89d91d7cc5b52397c78030cff2bb80210dd70f0979f25edf8d80829a158c1b6f",
+    "excerptCount": 9,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 82
+      },
+      {
+        "start": 86,
+        "end": 163
+      },
+      {
+        "start": 167,
+        "end": 543
+      },
+      {
+        "start": 543,
+        "end": 846
+      },
+      {
+        "start": 850,
+        "end": 1366
+      },
+      {
+        "start": 1370,
+        "end": 1515
+      },
+      {
+        "start": 1519,
+        "end": 1731
+      },
+      {
+        "start": 1735,
+        "end": 1814
+      },
+      {
+        "start": 1818,
+        "end": 2159
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/05-design-coding.html#q2",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q2",
+    "heading": "面试 05 · 系统设计 + 手写题 > 设计一个支持流式输出的对话服务（SSE 与 WebSocket 取舍、断连恢复、多端同步、取消）",
+    "sourceSha256": "c1e1a2aa945899c0b6014f6aae8db0e395dbf06455bdda76d9901b79978f7a2c",
+    "excerptCount": 13,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 168
+      },
+      {
+        "start": 172,
+        "end": 189
+      },
+      {
+        "start": 193,
+        "end": 492
+      },
+      {
+        "start": 496,
+        "end": 756
+      },
+      {
+        "start": 760,
+        "end": 766
+      },
+      {
+        "start": 770,
+        "end": 1195
+      },
+      {
+        "start": 1199,
+        "end": 1490
+      },
+      {
+        "start": 1494,
+        "end": 1561
+      },
+      {
+        "start": 1565,
+        "end": 1825
+      },
+      {
+        "start": 1829,
+        "end": 1998
+      },
+      {
+        "start": 2002,
+        "end": 2226
+      },
+      {
+        "start": 2230,
+        "end": 2392
+      },
+      {
+        "start": 2396,
+        "end": 2755
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/05-design-coding.html#q6",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q6",
+    "heading": "面试 05 · 系统设计 + 手写题 > 手写带并发上限、超时和指数退避重试的批量 LLM 调用",
+    "sourceSha256": "cb3f6b895cc4e6e2f4ec426ac0e8c68cb2cf14e3aa870b692790cd9e4266fbda",
+    "excerptCount": 13,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 227
+      },
+      {
+        "start": 231,
+        "end": 316
+      },
+      {
+        "start": 320,
+        "end": 366
+      },
+      {
+        "start": 370,
+        "end": 3948
+      },
+      {
+        "start": 3952,
+        "end": 4021
+      },
+      {
+        "start": 4025,
+        "end": 4655
+      },
+      {
+        "start": 4659,
+        "end": 4680
+      },
+      {
+        "start": 4684,
+        "end": 5142
+      },
+      {
+        "start": 5142,
+        "end": 5506
+      },
+      {
+        "start": 5510,
+        "end": 5875
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/05-design-coding.html#q7",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q7",
+    "heading": "面试 05 · 系统设计 + 手写题 > 手写 SSE 流式响应解析器（处理分片、跨 chunk 的半行、[DONE] 终止、错误帧）",
+    "sourceSha256": "18864cd8aa7cfcec30d5047302f83e3cd3b830c069577e4ea52aa06c4f4808bd",
+    "excerptCount": 16,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 60
+      },
+      {
+        "start": 64,
+        "end": 86
+      },
+      {
+        "start": 90,
+        "end": 288
+      },
+      {
+        "start": 292,
+        "end": 522
+      },
+      {
+        "start": 526,
+        "end": 704
+      },
+      {
+        "start": 708,
+        "end": 741
+      },
+      {
+        "start": 745,
+        "end": 4805
+      },
+      {
+        "start": 4809,
+        "end": 4941
+      },
+      {
+        "start": 4945,
+        "end": 5306
+      },
+      {
+        "start": 5310,
+        "end": 5366
+      },
+      {
+        "start": 5370,
+        "end": 5390
+      },
+      {
+        "start": 5394,
+        "end": 5720
+      },
+      {
+        "start": 5720,
+        "end": 6130
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/05-design-coding.html#q8",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q8",
+    "heading": "面试 05 · 系统设计 + 手写题 > 手写上下文裁剪：给定 token 预算，保留 system 与最近 N 轮，中间做摘要占位",
+    "sourceSha256": "6e138ce681ee75883155699f9a96b519a8044c041d97b6201f88ce3b3b0d64c6",
+    "excerptCount": 13,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 82
+      },
+      {
+        "start": 86,
+        "end": 349
+      },
+      {
+        "start": 349,
+        "end": 5209
+      },
+      {
+        "start": 5213,
+        "end": 5263
+      },
+      {
+        "start": 5267,
+        "end": 5957
+      },
+      {
+        "start": 5961,
+        "end": 5978
+      },
+      {
+        "start": 5982,
+        "end": 6335
+      },
+      {
+        "start": 6335,
+        "end": 6740
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/05-design-coding.html#q9",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q9",
+    "heading": "面试 05 · 系统设计 + 手写题 > 手写多路检索结果的 RRF 融合与去重",
+    "sourceSha256": "d9427a5dd4a5df71134092ba7d086e6cf20795f6bf042f0b2ca4c729fb484ea8",
+    "excerptCount": 12,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 191
+      },
+      {
+        "start": 195,
+        "end": 290
+      },
+      {
+        "start": 294,
+        "end": 3183
+      },
+      {
+        "start": 3187,
+        "end": 3213
+      },
+      {
+        "start": 3217,
+        "end": 3488
+      },
+      {
+        "start": 3492,
+        "end": 3519
+      },
+      {
+        "start": 3523,
+        "end": 3860
+      },
+      {
+        "start": 3860,
+        "end": 4034
+      },
+      {
+        "start": 4038,
+        "end": 4531
+      },
+      {
+        "start": 4535,
+        "end": 4550
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/05-design-coding.html#q10",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q10",
+    "heading": "面试 05 · 系统设计 + 手写题 > 设计一个低代码搭建产物转 React/Vue 代码的「出码」方案",
+    "sourceSha256": "1a5e79a37f6535e85385206ab7a1fc3a7897f07fc540c31f485f2bb6fcc80ce3",
+    "excerptCount": 10,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 47
+      },
+      {
+        "start": 51,
+        "end": 195
+      },
+      {
+        "start": 195,
+        "end": 303
+      },
+      {
+        "start": 307,
+        "end": 316
+      },
+      {
+        "start": 320,
+        "end": 742
+      },
+      {
+        "start": 742,
+        "end": 775
+      },
+      {
+        "start": 779,
+        "end": 1304
+      },
+      {
+        "start": 1304,
+        "end": 1491
+      },
+      {
+        "start": 1495,
+        "end": 1927
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/07-vue.html#q2",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q2",
+    "heading": "面试 07 · Vue 深挖 > 响应式是怎么知道「谁用了这个数据」的",
+    "sourceSha256": "ec755e927e1fc24c6a2d7cc500f29bdcdc4cb4adb28154a46c9ab6373db36f37",
+    "excerptCount": 6,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 50
+      },
+      {
+        "start": 54,
+        "end": 345
+      },
+      {
+        "start": 349,
+        "end": 381
+      },
+      {
+        "start": 385,
+        "end": 836
+      },
+      {
+        "start": 836,
+        "end": 1265
+      },
+      {
+        "start": 1269,
+        "end": 1674
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/07-vue.html#q4",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q4",
+    "heading": "面试 07 · Vue 深挖 > ref 和 reactive 怎么选，为什么 ref 要 .value",
+    "sourceSha256": "f5a612a2ddf95ce7aefd45d070e7fdf148f1cee9af5dd0479928f2818344dcc5",
+    "excerptCount": 7,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 203
+      },
+      {
+        "start": 207,
+        "end": 314
+      },
+      {
+        "start": 318,
+        "end": 349
+      },
+      {
+        "start": 353,
+        "end": 707
+      },
+      {
+        "start": 711,
+        "end": 775
+      },
+      {
+        "start": 779,
+        "end": 962
+      },
+      {
+        "start": 966,
+        "end": 1552
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/07-vue.html#q5",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q5",
+    "heading": "面试 07 · Vue 深挖 > Composition API 比 Options API 好在哪，什么时候不该用",
+    "sourceSha256": "05333676813359ef5755aa08e05d705ba565610e419acc0d49a326f783b687ef",
+    "excerptCount": 8,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 30
+      },
+      {
+        "start": 34,
+        "end": 207
+      },
+      {
+        "start": 211,
+        "end": 438
+      },
+      {
+        "start": 442,
+        "end": 453
+      },
+      {
+        "start": 457,
+        "end": 569
+      },
+      {
+        "start": 573,
+        "end": 738
+      },
+      {
+        "start": 742,
+        "end": 920
+      },
+      {
+        "start": 924,
+        "end": 1578
+      },
+      {
+        "start": 1582,
+        "end": 1590
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/07-vue.html#q12",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q12",
+    "heading": "面试 07 · Vue 深挖 > Axios 请求层你怎么封装的",
+    "sourceSha256": "4650d0f4363684664375a2ec2626a92baee4d28aa2ebc322f19f1eb32fe82c02",
+    "excerptCount": 9,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 13
+      },
+      {
+        "start": 17,
+        "end": 310
+      },
+      {
+        "start": 314,
+        "end": 323
+      },
+      {
+        "start": 327,
+        "end": 413
+      },
+      {
+        "start": 417,
+        "end": 1000
+      },
+      {
+        "start": 1004,
+        "end": 1152
+      },
+      {
+        "start": 1156,
+        "end": 1229
+      },
+      {
+        "start": 1233,
+        "end": 1396
+      },
+      {
+        "start": 1400,
+        "end": 1978
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/07-vue.html#q13",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q13",
+    "heading": "面试 07 · Vue 深挖 > refresh_token 无感续期，多个请求同时 401 怎么办",
+    "sourceSha256": "f2dc10983902f4d5a49b006f9e1c3b13bbff89302084f9cf216e3401d64a1ce6",
+    "excerptCount": 9,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 37
+      },
+      {
+        "start": 41,
+        "end": 214
+      },
+      {
+        "start": 218,
+        "end": 238
+      },
+      {
+        "start": 242,
+        "end": 1104
+      },
+      {
+        "start": 1108,
+        "end": 1117
+      },
+      {
+        "start": 1121,
+        "end": 1203
+      },
+      {
+        "start": 1207,
+        "end": 1281
+      },
+      {
+        "start": 1285,
+        "end": 1462
+      },
+      {
+        "start": 1466,
+        "end": 1888
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/07-vue.html#q21",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q21",
+    "heading": "面试 07 · Vue 深挖 > 发布后浏览器还在加载旧版本，怎么定位",
+    "sourceSha256": "d26029c79aacebec63543a332d4a30094a39779d4657670fe0abfc8e2c0221d8",
+    "excerptCount": 10,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 26
+      },
+      {
+        "start": 30,
+        "end": 71
+      },
+      {
+        "start": 75,
+        "end": 262
+      },
+      {
+        "start": 266,
+        "end": 431
+      },
+      {
+        "start": 435,
+        "end": 592
+      },
+      {
+        "start": 596,
+        "end": 605
+      },
+      {
+        "start": 609,
+        "end": 822
+      },
+      {
+        "start": 826,
+        "end": 995
+      },
+      {
+        "start": 999,
+        "end": 1592
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/07-vue.html#q24",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q24",
+    "heading": "面试 07 · Vue 深挖 > 通用组件的 API 你怎么设计",
+    "sourceSha256": "c0ee6cb613010e73947a17c32b5bf983d4b90f0d8bae0416e9e23c5043e5024a",
+    "excerptCount": 10,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 22
+      },
+      {
+        "start": 26,
+        "end": 177
+      },
+      {
+        "start": 181,
+        "end": 318
+      },
+      {
+        "start": 322,
+        "end": 359
+      },
+      {
+        "start": 363,
+        "end": 465
+      },
+      {
+        "start": 469,
+        "end": 653
+      },
+      {
+        "start": 657,
+        "end": 905
+      },
+      {
+        "start": 909,
+        "end": 981
+      },
+      {
+        "start": 985,
+        "end": 1558
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/07-vue.html#q28",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q28",
+    "heading": "面试 07 · Vue 深挖 > 瀑布流怎么实现，难点在哪",
+    "sourceSha256": "e559e83aee98274bd110eaea64844e822e8ff2dceaa5af2070c5c7adab5a2d8a",
+    "excerptCount": 11,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 77
+      },
+      {
+        "start": 81,
+        "end": 92
+      },
+      {
+        "start": 96,
+        "end": 341
+      },
+      {
+        "start": 345,
+        "end": 450
+      },
+      {
+        "start": 454,
+        "end": 474
+      },
+      {
+        "start": 478,
+        "end": 713
+      },
+      {
+        "start": 717,
+        "end": 897
+      },
+      {
+        "start": 901,
+        "end": 1035
+      },
+      {
+        "start": 1039,
+        "end": 1274
+      },
+      {
+        "start": 1278,
+        "end": 1990
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/07-vue.html#q29",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q29",
+    "heading": "面试 07 · Vue 深挖 > 白屏问题一般是什么原因，怎么排查",
+    "sourceSha256": "b977a2f7a290be301dd04bf5bf7216c5732a7150a8817cae8b58f92c4869fc40",
+    "excerptCount": 9,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 80
+      },
+      {
+        "start": 84,
+        "end": 221
+      },
+      {
+        "start": 225,
+        "end": 417
+      },
+      {
+        "start": 421,
+        "end": 775
+      },
+      {
+        "start": 779,
+        "end": 914
+      },
+      {
+        "start": 918,
+        "end": 1121
+      },
+      {
+        "start": 1125,
+        "end": 1184
+      },
+      {
+        "start": 1188,
+        "end": 1944
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/08-react.html#q16",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q16",
+    "heading": "面试 08 · React 机制层 > SSR 解决什么问题，Next.js 的渲染模式有哪几种",
+    "sourceSha256": "299042b3bfca2edd2311cc321f032f9d22897561f8a6e6988a6e53ca614dd4a1",
+    "excerptCount": 7,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 168
+      },
+      {
+        "start": 172,
+        "end": 194
+      },
+      {
+        "start": 198,
+        "end": 462
+      },
+      {
+        "start": 466,
+        "end": 592
+      },
+      {
+        "start": 596,
+        "end": 888
+      },
+      {
+        "start": 892,
+        "end": 1574
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/08-react.html#q17",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q17",
+    "heading": "面试 08 · React 机制层 > React 里怎么做数据请求，为什么现在推荐用库",
+    "sourceSha256": "0c00d1488a8f6aa8bdd7b5fc74e7b0ede643d37e9ae65a855150590323399c83",
+    "excerptCount": 7,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 108
+      },
+      {
+        "start": 112,
+        "end": 525
+      },
+      {
+        "start": 529,
+        "end": 642
+      },
+      {
+        "start": 646,
+        "end": 901
+      },
+      {
+        "start": 905,
+        "end": 1139
+      },
+      {
+        "start": 1143,
+        "end": 1870
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/08-react.html#q18",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q18",
+    "heading": "面试 08 · React 机制层 > 从 Vue 转过来写 React，最容易犯哪些错",
+    "sourceSha256": "2d974bceeff511b01096062a385a3d13cd80d2aee7fe8f81068e3cadd33ca290",
+    "excerptCount": 9,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 45
+      },
+      {
+        "start": 49,
+        "end": 273
+      },
+      {
+        "start": 277,
+        "end": 397
+      },
+      {
+        "start": 401,
+        "end": 553
+      },
+      {
+        "start": 557,
+        "end": 705
+      },
+      {
+        "start": 709,
+        "end": 796
+      },
+      {
+        "start": 800,
+        "end": 905
+      },
+      {
+        "start": 909,
+        "end": 1620
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/08-react.html#q19",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q19",
+    "heading": "面试 08 · React 机制层 > 你简历上都是 Vue 项目，React 你实际写过多少",
+    "sourceSha256": "4f0e3f42859648fe1acc3cfc17c2896c02733b074e28d6245a5696b40f671a70",
+    "excerptCount": 9,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 88
+      },
+      {
+        "start": 92,
+        "end": 114
+      },
+      {
+        "start": 118,
+        "end": 366
+      },
+      {
+        "start": 370,
+        "end": 384
+      },
+      {
+        "start": 388,
+        "end": 591
+      },
+      {
+        "start": 591,
+        "end": 746
+      },
+      {
+        "start": 750,
+        "end": 899
+      },
+      {
+        "start": 903,
+        "end": 1448
+      },
+      {
+        "start": 1452,
+        "end": 1473
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/09-database.html#q12",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q12",
+    "heading": "面试 09 · 数据库实战 > MySQL 和 PostgreSQL 怎么选",
+    "sourceSha256": "0c4a5e7f7668bee19e6c31d0bd6a91b055345edd9b5579899f9caaaa598a5110",
+    "excerptCount": 5,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 62
+      },
+      {
+        "start": 66,
+        "end": 330
+      },
+      {
+        "start": 334,
+        "end": 600
+      },
+      {
+        "start": 604,
+        "end": 922
+      },
+      {
+        "start": 926,
+        "end": 1217
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/10-node.html#q6",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q6",
+    "heading": "面试 10 · Node 服务端 > 未捕获异常怎么办，优雅关闭要做什么",
+    "sourceSha256": "0485ad01ab91fb5b7200d22caa628e2c2f19cfa676367809cfd762270192c623",
+    "excerptCount": 9,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 123
+      },
+      {
+        "start": 127,
+        "end": 209
+      },
+      {
+        "start": 213,
+        "end": 527
+      },
+      {
+        "start": 531,
+        "end": 651
+      },
+      {
+        "start": 655,
+        "end": 685
+      },
+      {
+        "start": 689,
+        "end": 954
+      },
+      {
+        "start": 954,
+        "end": 1412
+      },
+      {
+        "start": 1416,
+        "end": 1663
+      },
+      {
+        "start": 1667,
+        "end": 2116
+      },
+      {
+        "start": 2120,
+        "end": 2137
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/10-node.html#q8",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q8",
+    "heading": "面试 10 · Node 服务端 > CommonJS 和 ESM 的区别，混用会有什么问题",
+    "sourceSha256": "01fa2ee92a2d55eb4833e92d0fd65f4b233aed01997337d7c7ccdd1c406c5aa5",
+    "excerptCount": 10,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 231
+      },
+      {
+        "start": 235,
+        "end": 616
+      },
+      {
+        "start": 620,
+        "end": 886
+      },
+      {
+        "start": 890,
+        "end": 1007
+      },
+      {
+        "start": 1011,
+        "end": 1190
+      },
+      {
+        "start": 1194,
+        "end": 1268
+      },
+      {
+        "start": 1272,
+        "end": 1312
+      },
+      {
+        "start": 1316,
+        "end": 1515
+      },
+      {
+        "start": 1519,
+        "end": 1880
+      },
+      {
+        "start": 1884,
+        "end": 2502
+      },
+      {
+        "start": 2506,
+        "end": 2523
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/10-node.html#q10",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q10",
+    "heading": "面试 10 · Node 服务端 > 鉴权怎么做，JWT 和 Session 选哪个",
+    "sourceSha256": "9b12224da6dd65387de15780d6dd07a55648be8a219787ea365074e6048fe6c8",
+    "excerptCount": 8,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 237
+      },
+      {
+        "start": 241,
+        "end": 321
+      },
+      {
+        "start": 325,
+        "end": 622
+      },
+      {
+        "start": 626,
+        "end": 654
+      },
+      {
+        "start": 658,
+        "end": 854
+      },
+      {
+        "start": 858,
+        "end": 1027
+      },
+      {
+        "start": 1031,
+        "end": 1680
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/10-node.html#q11",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q11",
+    "heading": "面试 10 · Node 服务端 > 参数校验怎么做，为什么不能信前端",
+    "sourceSha256": "5dfc0564453e6fbc3ef6405de302f8b9ded0c3ea637efe4c7f0dc5466ac451e9",
+    "excerptCount": 6,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 103
+      },
+      {
+        "start": 107,
+        "end": 343
+      },
+      {
+        "start": 347,
+        "end": 785
+      },
+      {
+        "start": 789,
+        "end": 1003
+      },
+      {
+        "start": 1007,
+        "end": 1266
+      },
+      {
+        "start": 1270,
+        "end": 1853
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/10-node.html#q15",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q15",
+    "heading": "面试 10 · Node 服务端 > Node 服务的内存泄漏怎么查",
+    "sourceSha256": "73350e612fe8afc88c8c7afcee4543006abf025ae36f0f8306b726158cd42877",
+    "excerptCount": 9,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 159
+      },
+      {
+        "start": 163,
+        "end": 335
+      },
+      {
+        "start": 339,
+        "end": 480
+      },
+      {
+        "start": 484,
+        "end": 686
+      },
+      {
+        "start": 690,
+        "end": 709
+      },
+      {
+        "start": 713,
+        "end": 1113
+      },
+      {
+        "start": 1117,
+        "end": 1227
+      },
+      {
+        "start": 1231,
+        "end": 1903
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/10-node.html#q16",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q16",
+    "heading": "面试 10 · Node 服务端 > worker_threads 什么时候用，和多进程怎么选",
+    "sourceSha256": "fb6d413006f0d7961462f6b7e6b132625fe1c56e36c4e32858d234fb70811725",
+    "excerptCount": 9,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 146
+      },
+      {
+        "start": 150,
+        "end": 159
+      },
+      {
+        "start": 163,
+        "end": 455
+      },
+      {
+        "start": 459,
+        "end": 523
+      },
+      {
+        "start": 527,
+        "end": 806
+      },
+      {
+        "start": 810,
+        "end": 899
+      },
+      {
+        "start": 903,
+        "end": 1029
+      },
+      {
+        "start": 1033,
+        "end": 1708
+      },
+      {
+        "start": 1712,
+        "end": 1730
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/10-node.html#q18",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q18",
+    "heading": "面试 10 · Node 服务端 > 文件上传怎么做，大文件怎么处理",
+    "sourceSha256": "02c8fadf5eb118d506adebc09556f5e9d7893296b157c24747b4accc3dc05b97",
+    "excerptCount": 11,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 11,
+        "end": 255
+      },
+      {
+        "start": 259,
+        "end": 367
+      },
+      {
+        "start": 371,
+        "end": 436
+      },
+      {
+        "start": 440,
+        "end": 541
+      },
+      {
+        "start": 545,
+        "end": 660
+      },
+      {
+        "start": 664,
+        "end": 684
+      },
+      {
+        "start": 688,
+        "end": 866
+      },
+      {
+        "start": 870,
+        "end": 1017
+      },
+      {
+        "start": 1021,
+        "end": 1784
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/10-node.html#q19",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q19",
+    "heading": "面试 10 · Node 服务端 > 模型接口不稳定，怎么保证服务可用",
+    "sourceSha256": "7df5f8d19561881ad5c799856e742c148cb6703aff5c5c98699cbdf2e0956961",
+    "excerptCount": 9,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 9
+      },
+      {
+        "start": 13,
+        "end": 202
+      },
+      {
+        "start": 206,
+        "end": 307
+      },
+      {
+        "start": 311,
+        "end": 467
+      },
+      {
+        "start": 471,
+        "end": 502
+      },
+      {
+        "start": 506,
+        "end": 679
+      },
+      {
+        "start": 683,
+        "end": 847
+      },
+      {
+        "start": 851,
+        "end": 1473
+      },
+      {
+        "start": 1477,
+        "end": 1495
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/10-node.html#q20",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q20",
+    "heading": "面试 10 · Node 服务端 > Koa 的中间件运作原理是什么，和 Express 有什么区别",
+    "sourceSha256": "96195915d81b6bfcb81bd501071a20fa62d9732837eda9b7a0f6617e9300f6c9",
+    "excerptCount": 12,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 75
+      },
+      {
+        "start": 79,
+        "end": 207
+      },
+      {
+        "start": 211,
+        "end": 756
+      },
+      {
+        "start": 760,
+        "end": 968
+      },
+      {
+        "start": 972,
+        "end": 1005
+      },
+      {
+        "start": 1009,
+        "end": 1204
+      },
+      {
+        "start": 1208,
+        "end": 1351
+      },
+      {
+        "start": 1355,
+        "end": 1367
+      },
+      {
+        "start": 1371,
+        "end": 1733
+      },
+      {
+        "start": 1737,
+        "end": 2104
+      },
+      {
+        "start": 2108,
+        "end": 2854
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/10-node.html#q21",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q21",
+    "heading": "面试 10 · Node 服务端 > IM 聊天室断开连接要如何处理，重连策略怎么设计",
+    "sourceSha256": "d59deaca82d3581ebbb719dfa203bb96f583e45192aa6c67a741b6da6e346c63",
+    "excerptCount": 11,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 54
+      },
+      {
+        "start": 58,
+        "end": 274
+      },
+      {
+        "start": 278,
+        "end": 391
+      },
+      {
+        "start": 395,
+        "end": 795
+      },
+      {
+        "start": 799,
+        "end": 887
+      },
+      {
+        "start": 891,
+        "end": 907
+      },
+      {
+        "start": 911,
+        "end": 1441
+      },
+      {
+        "start": 1441,
+        "end": 1470
+      },
+      {
+        "start": 1474,
+        "end": 1690
+      },
+      {
+        "start": 1690,
+        "end": 2341
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/10-node.html#q22",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q22",
+    "heading": "面试 10 · Node 服务端 > IM 聊天室内容变多后变卡，虚拟列表的难点在哪",
+    "sourceSha256": "858aa5fb42355f2f1d679c608eec983ce39162134ac37365fa6b7bed0b4606b8",
+    "excerptCount": 10,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 103
+      },
+      {
+        "start": 107,
+        "end": 186
+      },
+      {
+        "start": 190,
+        "end": 376
+      },
+      {
+        "start": 380,
+        "end": 555
+      },
+      {
+        "start": 559,
+        "end": 919
+      },
+      {
+        "start": 923,
+        "end": 1122
+      },
+      {
+        "start": 1126,
+        "end": 1136
+      },
+      {
+        "start": 1140,
+        "end": 1406
+      },
+      {
+        "start": 1406,
+        "end": 2510
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/11-java.html#q9",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q9",
+    "heading": "面试 11 · Java > synchronized 的锁升级还在吗，什么时候必须换 ReentrantLock",
+    "sourceSha256": "66b2e8b449ae5a5de6eff1335e54152927ed976d76a43c278d032b7402fb188d",
+    "excerptCount": 8,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 126
+      },
+      {
+        "start": 130,
+        "end": 457
+      },
+      {
+        "start": 461,
+        "end": 823
+      },
+      {
+        "start": 827,
+        "end": 857
+      },
+      {
+        "start": 861,
+        "end": 1152
+      },
+      {
+        "start": 1156,
+        "end": 1298
+      },
+      {
+        "start": 1302,
+        "end": 1933
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/11-java.html#q13",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q13",
+    "heading": "面试 11 · Java > MyBatis 的 #{} 和 ${} 有什么区别",
+    "sourceSha256": "8136dfd96aa1474de44f8b63ef4cf8c5c5acb24f852c5663f325cca92b7cc88e",
+    "excerptCount": 9,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 121
+      },
+      {
+        "start": 125,
+        "end": 215
+      },
+      {
+        "start": 219,
+        "end": 384
+      },
+      {
+        "start": 388,
+        "end": 415
+      },
+      {
+        "start": 419,
+        "end": 678
+      },
+      {
+        "start": 682,
+        "end": 793
+      },
+      {
+        "start": 797,
+        "end": 908
+      },
+      {
+        "start": 912,
+        "end": 1241
+      },
+      {
+        "start": 1245,
+        "end": 1728
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/11-java.html#q16",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q16",
+    "heading": "面试 11 · Java > Stream 和 Optional 什么时候不该用",
+    "sourceSha256": "934fc81b7d7122d755e7268731afa3fb71c28915e8f41811c537fbcdb432432f",
+    "excerptCount": 7,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 174
+      },
+      {
+        "start": 178,
+        "end": 197
+      },
+      {
+        "start": 201,
+        "end": 399
+      },
+      {
+        "start": 403,
+        "end": 727
+      },
+      {
+        "start": 731,
+        "end": 1088
+      },
+      {
+        "start": 1092,
+        "end": 1308
+      },
+      {
+        "start": 1312,
+        "end": 1812
+      },
+      {
+        "start": 1816,
+        "end": 1824
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/11-java.html#q18",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q18",
+    "heading": "面试 11 · Java > AI 应用里 Java 和 Node/Python 怎么分工",
+    "sourceSha256": "e9947d486c56933224fbc875ae82827ddef04c7ed55ec2585f105140df6c5e1e",
+    "excerptCount": 7,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 212
+      },
+      {
+        "start": 216,
+        "end": 242
+      },
+      {
+        "start": 246,
+        "end": 415
+      },
+      {
+        "start": 419,
+        "end": 489
+      },
+      {
+        "start": 493,
+        "end": 654
+      },
+      {
+        "start": 658,
+        "end": 852
+      },
+      {
+        "start": 856,
+        "end": 1294
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/11-java.html#q19",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q19",
+    "heading": "面试 11 · Java > 你简历上都是前端和 Node，Java 实际写过多少",
+    "sourceSha256": "6a445da57be8722338fc6a6f00e211446c71b13c5524051d52013e1a4f1f53d9",
+    "excerptCount": 13,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 69
+      },
+      {
+        "start": 73,
+        "end": 96
+      },
+      {
+        "start": 100,
+        "end": 335
+      },
+      {
+        "start": 339,
+        "end": 354
+      },
+      {
+        "start": 358,
+        "end": 448
+      },
+      {
+        "start": 452,
+        "end": 496
+      },
+      {
+        "start": 500,
+        "end": 558
+      },
+      {
+        "start": 562,
+        "end": 651
+      },
+      {
+        "start": 655,
+        "end": 705
+      },
+      {
+        "start": 709,
+        "end": 831
+      },
+      {
+        "start": 835,
+        "end": 961
+      },
+      {
+        "start": 965,
+        "end": 1528
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/12-code-traps.html#q3",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q3",
+    "heading": "面试 12 · 代码陷阱题 > await 一个 Proxy，为什么会打印 then",
+    "sourceSha256": "ced242e9413372767736c606d6fd496de5d4cbcb443ac040dbbfab25b5ea4c0a",
+    "excerptCount": 10,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 159
+      },
+      {
+        "start": 163,
+        "end": 226
+      },
+      {
+        "start": 230,
+        "end": 526
+      },
+      {
+        "start": 530,
+        "end": 556
+      },
+      {
+        "start": 560,
+        "end": 781
+      },
+      {
+        "start": 785,
+        "end": 865
+      },
+      {
+        "start": 869,
+        "end": 1112
+      },
+      {
+        "start": 1116,
+        "end": 1463
+      },
+      {
+        "start": 1467,
+        "end": 2168
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/12-code-traps.html#q4",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q4",
+    "heading": "面试 12 · 代码陷阱题 > 这两段改对象的代码分别输出什么",
+    "sourceSha256": "ff844f49629fe066a8ec7ce3b30eeb05f03e805b1c6b43fdadacdb33817af022",
+    "excerptCount": 15,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 224
+      },
+      {
+        "start": 228,
+        "end": 264
+      },
+      {
+        "start": 268,
+        "end": 346
+      },
+      {
+        "start": 350,
+        "end": 417
+      },
+      {
+        "start": 421,
+        "end": 559
+      },
+      {
+        "start": 559,
+        "end": 714
+      },
+      {
+        "start": 718,
+        "end": 757
+      },
+      {
+        "start": 761,
+        "end": 869
+      },
+      {
+        "start": 873,
+        "end": 987
+      },
+      {
+        "start": 991,
+        "end": 1017
+      },
+      {
+        "start": 1021,
+        "end": 1224
+      },
+      {
+        "start": 1228,
+        "end": 1614
+      },
+      {
+        "start": 1618,
+        "end": 1944
+      },
+      {
+        "start": 1948,
+        "end": 2640
+      },
+      {
+        "start": 2644,
+        "end": 2653
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/12-code-traps.html#q6",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q6",
+    "heading": "面试 12 · 代码陷阱题 > 这个 reduce 去重函数不传初始值会怎样",
+    "sourceSha256": "e293144fd643c7b5c67c870d4eea63ccf0bfac8593dcef88808406b660407e08",
+    "excerptCount": 16,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 136
+      },
+      {
+        "start": 140,
+        "end": 209
+      },
+      {
+        "start": 213,
+        "end": 274
+      },
+      {
+        "start": 278,
+        "end": 651
+      },
+      {
+        "start": 655,
+        "end": 883
+      },
+      {
+        "start": 887,
+        "end": 1073
+      },
+      {
+        "start": 1077,
+        "end": 1185
+      },
+      {
+        "start": 1189,
+        "end": 1281
+      },
+      {
+        "start": 1285,
+        "end": 1344
+      },
+      {
+        "start": 1348,
+        "end": 1375
+      },
+      {
+        "start": 1379,
+        "end": 1591
+      },
+      {
+        "start": 1595,
+        "end": 1726
+      },
+      {
+        "start": 1730,
+        "end": 1825
+      },
+      {
+        "start": 1829,
+        "end": 2041
+      },
+      {
+        "start": 2045,
+        "end": 2727
+      },
+      {
+        "start": 2731,
+        "end": 2740
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/12-code-traps.html#q7",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q7",
+    "heading": "面试 12 · 代码陷阱题 > 为什么键名一致的这组对象访问更快",
+    "sourceSha256": "ffab818df0e21f95365c70e935d19024b126eeb08daa9b7ada064d1334ad032c",
+    "excerptCount": 13,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 186
+      },
+      {
+        "start": 190,
+        "end": 261
+      },
+      {
+        "start": 265,
+        "end": 540
+      },
+      {
+        "start": 544,
+        "end": 585
+      },
+      {
+        "start": 589,
+        "end": 814
+      },
+      {
+        "start": 818,
+        "end": 998
+      },
+      {
+        "start": 1002,
+        "end": 1060
+      },
+      {
+        "start": 1064,
+        "end": 1288
+      },
+      {
+        "start": 1292,
+        "end": 1382
+      },
+      {
+        "start": 1386,
+        "end": 1432
+      },
+      {
+        "start": 1436,
+        "end": 1768
+      },
+      {
+        "start": 1772,
+        "end": 2608
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/12-code-traps.html#q8",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q8",
+    "heading": "面试 12 · 代码陷阱题 > console.log 被第三方代码重写了，怎么还原",
+    "sourceSha256": "d0ad15399e8f8b0940f22f2ca8e075131aa95b1499d26c3f3513140b4193a778",
+    "excerptCount": 17,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 14
+      },
+      {
+        "start": 18,
+        "end": 46
+      },
+      {
+        "start": 50,
+        "end": 159
+      },
+      {
+        "start": 163,
+        "end": 295
+      },
+      {
+        "start": 299,
+        "end": 324
+      },
+      {
+        "start": 328,
+        "end": 348
+      },
+      {
+        "start": 352,
+        "end": 635
+      },
+      {
+        "start": 639,
+        "end": 1093
+      },
+      {
+        "start": 1097,
+        "end": 1120
+      },
+      {
+        "start": 1124,
+        "end": 1589
+      },
+      {
+        "start": 1593,
+        "end": 1628
+      },
+      {
+        "start": 1632,
+        "end": 1687
+      },
+      {
+        "start": 1691,
+        "end": 2047
+      },
+      {
+        "start": 2051,
+        "end": 2306
+      },
+      {
+        "start": 2310,
+        "end": 2464
+      },
+      {
+        "start": 2468,
+        "end": 3517
+      }
+    ]
+  },
+  {
+    "sourceId": "interview-prep/12-code-traps.html#q9",
+    "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q9",
+    "heading": "面试 12 · 代码陷阱题 > 反转字符串有几种写法，哪种在真实文本上是对的",
+    "sourceSha256": "4782ecd255528cfcf18edb023b376a967637711e186afc15fcdc3d95ae60d86d",
+    "excerptCount": 16,
+    "ranges": [
+      {
+        "start": 0,
+        "end": 10
+      },
+      {
+        "start": 14,
+        "end": 157
+      },
+      {
+        "start": 161,
+        "end": 325
+      },
+      {
+        "start": 329,
+        "end": 399
+      },
+      {
+        "start": 403,
+        "end": 1007
+      },
+      {
+        "start": 1011,
+        "end": 1023
+      },
+      {
+        "start": 1027,
+        "end": 1490
+      },
+      {
+        "start": 1490,
+        "end": 1583
+      },
+      {
+        "start": 1587,
+        "end": 1616
+      },
+      {
+        "start": 1620,
+        "end": 1923
+      },
+      {
+        "start": 1927,
+        "end": 2400
+      },
+      {
+        "start": 2404,
+        "end": 2530
+      },
+      {
+        "start": 2534,
+        "end": 3026
+      },
+      {
+        "start": 3030,
+        "end": 3234
+      },
+      {
+        "start": 3238,
+        "end": 4167
+      },
+      {
+        "start": 4171,
+        "end": 4178
+      }
+    ]
+  }
+]

@@ -147,6 +147,7 @@ scripts/
 
 ## 文档
 
+- [fqx 网站知识资料](docs/knowledge/fqx/README.md) — 五类知识地图、266 道面试题的原文快照、导入方法与检索抽查
 - [docs/rag.md](docs/rag.md) — RAG 的权重下载、设计决定和排查
 - [docs/skills.md](docs/skills.md) — 技能选择、文件结构、加载预算与验证边界
 - [docs/answer-evaluation.md](docs/answer-evaluation.md) — 引用与拒答评测、实测基线及人工核查方法

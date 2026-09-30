@@ -1,0 +1,69 @@
+# Java > 从 Java 到后端项目 > 资料说明
+
+来源：https://fqx.lx.ci/java-map/
+
+来源：https://fqx.lx.ci/java-map/
+
+以理解和复习效率为优先；主图只放基础主线，冷门参数、源码细节和高阶八股不放进来。
+
+# Java > 从 Java 到后端项目
+
+来源：https://fqx.lx.ci/java-map/
+
+JDK 负责语言和运行时，Maven 管依赖，Spring 组织对象和请求，MyBatis/JDBC 访问数据库，测试与日志负责验证和排错。它们组合起来才是一个可交付的 Java 后端。
+
+# Java > 从 Java 到后端项目 > Maven：管理依赖和构建
+
+来源：https://fqx.lx.ci/java-map/
+
+Maven 通过 `pom.xml` 声明项目依赖，并完成编译、测试、打包。
+
+常见目录约定是 `src/main/java` 放业务代码，`src/test/java` 放测试。最终通常打成 jar，由 JVM 启动。
+
+# Java > 从 Java 到后端项目 > 一次 Web 请求怎么走
+
+来源：https://fqx.lx.ci/java-map/
+
+请求进入 Controller，Controller 校验和转换参数，再调用 Service 处理业务，Service 调 Repository/Mapper 访问数据库，最后把结果序列化成 JSON 返回。
+
+每层只做自己的事，代码才容易修改和测试。
+
+# Java > 从 Java 到后端项目 > Spring IoC：对象交给容器创建
+
+来源：https://fqx.lx.ci/java-map/
+
+业务类不再自己到处 `new` 依赖，而是声明需要什么，由 Spring 创建并注入。
+
+优先使用构造器注入。这样依赖一眼可见，测试时也能直接传入假的实现。
+
+# Java > 从 Java 到后端项目 > AOP：给一批方法统一加能力
+
+来源：https://fqx.lx.ci/java-map/
+
+日志、事务、权限等逻辑会横跨很多业务方法，AOP 用代理把这些公共能力包在方法外面。
+
+`@Transactional` 就是典型 AOP：方法开始前开启事务，成功提交，异常时按规则回滚。自调用没经过代理时可能失效。
+
+# Java > 从 Java 到后端项目 > JDBC、MyBatis 和数据库
+
+来源：https://fqx.lx.ci/java-map/
+
+JDBC 是 Java 访问数据库的底层标准；MyBatis 在它上面帮助映射 SQL 参数和结果。
+
+参数值使用 MyBatis 的井号占位写法安全绑定；用户输入不要使用美元占位写法直接拼进 SQL。多条相关写操作要放在同一个事务里。
+
+# Java > 从 Java 到后端项目 > 测试、日志和配置
+
+来源：https://fqx.lx.ci/java-map/
+
+单元测试验证一个类的逻辑，集成测试验证 Spring、数据库等组件是否配合正确。日志记录关键上下文，但不要打印密码和令牌。
+
+开发、测试、生产的地址和密钥应放在外部配置中，代码保持一致。
+
+# Java > 从 Java 到后端项目 > 最后把整条主线串起来
+
+来源：https://fqx.lx.ci/java-map/
+
+你写的**类和方法**被编译成字节码，在 **JVM** 中运行；业务数据装进**对象和集合**；异常处理失败，IO 连接外部；线程池承接并发任务；**Spring** 组织对象和请求；**MyBatis/JDBC** 把数据写入数据库；Maven、测试和日志保证它能被交付和维护。
+
+这就是 Java 基础知识之间的关系。复习时先顺着这条线讲通，再补某个节点的细节。

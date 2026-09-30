@@ -1,0 +1,3664 @@
+{
+  "schemaVersion": 1,
+  "origin": "https://fqx.lx.ci",
+  "snapshotDate": "2026-09-29",
+  "preparedAt": "2026-09-29T12:22:38.795Z",
+  "documents": [
+    {
+      "key": "frontend-map/01-htmlcss",
+      "title": "fqx · 前端知识体系 · HTML / CSS 与渲染管线",
+      "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+      "originalPath": "originals/frontend-map/01-htmlcss.md",
+      "indexPath": "index/frontend-map/01-htmlcss.md",
+      "originalSha256": "82589f911fe775067ec88a69f531f40e639a3f9e612b28fd3f64217c1e69c28b",
+      "indexSha256": "d48f823641b1dbd8142d5a76e42b3b167fb7846678d67bc3c9dbf1223e80194a",
+      "characters": 6929,
+      "chunkCount": 24,
+      "unitCount": 8,
+      "units": [
+        {
+          "sourceId": "frontend-map/htmlcss/meta",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > HTML / CSS 与渲染管线 > 资料说明",
+          "sha256": "f08b3a1665237eb83e04dfc5dd65654b3df0c001a765c9aac940b9ae7c02db10"
+        },
+        {
+          "sourceId": "frontend-map/htmlcss",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > HTML / CSS 与渲染管线",
+          "sha256": "8983e7666abf496aeeb49c6577d1081eff475665b18f4e426e6d350f1892cec6"
+        },
+        {
+          "sourceId": "frontend-map/htmlcss-pipeline",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > HTML / CSS 与渲染管线 > 渲染管线：五步，代价递减",
+          "sha256": "9c33a735a3a21d47bbfb726db3162eb5507a678c6e4483688e784e2920885019"
+        },
+        {
+          "sourceId": "frontend-map/htmlcss-pipeline-critical",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > HTML / CSS 与渲染管线 > 渲染管线：五步，代价递减 > 关键渲染路径与阻塞",
+          "sha256": "e78d7424cb24341d59f94775ce91dd944153f1dd0abca02786cfbc3c219c4f9b"
+        },
+        {
+          "sourceId": "frontend-map/htmlcss-box",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > HTML / CSS 与渲染管线 > 渲染管线：五步，代价递减 > 盒模型与 BFC",
+          "sha256": "45967e2ef7bd1c8372dfc7ca8271e78d00730521cbb52c125b2f6ecf96f43ff2"
+        },
+        {
+          "sourceId": "frontend-map/htmlcss-layout",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > HTML / CSS 与渲染管线 > Flex 与 Grid：什么时候用哪个",
+          "sha256": "74d5fdb3b1d47c306cccb2911dcb779ab896ca626d1f9ea22ab764796a1c9cc4"
+        },
+        {
+          "sourceId": "frontend-map/htmlcss-position",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > HTML / CSS 与渲染管线 > 定位、层叠与 z-index 失效",
+          "sha256": "626b07e77d9a68e09f2c9c17fd761b2ea3a065c7319b9d33589c391ab07d4ab6"
+        },
+        {
+          "sourceId": "frontend-map/htmlcss-semantic",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > HTML / CSS 与渲染管线 > 语义化与可访问性：不是「加个 aria 就行」",
+          "sha256": "2baaf7d4e1ff6609f214ed2709bb13f9fa31d60133b254958f0429ad9cb38179"
+        }
+      ]
+    },
+    {
+      "key": "frontend-map/02-js",
+      "title": "fqx · 前端知识体系 · JavaScript 核心",
+      "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+      "originalPath": "originals/frontend-map/02-js.md",
+      "indexPath": "index/frontend-map/02-js.md",
+      "originalSha256": "35fe73d6aebb6ab102da2c775cec9ee95cc7979808158e4d96b2cb93980a35d7",
+      "indexSha256": "824c98436edad31e4441d57c0d210398e2f46574c6fcd328caecbaf50822e6e5",
+      "characters": 9278,
+      "chunkCount": 29,
+      "unitCount": 8,
+      "units": [
+        {
+          "sourceId": "frontend-map/js/meta",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > JavaScript 核心 > 资料说明",
+          "sha256": "734d27fb8cb72eb858bc38fb6b6e68f8c16a4f9d54bf0690934a6099fe4e0da2"
+        },
+        {
+          "sourceId": "frontend-map/js",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > JavaScript 核心",
+          "sha256": "ff576fa8e93a2d7ec189044414130079981338a4a53cb5e3a81be138e854989c"
+        },
+        {
+          "sourceId": "frontend-map/js-scope",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > JavaScript 核心 > 作用域与闭包：不是「函数里的函数」",
+          "sha256": "65ee55e67205a66bbe45ec6bcc4dcb4da478bb3be333a6547c2ca6c0eea03b18"
+        },
+        {
+          "sourceId": "frontend-map/js-scope-practical",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > JavaScript 核心 > 作用域与闭包：不是「函数里的函数」 > 闭包的实际用途",
+          "sha256": "cebd4b6b15aa2268dbdd9b365b2a0cd6de9820ff6416eaf857f11c8490630634"
+        },
+        {
+          "sourceId": "frontend-map/js-proto",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > JavaScript 核心 > 原型链：JS 的继承是「委托」不是「复制」",
+          "sha256": "c12e4ff8e705c481fb0977bfe68bbca5b3c04f4e8716521016b4e7588874d5a5"
+        },
+        {
+          "sourceId": "frontend-map/js-this",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > JavaScript 核心 > this：由「怎么调用」决定，不是「在哪定义」",
+          "sha256": "897cd8a51f465d10a314ce32c07b5b301ce51e4ae27aa078e3395cbf521b1508"
+        },
+        {
+          "sourceId": "frontend-map/js-eventloop",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > JavaScript 核心 > 事件循环：微任务、宏任务与渲染时机",
+          "sha256": "8878fa22f382a4b0b4e02a80b2ad2dd7e5bd100414b3c7e10d8ec6198b199530"
+        },
+        {
+          "sourceId": "frontend-map/js-async",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > JavaScript 核心 > Promise 与异步控制",
+          "sha256": "773a5a1a7f8ec99625c4693be152ae615cfbfa55f86390d886b426311c8eeac5"
+        }
+      ]
+    },
+    {
+      "key": "frontend-map/03-build",
+      "title": "fqx · 前端知识体系 · 模块化与构建工具",
+      "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+      "originalPath": "originals/frontend-map/03-build.md",
+      "indexPath": "index/frontend-map/03-build.md",
+      "originalSha256": "6cc5045470c88e8a2beabfae50dd9d0807598475a22621d657d9e2f11fc38794",
+      "indexSha256": "89d77d1cf8e8e3500b1558d94754c1cfa3af945f5a6bb61fcdc58ab54895518e",
+      "characters": 4922,
+      "chunkCount": 18,
+      "unitCount": 6,
+      "units": [
+        {
+          "sourceId": "frontend-map/build/meta",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 模块化与构建工具 > 资料说明",
+          "sha256": "734d27fb8cb72eb858bc38fb6b6e68f8c16a4f9d54bf0690934a6099fe4e0da2"
+        },
+        {
+          "sourceId": "frontend-map/build",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 模块化与构建工具",
+          "sha256": "e00675ec121694731bd928336ceeb3997758201df46c30b6cfd60e4292a61111"
+        },
+        {
+          "sourceId": "frontend-map/build-module",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 模块化与构建工具 > CommonJS 与 ESM：差异不只是语法",
+          "sha256": "7bbc472da770105af887ff9a0236f31f9c0173f9697841432c13821f1dd24e3a"
+        },
+        {
+          "sourceId": "frontend-map/build-vite-webpack",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 模块化与构建工具 > Vite vs Webpack：dev 和 build 是两套逻辑",
+          "sha256": "58db784487f004456ecacd4d42e6d0a25d95af459aa4df78a6022d87ddc479ed"
+        },
+        {
+          "sourceId": "frontend-map/build-treeshaking",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 模块化与构建工具 > Tree-shaking 为什么经常不生效",
+          "sha256": "053899043ac2526d8d1d8ee1641e1727a4a7ac104a9626a903a74ae2c75ecfcc"
+        },
+        {
+          "sourceId": "frontend-map/build-ts",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 模块化与构建工具 > TypeScript：类型系统的关键点",
+          "sha256": "8949072a7ec0494d4bd5acd1e6c61e46425a55d958ddb77b98570d35f9425c32"
+        }
+      ]
+    },
+    {
+      "key": "frontend-map/04-framework",
+      "title": "fqx · 前端知识体系 · 框架原理：Vue 与 React",
+      "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+      "originalPath": "originals/frontend-map/04-framework.md",
+      "indexPath": "index/frontend-map/04-framework.md",
+      "originalSha256": "4c4c6c8c1735632fc644e24855f5a1fb3c947d75cb8e626d3e885dd7e4a52dba",
+      "indexSha256": "16e7c2b9f2d8dfefdf4834055948394cc1855aa9b0edcbd2d01c5ce89b2fc42a",
+      "characters": 5684,
+      "chunkCount": 18,
+      "unitCount": 6,
+      "units": [
+        {
+          "sourceId": "frontend-map/framework/meta",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 框架原理：Vue 与 React > 资料说明",
+          "sha256": "734d27fb8cb72eb858bc38fb6b6e68f8c16a4f9d54bf0690934a6099fe4e0da2"
+        },
+        {
+          "sourceId": "frontend-map/framework",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 框架原理：Vue 与 React",
+          "sha256": "2db58a7370e237bb3d4fceb6761cd98b666e603397f5febae8829c47166b79ae"
+        },
+        {
+          "sourceId": "frontend-map/framework-reactive",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 框架原理：Vue 与 React > Vue 的响应式：Proxy 拦截 + 依赖收集",
+          "sha256": "2629eb02abdd575a8231c7d5eb6e7d875df53de7ca23ade35698420d3cb40fa0"
+        },
+        {
+          "sourceId": "frontend-map/framework-vdom",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 框架原理：Vue 与 React > 虚拟 DOM 与 diff：它的价值不是「快」",
+          "sha256": "2d70bea4fcc47234cadecd55aab6dab2a42309f0188edbedf1c24dc883e0dd49"
+        },
+        {
+          "sourceId": "frontend-map/framework-hooks",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 框架原理：Vue 与 React > Hooks 的规则和陷阱",
+          "sha256": "cba93964d64f593f4fad829a7bb01ecfd6a10f49253fbbee058c66f311d3fcae"
+        },
+        {
+          "sourceId": "frontend-map/framework-state",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 框架原理：Vue 与 React > 状态管理：什么该进全局",
+          "sha256": "3f437881d7f2ab852baa4681518e0304a0dbf4131457de7fa38a7e85606c5c6b"
+        }
+      ]
+    },
+    {
+      "key": "frontend-map/05-network",
+      "title": "fqx · 前端知识体系 · 网络与性能优化",
+      "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+      "originalPath": "originals/frontend-map/05-network.md",
+      "indexPath": "index/frontend-map/05-network.md",
+      "originalSha256": "8a3fe554c783b7ff195775de7ed3d1de0b6f37ba9e4e633d053e1ca45273acc9",
+      "indexSha256": "3b1bc1926bb64b60e5fcf1ad658b9e48cb5c55b4d204d95dd4ea07a8187a41c4",
+      "characters": 5481,
+      "chunkCount": 18,
+      "unitCount": 6,
+      "units": [
+        {
+          "sourceId": "frontend-map/network/meta",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 网络与性能优化 > 资料说明",
+          "sha256": "734d27fb8cb72eb858bc38fb6b6e68f8c16a4f9d54bf0690934a6099fe4e0da2"
+        },
+        {
+          "sourceId": "frontend-map/network",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 网络与性能优化",
+          "sha256": "81abc25f0fed358e87bd722397f7935b86f0a6248de97cda60fe1d9b50ec2e29"
+        },
+        {
+          "sourceId": "frontend-map/network-vitals",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 网络与性能优化 > Core Web Vitals：三个指标，各对应不同瓶颈",
+          "sha256": "c126932ab099e2c1534c7be104187e9d2295e1cd35e211fde97a50f60b187ad3"
+        },
+        {
+          "sourceId": "frontend-map/network-cache",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 网络与性能优化 > HTTP 缓存：强缓存与协商缓存",
+          "sha256": "aa99ce65f9be3f30c56a8cb006bb448056c04522fdd22c9a3a29b756f4576765"
+        },
+        {
+          "sourceId": "frontend-map/network-cors",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 网络与性能优化 > 跨域：CORS 的完整流程和坑",
+          "sha256": "38601a5c7ca14faea5695cc6ec813005d2db93e56bc5f2ae10cd8707bca22b9c"
+        },
+        {
+          "sourceId": "frontend-map/network-loading",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > 网络与性能优化 > 资源加载：预加载、分包与懒加载",
+          "sha256": "1abe144f9b84c16b85632092e1a6c3dcce46373c3ddb779e953ccb544b427c24"
+        }
+      ]
+    },
+    {
+      "key": "frontend-map/06-security",
+      "title": "fqx · 前端知识体系 · Web 安全与部署",
+      "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+      "originalPath": "originals/frontend-map/06-security.md",
+      "indexPath": "index/frontend-map/06-security.md",
+      "originalSha256": "a096f39e68d787d98a7ddf9efe91a212143301a125faf823a93af514821cc264",
+      "indexSha256": "1d143f23a61f80e84c994de22b1c7a22ed9d247a3c07be58c1b9b9fef8c51370",
+      "characters": 5494,
+      "chunkCount": 19,
+      "unitCount": 6,
+      "units": [
+        {
+          "sourceId": "frontend-map/security/meta",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > Web 安全与部署 > 资料说明",
+          "sha256": "734d27fb8cb72eb858bc38fb6b6e68f8c16a4f9d54bf0690934a6099fe4e0da2"
+        },
+        {
+          "sourceId": "frontend-map/security",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > Web 安全与部署",
+          "sha256": "a9dd8e36b7ded0fa8f5dabb4b20857f8216b634a406924821885c43a12bf1c94"
+        },
+        {
+          "sourceId": "frontend-map/security-xss",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > Web 安全与部署 > XSS：数据被当成代码执行",
+          "sha256": "dd5cbec01257bcb12e46771845c625fea5e94b742221f83bf4bb94044de14345"
+        },
+        {
+          "sourceId": "frontend-map/security-csrf",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > Web 安全与部署 > CSRF：浏览器自动带凭证",
+          "sha256": "3e3ef4f0540e32b29811e556bda56e70c3171cc9a8d510ff22d52ec57cc03337"
+        },
+        {
+          "sourceId": "frontend-map/security-ai",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > Web 安全与部署 > AI 应用前端的新攻击面",
+          "sha256": "3083783d20e1b8b6f5aa76d838110bac09faf067c971bdf8ac61833796208fd2"
+        },
+        {
+          "sourceId": "frontend-map/security-deploy",
+          "sourceUrl": "https://fqx.lx.ci/frontend-map/",
+          "heading": "前端 > Web 安全与部署 > 部署与上线",
+          "sha256": "6606e974f2666319d2e06b309914abd4874d5241498290cd59ca365c60c67cb6"
+        }
+      ]
+    },
+    {
+      "key": "java-map/01-start",
+      "title": "fqx · Java 基础知识主线 · 从代码到运行",
+      "sourceUrl": "https://fqx.lx.ci/java-map/",
+      "originalPath": "originals/java-map/01-start.md",
+      "indexPath": "index/java-map/01-start.md",
+      "originalSha256": "18978d981f9daf44dd91a97a5b66c230648bbe725ae6bdad8e4386519a57f7d4",
+      "indexSha256": "e60390b86168257b985310cdf8cece4e443ae8ede16ac6b6f6b71a4a4a8f8ee0",
+      "characters": 1210,
+      "chunkCount": 7,
+      "unitCount": 7,
+      "units": [
+        {
+          "sourceId": "java-map/start/meta",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从代码到运行 > 资料说明",
+          "sha256": "188bbd60b79d5a5473ceb23fc28b5887795a0ea12b7d0cba185c25d2c9b9538c"
+        },
+        {
+          "sourceId": "java-map/start",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从代码到运行",
+          "sha256": "1d72e90eda02af4247a74654a2fbab81cc10764e0241819a1d4e3787e5cfe653"
+        },
+        {
+          "sourceId": "java-map/start-jdk",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从代码到运行 > JDK、JRE、JVM 是什么关系",
+          "sha256": "8f81c379f06cf2b910253169e2234413c334d0a7fcc6e366e2a1455d4c30e707"
+        },
+        {
+          "sourceId": "java-map/start-main",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从代码到运行 > 程序从 main 方法开始",
+          "sha256": "cf7aed207a6ce1d632222b3b71b1ccc5b166e3073901d9460166501ee0dc6dcc"
+        },
+        {
+          "sourceId": "java-map/start-type",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从代码到运行 > 变量和类型：数据是什么",
+          "sha256": "ec6ef4fa197af22d700c55a8023a13ee3a28c22d8c8d422d382cf84cf979ef2e"
+        },
+        {
+          "sourceId": "java-map/start-flow",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从代码到运行 > 判断和循环：决定代码怎么走",
+          "sha256": "596047a458e517c6f8fa97905a1966162aa24f5d453ead385f55bdb13cdae2f7"
+        },
+        {
+          "sourceId": "java-map/start-method",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从代码到运行 > 方法：把一段行为起名字",
+          "sha256": "0545cc1d203a3b149072722d010f1f54e1e2533878ab8ab985c7a6eb1f65dfbc"
+        }
+      ]
+    },
+    {
+      "key": "java-map/02-oop",
+      "title": "fqx · Java 基础知识主线 · 类与对象",
+      "sourceUrl": "https://fqx.lx.ci/java-map/",
+      "originalPath": "originals/java-map/02-oop.md",
+      "indexPath": "index/java-map/02-oop.md",
+      "originalSha256": "a15feb8a4f0e514e7ea5cb6fce30eec94d6f82595e424abae823d39acaa80140",
+      "indexSha256": "6f3cfa8586139c7e10d06071bb39db02ccce3fb2e882779e842405565aed6d79",
+      "characters": 996,
+      "chunkCount": 8,
+      "unitCount": 8,
+      "units": [
+        {
+          "sourceId": "java-map/oop/meta",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 类与对象 > 资料说明",
+          "sha256": "71302201c9bda35b5eaf3101e57ee2021000529770297378e944b0e8eb24f73d"
+        },
+        {
+          "sourceId": "java-map/oop",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 类与对象",
+          "sha256": "e77b5642fb624a6d0fe38951255917950e434ff1661ab35331378be09df88431"
+        },
+        {
+          "sourceId": "java-map/oop-class",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 类与对象 > 类是模板，对象是实例",
+          "sha256": "911ed2de0889e5aaa5dfa9cc40941e882462682443aedc94db95ef261e9e7103"
+        },
+        {
+          "sourceId": "java-map/oop-encapsulation",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 类与对象 > 封装：别让外部随便改内部状态",
+          "sha256": "219faf399962ed0e56b46a606368de10b8f14a3c53dc8f773fc9e9eb1a4d0b5f"
+        },
+        {
+          "sourceId": "java-map/oop-inherit",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 类与对象 > 继承：复用共同特征",
+          "sha256": "7a2859a6e924d1c32f82c9a4d2720b4b1887f70dfcc5a87d55923c7f9ae26436"
+        },
+        {
+          "sourceId": "java-map/oop-poly",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 类与对象 > 多态：面向接口调用",
+          "sha256": "f53f4360e88709a7fbbad9f63d4aa579fbc4c134a608c20c609b18616ec7003c"
+        },
+        {
+          "sourceId": "java-map/oop-interface",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 类与对象 > 接口和抽象类怎么选",
+          "sha256": "51ac13fa0cc67b1d3fba0ed22ae1694e65b6523b3aac2ccc9c81565efe64e846"
+        },
+        {
+          "sourceId": "java-map/oop-equals",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 类与对象 > ==、equals 和 hashCode",
+          "sha256": "78f4a28372efd2dc3ac0001b162929440d113defd41b2ac5790c8db5451276ea"
+        }
+      ]
+    },
+    {
+      "key": "java-map/03-data",
+      "title": "fqx · Java 基础知识主线 · 常用数据与集合",
+      "sourceUrl": "https://fqx.lx.ci/java-map/",
+      "originalPath": "originals/java-map/03-data.md",
+      "indexPath": "index/java-map/03-data.md",
+      "originalSha256": "6eea711f1912fc4939cc20ca897a7232fca4a3c136ffa0aee961f33163c5744c",
+      "indexSha256": "c8843f437ed13f64d440b51a811d1fd4420ea5a28c60ec5bdd8bb5173550f851",
+      "characters": 990,
+      "chunkCount": 8,
+      "unitCount": 8,
+      "units": [
+        {
+          "sourceId": "java-map/data/meta",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 常用数据与集合 > 资料说明",
+          "sha256": "71302201c9bda35b5eaf3101e57ee2021000529770297378e944b0e8eb24f73d"
+        },
+        {
+          "sourceId": "java-map/data",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 常用数据与集合",
+          "sha256": "5675b576b8c5370faefb3deeacc79f5b3d29687a0091d652470c9c128ad914e5"
+        },
+        {
+          "sourceId": "java-map/data-string",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 常用数据与集合 > String：最常用的对象",
+          "sha256": "9ef5a177322d5f283353da7b29e4b4647a601a4c1c0db5f3f8306fb4bb1d4c5e"
+        },
+        {
+          "sourceId": "java-map/data-array",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 常用数据与集合 > 数组：长度固定的一组数据",
+          "sha256": "e71373f4647b4c10ccff119af32a8e786f1c5f16ce826645739f6ce33a7aed76"
+        },
+        {
+          "sourceId": "java-map/data-collection",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 常用数据与集合 > List、Set、Map 各解决什么问题",
+          "sha256": "35b58dc94484fb4228d913513798b4797f76169c61034a76569bfe432c4d1c1a"
+        },
+        {
+          "sourceId": "java-map/data-generic",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 常用数据与集合 > 泛型：规定容器里装什么",
+          "sha256": "f93eb1acd9527eab3016b10794ad8c52cdc206b5d8dab8009ccff42143fe8da6"
+        },
+        {
+          "sourceId": "java-map/data-iterate",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 常用数据与集合 > 遍历和 Stream",
+          "sha256": "9768999a52be49aa55364b517c2d0fe469f549bedc994006ce14fc5fb966810c"
+        },
+        {
+          "sourceId": "java-map/data-time",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 常用数据与集合 > 时间与金额要用专门类型",
+          "sha256": "ddc8e74d107c1f17e5fda60550aade89a5cd70de87e232a7c3de79b95add21d8"
+        }
+      ]
+    },
+    {
+      "key": "java-map/04-io",
+      "title": "fqx · Java 基础知识主线 · 异常与输入输出",
+      "sourceUrl": "https://fqx.lx.ci/java-map/",
+      "originalPath": "originals/java-map/04-io.md",
+      "indexPath": "index/java-map/04-io.md",
+      "originalSha256": "c03c13d47b6e93b07e668c176e901fec0c3cd23edf9403db1f00f82bc6f19d56",
+      "indexSha256": "1a511d91b526e14acf0883799b660bbf273f1a48384cf19e6a875d03f8b105ae",
+      "characters": 777,
+      "chunkCount": 7,
+      "unitCount": 7,
+      "units": [
+        {
+          "sourceId": "java-map/io/meta",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 异常与输入输出 > 资料说明",
+          "sha256": "71302201c9bda35b5eaf3101e57ee2021000529770297378e944b0e8eb24f73d"
+        },
+        {
+          "sourceId": "java-map/io",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 异常与输入输出",
+          "sha256": "3004918a5ef3790c6f0e986bcf7ef4f89710371a5e5381d3b0d25229e4832613"
+        },
+        {
+          "sourceId": "java-map/io-exception",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 异常与输入输出 > 异常：把失败沿调用链传出去",
+          "sha256": "1909fd0deaabd382bb1a3be50f5d7f094a4b2c0690106f7321b33927f9635b1c"
+        },
+        {
+          "sourceId": "java-map/io-checked",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 异常与输入输出 > 受检异常和运行时异常",
+          "sha256": "968ad7ee07aa548a650d283af9f5d62f88ca53b0ba70858c06d7cd77ad6edbe7"
+        },
+        {
+          "sourceId": "java-map/io-stream",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 异常与输入输出 > IO：字节流和字符流",
+          "sha256": "8c6da323d3a80e11db0f57a3e7da0ac527578fbe9e8e042f50f89e23f0e1d74c"
+        },
+        {
+          "sourceId": "java-map/io-file",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 异常与输入输出 > 文件处理不要一次全读进内存",
+          "sha256": "1513241d605ec5fa304d5e2fd4a190cff6ae8f1ca863badbe8cdeb095eed6324"
+        },
+        {
+          "sourceId": "java-map/io-json",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 异常与输入输出 > 对象怎样变成可传输的数据",
+          "sha256": "a20c6f84f8663dfcf72521e197856e5600689e245ef61ff11eb922bfac453c73"
+        }
+      ]
+    },
+    {
+      "key": "java-map/05-concurrent",
+      "title": "fqx · Java 基础知识主线 · 线程与并发",
+      "sourceUrl": "https://fqx.lx.ci/java-map/",
+      "originalPath": "originals/java-map/05-concurrent.md",
+      "indexPath": "index/java-map/05-concurrent.md",
+      "originalSha256": "5dcad20516f4daeb06e4ceb727aeddb70d351746aa0ad46ce63e22fe67d9b869",
+      "indexSha256": "fabaaa276c3642b72ea71834f79d0f91fd3ba8ab6952cbc9962f094a9fbd0ae1",
+      "characters": 866,
+      "chunkCount": 7,
+      "unitCount": 7,
+      "units": [
+        {
+          "sourceId": "java-map/concurrent/meta",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 线程与并发 > 资料说明",
+          "sha256": "71302201c9bda35b5eaf3101e57ee2021000529770297378e944b0e8eb24f73d"
+        },
+        {
+          "sourceId": "java-map/concurrent",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 线程与并发",
+          "sha256": "b1d3f7195840e4648f149b9bb947d49f9f1ff5a3dbc17dc08c3f1e110be56616"
+        },
+        {
+          "sourceId": "java-map/concurrent-thread",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 线程与并发 > 进程、线程和任务",
+          "sha256": "7da3da38afd63b86439b588e07924b368a77af2cda31510a8403240a82196527"
+        },
+        {
+          "sourceId": "java-map/concurrent-race",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 线程与并发 > 线程安全问题从哪里来",
+          "sha256": "51d5b79dc8e9a608f553fc474746fc4ddb0323df9fa4e00e2585ea863cc4f69d"
+        },
+        {
+          "sourceId": "java-map/concurrent-lock",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 线程与并发 > synchronized 和 volatile",
+          "sha256": "833749a4e3be178d1d82bc7a12db8bb791c74fdfe26901d369bb8a78df784215"
+        },
+        {
+          "sourceId": "java-map/concurrent-pool",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 线程与并发 > 线程池：限制并发数量",
+          "sha256": "95dffac3ca2be66fb1f7a6f6637d00641011185affcb7581bef867321e4823db"
+        },
+        {
+          "sourceId": "java-map/concurrent-async",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 线程与并发 > 异步不是更快，而是不原地等待",
+          "sha256": "138de0680c2f7ea92a44e922f75c002320bc5059e0abccc534785900f05e4864"
+        }
+      ]
+    },
+    {
+      "key": "java-map/06-jvm",
+      "title": "fqx · Java 基础知识主线 · JVM 怎么管理程序",
+      "sourceUrl": "https://fqx.lx.ci/java-map/",
+      "originalPath": "originals/java-map/06-jvm.md",
+      "indexPath": "index/java-map/06-jvm.md",
+      "originalSha256": "e48ec5cd44269c88c23e29a383ae6dc9a1735e9c2c3df9408f79fbd5c60f1576",
+      "indexSha256": "f86518af35d83b3c30a296452c71ebbe18976b31d75a40009e6eae9c6caea6c7",
+      "characters": 863,
+      "chunkCount": 7,
+      "unitCount": 7,
+      "units": [
+        {
+          "sourceId": "java-map/jvm/meta",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > JVM 怎么管理程序 > 资料说明",
+          "sha256": "71302201c9bda35b5eaf3101e57ee2021000529770297378e944b0e8eb24f73d"
+        },
+        {
+          "sourceId": "java-map/jvm",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > JVM 怎么管理程序",
+          "sha256": "9257e52c0b8ad326e8330973143c8ef05be0a9e391d27ffaf277b906b6abd20e"
+        },
+        {
+          "sourceId": "java-map/jvm-load",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > JVM 怎么管理程序 > 类加载：用到类时把它加载进来",
+          "sha256": "9ae033b4a87696effdcd610edb177d674613b3e1eb1c1691d3c6fc523f538c65"
+        },
+        {
+          "sourceId": "java-map/jvm-memory",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > JVM 怎么管理程序 > 栈、堆和元空间",
+          "sha256": "dbeba7e582aa7545391438eb84283344b578e0b82da55106a8baba5770686cfb"
+        },
+        {
+          "sourceId": "java-map/jvm-gc",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > JVM 怎么管理程序 > GC：回收不可达对象",
+          "sha256": "07749d48be9996a70abfa0d4a1dd8a0839ed96a9b41796f50d01460660f7c3b0"
+        },
+        {
+          "sourceId": "java-map/jvm-oom",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > JVM 怎么管理程序 > 常见内存问题怎么看",
+          "sha256": "1e6f64a8f67454b139f1d0028a53a46940bcf4f0cdb1871b9774fc8622d0ef0c"
+        },
+        {
+          "sourceId": "java-map/jvm-jit",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > JVM 怎么管理程序 > 为什么 Java 越跑越快",
+          "sha256": "150bdca5f9100c63d58e300e42cf3e0b104f879b044c5916e285c839d69f8be1"
+        }
+      ]
+    },
+    {
+      "key": "java-map/07-web",
+      "title": "fqx · Java 基础知识主线 · 从 Java 到后端项目",
+      "sourceUrl": "https://fqx.lx.ci/java-map/",
+      "originalPath": "originals/java-map/07-web.md",
+      "indexPath": "index/java-map/07-web.md",
+      "originalSha256": "d9e571b1a580ffe021917ec1719ac98ee8f892d4d5ceb6c1389f8a63c2f97c54",
+      "indexSha256": "89abd75a58c805c070adeb07a39335047e26fcc3494ba2adc7ae9fd73550d6b9",
+      "characters": 1327,
+      "chunkCount": 9,
+      "unitCount": 9,
+      "units": [
+        {
+          "sourceId": "java-map/web/meta",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从 Java 到后端项目 > 资料说明",
+          "sha256": "71302201c9bda35b5eaf3101e57ee2021000529770297378e944b0e8eb24f73d"
+        },
+        {
+          "sourceId": "java-map/web",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从 Java 到后端项目",
+          "sha256": "d15d5faafdebfcc487a8086a45dbfcc563301c8261453f827a1c0f44b3ea4442"
+        },
+        {
+          "sourceId": "java-map/web-maven",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从 Java 到后端项目 > Maven：管理依赖和构建",
+          "sha256": "ea6d086aecfca35c7f088eadec8b631846b4518b22a50efdcf88d1cbb4d7b63d"
+        },
+        {
+          "sourceId": "java-map/web-request",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从 Java 到后端项目 > 一次 Web 请求怎么走",
+          "sha256": "e519c7b0d97d415bb577600f8c6ce9892f155fb04143e2dc2165d11df6639fc9"
+        },
+        {
+          "sourceId": "java-map/web-ioc",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从 Java 到后端项目 > Spring IoC：对象交给容器创建",
+          "sha256": "b241696f97fb8fc2b189f2324903573e4a246c83d04d02252ac3661f66b5ab5e"
+        },
+        {
+          "sourceId": "java-map/web-aop",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从 Java 到后端项目 > AOP：给一批方法统一加能力",
+          "sha256": "51fbb5bfe6e676f122d30967cf912d57c955723676bff18b957b402f7f2c9ebd"
+        },
+        {
+          "sourceId": "java-map/web-db",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从 Java 到后端项目 > JDBC、MyBatis 和数据库",
+          "sha256": "d21dcdf6c652706de57b7e73f5fa67f03893cdaa035560d0448459f5307a6d73"
+        },
+        {
+          "sourceId": "java-map/web-test",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从 Java 到后端项目 > 测试、日志和配置",
+          "sha256": "d447cab87f0743b11953f7d9ee2954977abf2a2c2e86ffac108cb7f8fa02d7f4"
+        },
+        {
+          "sourceId": "java-map/web-whole",
+          "sourceUrl": "https://fqx.lx.ci/java-map/",
+          "heading": "Java > 从 Java 到后端项目 > 最后把整条主线串起来",
+          "sha256": "313c36bd09f2e9d6ba07f0b75860018e07a387ebece8f73ab8f6d989741feeac"
+        }
+      ]
+    },
+    {
+      "key": "sql-map/01-basic",
+      "title": "fqx · SQL / 数据库知识体系 · 关系模型与查询基础",
+      "sourceUrl": "https://fqx.lx.ci/sql-map/",
+      "originalPath": "originals/sql-map/01-basic.md",
+      "indexPath": "index/sql-map/01-basic.md",
+      "originalSha256": "edd929ad33ef1a6a1078e8c86c74a710481e01bfc90663d238642bf4f4b2dece",
+      "indexSha256": "2ba157169dd3ad066b57be2a546f81963779e488e574148565ae791df5260078",
+      "characters": 7164,
+      "chunkCount": 25,
+      "unitCount": 11,
+      "units": [
+        {
+          "sourceId": "sql-map/basic/meta",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > 资料说明",
+          "sha256": "321e14822079b17dbfc26a55c3eec2da34e464461226b7eedbe5cf415dee0ac3"
+        },
+        {
+          "sourceId": "sql-map/basic",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础",
+          "sha256": "c99feb02707fa662624a3f383ca7aa9f2af472c83767814274230aa2286bffb7"
+        },
+        {
+          "sourceId": "sql-map/basic-model",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > 关系模型：表在解决什么问题",
+          "sha256": "10061446f92b3a4c3ac7b36b65565b0114ebb1f040d08bad2d12531e1ce8313c"
+        },
+        {
+          "sourceId": "sql-map/basic-order",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > SELECT 的逻辑执行顺序",
+          "sha256": "3a45f8f25168b35062ced3490733d51e83c805284fe2543f2b63882cd5ad5352"
+        },
+        {
+          "sourceId": "sql-map/basic-join",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > JOIN：行数为什么会翻倍",
+          "sha256": "bac889d0fb47af2eddeebd303518ee07a937be9ee213a18c2a84831a3827cb54"
+        },
+        {
+          "sourceId": "sql-map/basic-join-cartesian",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > JOIN：行数为什么会翻倍 > 笛卡尔积怎么产生、怎么发现",
+          "sha256": "1c7b0649ed2b74d28198b810f494a6335f8409f2e0500b650705f617515e32b1"
+        },
+        {
+          "sourceId": "sql-map/basic-null",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > NULL 的三值逻辑",
+          "sha256": "388c3eecbd5e02e1abc6ce884f96b9d84a9574bf00ab098cb9d8f6f2dca7a10c"
+        },
+        {
+          "sourceId": "sql-map/basic-group",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > GROUP BY 与 HAVING",
+          "sha256": "8860bbfb02b7d2ad4ffcd1dfc27cc25a7baa5490f9ba0a4bc00874e1e7e86eec"
+        },
+        {
+          "sourceId": "sql-map/basic-subquery",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > 子查询、EXISTS、IN",
+          "sha256": "d5b469c338c6f7e8a11cee774e89bc237de2f22e5d0635b464845e6162170089"
+        },
+        {
+          "sourceId": "sql-map/basic-window",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > 窗口函数：GROUP BY 做不到的事",
+          "sha256": "1840f90238ecd2f88f71ecd2923c05c9fc58afbaec1733124ec069924b26bbbd"
+        },
+        {
+          "sourceId": "sql-map/basic-window-vs-group",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 关系模型与查询基础 > 窗口函数：GROUP BY 做不到的事 > 什么时候用窗口，什么时候用 GROUP BY",
+          "sha256": "e54895320e9c2c0574fa1712905cae73d7b5b066f7a0e6c83aa442ad25d42321"
+        }
+      ]
+    },
+    {
+      "key": "sql-map/02-idx",
+      "title": "fqx · SQL / 数据库知识体系 · 索引原理与设计",
+      "sourceUrl": "https://fqx.lx.ci/sql-map/",
+      "originalPath": "originals/sql-map/02-idx.md",
+      "indexPath": "index/sql-map/02-idx.md",
+      "originalSha256": "d5355c83f2fb93ffde660fa86c8e440ac30b34d2dca14528af67049ff9147c35",
+      "indexSha256": "0a87f50196ba72ca7d7583b325f423b1c608e0e53c1a94bf2c0405ce986fbed7",
+      "characters": 6996,
+      "chunkCount": 26,
+      "unitCount": 10,
+      "units": [
+        {
+          "sourceId": "sql-map/idx/meta",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 资料说明",
+          "sha256": "5497c1a43bf226f76a7832859ed23b5b40447d7c4845fce839cbf7a2d1a192ab"
+        },
+        {
+          "sourceId": "sql-map/idx",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计",
+          "sha256": "1dbb2fa797679caaeb37066897306e99bc0e2a783c25d4ad9737165754b03516"
+        },
+        {
+          "sourceId": "sql-map/idx-btree",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > B+ 树：为什么是它",
+          "sha256": "bd0cc6a78cf79dc5349e4a4455f05cc52ae018e1e65ddd9725f24ed3a2bb7bb2"
+        },
+        {
+          "sourceId": "sql-map/idx-cluster",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 聚簇索引与二级索引",
+          "sha256": "931c5db0231f5ab16ec9cabcc577bba27c18244a77197f505611aa7acf949004"
+        },
+        {
+          "sourceId": "sql-map/idx-cluster-cover",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 聚簇索引与二级索引 > 回表与覆盖索引",
+          "sha256": "76cab81b377cd34578dbca56a793110c2a831b313bef235593b0979f78d19bcb"
+        },
+        {
+          "sourceId": "sql-map/idx-composite",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 联合索引与最左前缀",
+          "sha256": "c75e92016858ee85039168fea7cc8343352ff3f74d1cf5aa58c31265dd13e053"
+        },
+        {
+          "sourceId": "sql-map/idx-fail",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 索引失效的完整清单",
+          "sha256": "1ceece4bde004257ec2481b88a64d225a1f1f4544d81bd1bd437587a078e143e"
+        },
+        {
+          "sourceId": "sql-map/idx-fail-icp",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 索引失效的完整清单 > 索引下推（ICP）",
+          "sha256": "c437a4ed648daee5658d8203e7cacb4f0092dc942d637582c53cd31fb6c73d5c"
+        },
+        {
+          "sourceId": "sql-map/idx-cost",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 什么时候不该建索引",
+          "sha256": "5e54f8a2b0a02713bc0c3489306405eac5dd0eb601b7668d51a123314e5fe97a"
+        },
+        {
+          "sourceId": "sql-map/idx-choose",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 索引原理与设计 > 怎么为一个查询设计索引",
+          "sha256": "c9584200edd5da3b12f200b26dd520af2ece685573a7e14dce0772ec7a60d79d"
+        }
+      ]
+    },
+    {
+      "key": "sql-map/03-tx",
+      "title": "fqx · SQL / 数据库知识体系 · 事务与并发控制",
+      "sourceUrl": "https://fqx.lx.ci/sql-map/",
+      "originalPath": "originals/sql-map/03-tx.md",
+      "indexPath": "index/sql-map/03-tx.md",
+      "originalSha256": "937dd7ccf5b52e559280f22180dab67f6c26b1ce2d5c16a60c11e7c6ff090f4f",
+      "indexSha256": "eef45c8fc76c477058e2454cff8c5c21c4543d0dcf5a5ced1d0918d960e7b484",
+      "characters": 6950,
+      "chunkCount": 23,
+      "unitCount": 8,
+      "units": [
+        {
+          "sourceId": "sql-map/tx/meta",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 事务与并发控制 > 资料说明",
+          "sha256": "5497c1a43bf226f76a7832859ed23b5b40447d7c4845fce839cbf7a2d1a192ab"
+        },
+        {
+          "sourceId": "sql-map/tx",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 事务与并发控制",
+          "sha256": "cf19443b94166f9a2a96d261c14bb48fe6ee300b2f982a43bd32391160c28287"
+        },
+        {
+          "sourceId": "sql-map/tx-acid",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 事务与并发控制 > ACID 各自靠什么实现",
+          "sha256": "209a1c341f03c8eda0f77a0876300d1f398934f7c4524003609238f568921c40"
+        },
+        {
+          "sourceId": "sql-map/tx-isolation",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 事务与并发控制 > 四个隔离级别与三类读异常",
+          "sha256": "ede5379c731aed86a188ad8746be79f6bf9ac2b7cb3a49c998c8762dcd60b4cd"
+        },
+        {
+          "sourceId": "sql-map/tx-mvcc",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 事务与并发控制 > MVCC：不加锁的读",
+          "sha256": "de1c82182ad82c06e86b5ee6bd4a3f24eef6e63c171f881f70e5e0858622ca5b"
+        },
+        {
+          "sourceId": "sql-map/tx-lock",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 事务与并发控制 > 锁的种类",
+          "sha256": "92c57ba13182f1b048ceda3d23ba978d6b79a56b14069f76ffe929c36dddde89"
+        },
+        {
+          "sourceId": "sql-map/tx-lock-deadlock",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 事务与并发控制 > 锁的种类 > 死锁：怎么产生、怎么查、怎么避免",
+          "sha256": "493f4450f97405439360b5330f503fb1c506baf21c5c08592294c8d2902711f0"
+        },
+        {
+          "sourceId": "sql-map/tx-long",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 事务与并发控制 > 长事务的危害",
+          "sha256": "a0946d3c8c706931610c7e2a871bf75b591a892335b638a785e86e880ca1181f"
+        }
+      ]
+    },
+    {
+      "key": "sql-map/04-exp",
+      "title": "fqx · SQL / 数据库知识体系 · 执行计划与调优",
+      "sourceUrl": "https://fqx.lx.ci/sql-map/",
+      "originalPath": "originals/sql-map/04-exp.md",
+      "indexPath": "index/sql-map/04-exp.md",
+      "originalSha256": "b93c650d4071ed5bfc317f8f2a4fc264630c2396d5d99fd536fab0dbbe81c412",
+      "indexSha256": "d894b2a10d00e95d6bf4fe4fe9b52b04ad38e99889f4bd02972c2402d515a0d9",
+      "characters": 6982,
+      "chunkCount": 22,
+      "unitCount": 9,
+      "units": [
+        {
+          "sourceId": "sql-map/exp/meta",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 执行计划与调优 > 资料说明",
+          "sha256": "5497c1a43bf226f76a7832859ed23b5b40447d7c4845fce839cbf7a2d1a192ab"
+        },
+        {
+          "sourceId": "sql-map/exp",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 执行计划与调优",
+          "sha256": "8edb1f8e54d1bc5de0375217add4b2233481b39699e5308e56bc030a734d25a4"
+        },
+        {
+          "sourceId": "sql-map/exp-read",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 执行计划与调优 > EXPLAIN 每一列怎么读",
+          "sha256": "33448fabf4e0ddb66efa488e604b85fdb7b4045226bdbd086d86a87ad21fc918"
+        },
+        {
+          "sourceId": "sql-map/exp-read-extra",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 执行计划与调优 > EXPLAIN 每一列怎么读 > Extra 列的几个关键值",
+          "sha256": "be2fd699274fe31f5daa30ba2219fabca6d6c7c11c730a84a70d9bd58442b8ba"
+        },
+        {
+          "sourceId": "sql-map/exp-slow",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 执行计划与调优 > 慢查询定位流程",
+          "sha256": "a066eda7352e32010561a688f0c85441ca951a0f8aa67ab7c82b3e2b92acd79d"
+        },
+        {
+          "sourceId": "sql-map/exp-patterns",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 执行计划与调优 > 常见慢查询形态与修法",
+          "sha256": "8876fad8acf32452caa60801459038be7ae19826d42b838c68ebd40850af9eaf"
+        },
+        {
+          "sourceId": "sql-map/exp-join-algo",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 执行计划与调优 > JOIN 的算法与驱动表",
+          "sha256": "5a2ccbed3ddc306cc0268c02dc424ee97c1c9a81c96fb824578fd15738f9757b"
+        },
+        {
+          "sourceId": "sql-map/exp-optimizer",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 执行计划与调优 > 优化器为什么选错索引",
+          "sha256": "95ee3138dbecac0ca900baa1ff613136a23b0b570a720d06e88f30fc5b3bfee1"
+        },
+        {
+          "sourceId": "sql-map/exp-what-to-change",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 执行计划与调优 > 该改 SQL、改索引、还是改表结构",
+          "sha256": "a3fcf1dac9c0d5303416cc1e61519c9c27929a7ecb9e96b9976bc711688f36f0"
+        }
+      ]
+    },
+    {
+      "key": "sql-map/05-eng",
+      "title": "fqx · SQL / 数据库知识体系 · 工程实践",
+      "sourceUrl": "https://fqx.lx.ci/sql-map/",
+      "originalPath": "originals/sql-map/05-eng.md",
+      "indexPath": "index/sql-map/05-eng.md",
+      "originalSha256": "4485250212b0bd7e0096a4f67e9ed3608d23119c4783438d62ec98906404edc2",
+      "indexSha256": "f8ba385e2cfc24bd10085f8b36cb8598605b8c62982b8688e3fe8858323310ad",
+      "characters": 8572,
+      "chunkCount": 28,
+      "unitCount": 10,
+      "units": [
+        {
+          "sourceId": "sql-map/eng/meta",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 工程实践 > 资料说明",
+          "sha256": "5497c1a43bf226f76a7832859ed23b5b40447d7c4845fce839cbf7a2d1a192ab"
+        },
+        {
+          "sourceId": "sql-map/eng",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 工程实践",
+          "sha256": "921c598e2338b120e17848399843786a9ad1b19786dfafd6cddbd2823859e1e7"
+        },
+        {
+          "sourceId": "sql-map/eng-type",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 工程实践 > 字段类型怎么选",
+          "sha256": "dc00a5ea04bcdd62eb364be5064f3b014354f3c2a14cce5f3034ddbdfbc43ae5"
+        },
+        {
+          "sourceId": "sql-map/eng-schema",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 工程实践 > 主键、唯一约束与软删除",
+          "sha256": "dad471453eff2f75dc89fe5d40415773db7bf41a4b090b931f9f461f7d5eb7b6"
+        },
+        {
+          "sourceId": "sql-map/eng-inject",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 工程实践 > SQL 注入与参数化",
+          "sha256": "98ea95837633ff5b7fa60fced9d78df02dbe69ef1b8342b187c11cdfc59b9c38"
+        },
+        {
+          "sourceId": "sql-map/eng-pool",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 工程实践 > 连接池",
+          "sha256": "34ebd8d8f420d8f7aa49c64e6370da8e3863335319a1647b1e18b6e2a9ad5a4f"
+        },
+        {
+          "sourceId": "sql-map/eng-replica",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 工程实践 > 读写分离与主从延迟",
+          "sha256": "d7a0cf6621650a4b8d406bf8202e0b8e490af5e0f8cf000524478848de68f410"
+        },
+        {
+          "sourceId": "sql-map/eng-ddl",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 工程实践 > 大表 DDL 的在线方案",
+          "sha256": "afbb4afd0f25982d43e9418907d3916a28139740130916ce90d6361ea49b5571"
+        },
+        {
+          "sourceId": "sql-map/eng-ddl-backup",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 工程实践 > 大表 DDL 的在线方案 > 备份、binlog 与恢复",
+          "sha256": "6e9322741526b9dcfb9317fceb7af4c0ebafdde9b3b70bda34ee8faf383d1892"
+        },
+        {
+          "sourceId": "sql-map/eng-shard",
+          "sourceUrl": "https://fqx.lx.ci/sql-map/",
+          "heading": "SQL（MySQL 8.0 / InnoDB） > 工程实践 > 分库分表：最后手段",
+          "sha256": "4e479eb194460feca2e8363e6e050c8af83c163287146c58c169d8767a6d527c"
+        }
+      ]
+    },
+    {
+      "key": "python-map/01-core",
+      "title": "fqx · Python 知识体系 · 语言内核",
+      "sourceUrl": "https://fqx.lx.ci/python-map/",
+      "originalPath": "originals/python-map/01-core.md",
+      "indexPath": "index/python-map/01-core.md",
+      "originalSha256": "7c904c25a8deba053d9df467674c198d76416fb8e7ec840c96571c54c4ae9610",
+      "indexSha256": "410aa758a4b105af0fa1eede971765862297a955c5cfb7fd6e7fbad7fca99721",
+      "characters": 14304,
+      "chunkCount": 46,
+      "unitCount": 14,
+      "units": [
+        {
+          "sourceId": "python-map/core/meta",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 资料说明",
+          "sha256": "fb911f73654eda36b170730e82d291b849e1152d6b3d0c43aedcf319e37f6a81"
+        },
+        {
+          "sourceId": "python-map/core",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核",
+          "sha256": "3cafdc20af95688c4f00330c8c903b59211d426690bdf457cc110efbb22d894b"
+        },
+        {
+          "sourceId": "python-map/core-binding",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 名字绑定：变量不是盒子",
+          "sha256": "cd86060e5a08c48a651df24fa052546de04603d056534ffc66a2a643edb9f9f6"
+        },
+        {
+          "sourceId": "python-map/core-binding-mutdefault",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 名字绑定：变量不是盒子 > 可变默认参数：最经典的坑",
+          "sha256": "0f06643b2f8e086e9cc78d3c5b1b911f10c629766bf3b430a68a5af06027d3a1"
+        },
+        {
+          "sourceId": "python-map/core-binding-copy",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 名字绑定：变量不是盒子 > 浅拷贝与深拷贝",
+          "sha256": "37f3cce44e0f0598d0f0d9ea170401582063167d7c5e255ed1175b20149e77a8"
+        },
+        {
+          "sourceId": "python-map/core-binding-isvseq",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 名字绑定：变量不是盒子 > is 与 == ：小整数缓存的陷阱",
+          "sha256": "a95401950d46a747c9680b1c3997af236e3b839c4f7402f2b3d070d3db4496c4"
+        },
+        {
+          "sourceId": "python-map/core-type",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 类型系统与真值判断",
+          "sha256": "405449457a359758dbb60e790d90a83a5df0da7946e3d9ed55f82f182b5c4293"
+        },
+        {
+          "sourceId": "python-map/core-type-num",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 类型系统与真值判断 > 数字：int 无限精度、float 有坑、Decimal 用于金额",
+          "sha256": "e3e2b3e28ba4916b229688c66b08f03f324f35ac4587096f8377f9421531447d"
+        },
+        {
+          "sourceId": "python-map/core-type-str",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 类型系统与真值判断 > 字符串与字节：encode/decode 的方向",
+          "sha256": "030f1c472bf50ffd722e361f93f5bac25da4eedb158da4cad053d0ee27382b20"
+        },
+        {
+          "sourceId": "python-map/core-func",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 函数、作用域与闭包",
+          "sha256": "35fe31073abfaa6e09fe0bde5a40dc43a9753eacfb52b62952988bccaf5e1e90"
+        },
+        {
+          "sourceId": "python-map/core-func-args",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 函数、作用域与闭包 > 参数：位置、关键字与解包",
+          "sha256": "f662c749d7f3758282924835f852cd819b61077220d49ce4378671060ef9a397"
+        },
+        {
+          "sourceId": "python-map/core-func-deco",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 函数、作用域与闭包 > 装饰器：语法糖背后就是函数替换",
+          "sha256": "3fd375a2a25ca5f95746b6ff7a6179192903ff61076db852ac8fb670a3edf410"
+        },
+        {
+          "sourceId": "python-map/core-exc",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 异常与上下文管理",
+          "sha256": "b3bcd4b344741f9780e92faa1b80d5648f6cbc363c308edd874545d6ad6aa5c5"
+        },
+        {
+          "sourceId": "python-map/core-exc-with",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 语言内核 > 异常与上下文管理 > with 与上下文管理器",
+          "sha256": "05184a734041e70a4048b91e8c0865b17e4350e8426a55d2321c834f0bca3098"
+        }
+      ]
+    },
+    {
+      "key": "python-map/02-data",
+      "title": "fqx · Python 知识体系 · 数据结构与迭代",
+      "sourceUrl": "https://fqx.lx.ci/python-map/",
+      "originalPath": "originals/python-map/02-data.md",
+      "indexPath": "index/python-map/02-data.md",
+      "originalSha256": "d092c3c9b91f9557e18ddde888f165558d2e5009de23971e8731594b2031cfb0",
+      "indexSha256": "8fed77d678ab8d8a362fcd69551c6f30ea827c2580cfc527bb8223f868efd7e9",
+      "characters": 9252,
+      "chunkCount": 30,
+      "unitCount": 9,
+      "units": [
+        {
+          "sourceId": "python-map/data/meta",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 数据结构与迭代 > 资料说明",
+          "sha256": "3a92a13d30d108917fb9f407896485c774cf814bbbf1443cd9456939d16fc81c"
+        },
+        {
+          "sourceId": "python-map/data",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 数据结构与迭代",
+          "sha256": "155b49414d19d9be1f68b0fca9ea63f83858f23ae23c3017d5a39aee7b1c6ff9"
+        },
+        {
+          "sourceId": "python-map/data-containers",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 数据结构与迭代 > 四种容器：选哪个",
+          "sha256": "0e4702abc4a199e3a97c62367b31697d24d5e7f8a1aae7ed8b21f93ac2a917dc"
+        },
+        {
+          "sourceId": "python-map/data-containers-dict",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 数据结构与迭代 > 四种容器：选哪个 > dict 的正确用法与 collections 工具",
+          "sha256": "5b4a78f79ff9e955c220af5d56747bb19b016049effc43b6c5c7ef7fcf982709"
+        },
+        {
+          "sourceId": "python-map/data-containers-set",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 数据结构与迭代 > 四种容器：选哪个 > set 与集合运算",
+          "sha256": "6be719733fc875202c564fbe9dee82b625dbcc7a4fd24e55588b55b7d3233c92"
+        },
+        {
+          "sourceId": "python-map/data-comp",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 数据结构与迭代 > 推导式与内置函数",
+          "sha256": "e0e2efd6d3cccf410615d69d8d5675c1adeb0a2da38a8df6c4549353af6a15b5"
+        },
+        {
+          "sourceId": "python-map/data-iter",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 数据结构与迭代 > 迭代器与生成器",
+          "sha256": "7bf56bfb8a576f7f52e8330b701653e18171ad05118e29cabf1d0f171e0bef7e"
+        },
+        {
+          "sourceId": "python-map/data-iter-itertools",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 数据结构与迭代 > 迭代器与生成器 > itertools：值得记住的几个",
+          "sha256": "a13f48113daa9889a155412e3df55ecd1ebe4b0542d475d25ba5f39a6d4b113d"
+        },
+        {
+          "sourceId": "python-map/data-iter-mem",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 数据结构与迭代 > 迭代器与生成器 > 内存与性能：什么时候该换工具",
+          "sha256": "80054e21eb365a15adeee6260f04b0033e5e570e5b85aab774193824c693e0d6"
+        }
+      ]
+    },
+    {
+      "key": "python-map/03-oop",
+      "title": "fqx · Python 知识体系 · 面向对象",
+      "sourceUrl": "https://fqx.lx.ci/python-map/",
+      "originalPath": "originals/python-map/03-oop.md",
+      "indexPath": "index/python-map/03-oop.md",
+      "originalSha256": "f3e436894654b26295698dc8b442c48d70ba69f772ea5a68c8ffa8e1ab4fbfbb",
+      "indexSha256": "c52e1eaecfa4a9df3cca4b18f5ef347d1e4071840b62aea4e352cb8c458ff7b2",
+      "characters": 8510,
+      "chunkCount": 31,
+      "unitCount": 8,
+      "units": [
+        {
+          "sourceId": "python-map/oop/meta",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 面向对象 > 资料说明",
+          "sha256": "3a92a13d30d108917fb9f407896485c774cf814bbbf1443cd9456939d16fc81c"
+        },
+        {
+          "sourceId": "python-map/oop",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 面向对象",
+          "sha256": "cbc5e7a7ffb6a604f11a05e2f7bc99acd29b2269748c519b2b45c652cf0331af"
+        },
+        {
+          "sourceId": "python-map/oop-class",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 面向对象 > 类、实例与属性查找",
+          "sha256": "c4d32e321332c98213711994dfe4ed193984f827755228c85afccea718acb1b5"
+        },
+        {
+          "sourceId": "python-map/oop-class-mro",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 面向对象 > 类、实例与属性查找 > 继承、MRO 与 super()",
+          "sha256": "62e58f13d861ca71c6809160312582f2b5c334325e99319d327c6b6b2db2c220"
+        },
+        {
+          "sourceId": "python-map/oop-desc",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 面向对象 > 描述符与 @property",
+          "sha256": "333b6096caddd879396943ac912514e1d0c577393da93effa1e2624b41d0a7f8"
+        },
+        {
+          "sourceId": "python-map/oop-dunder",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 面向对象 > 魔术方法：让对象表现得像内置类型",
+          "sha256": "f8074ff63ab071b4ac4ffffeb3c3a1d089a9ed15e60fd609aec9d61bd10f6afe"
+        },
+        {
+          "sourceId": "python-map/oop-data",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 面向对象 > dataclass 与 NamedTuple",
+          "sha256": "47dcb50b7f0b4dccda46e7b533ac3040936e36899b109f28a047be3abea3df84"
+        },
+        {
+          "sourceId": "python-map/oop-abc",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 面向对象 > 协议、ABC 与 duck typing",
+          "sha256": "4458bf85e9a90f5cc96c3a23d22568b48b946ad49bef7edf61a43b01be47d31e"
+        }
+      ]
+    },
+    {
+      "key": "python-map/04-conc",
+      "title": "fqx · Python 知识体系 · 并发与异步",
+      "sourceUrl": "https://fqx.lx.ci/python-map/",
+      "originalPath": "originals/python-map/04-conc.md",
+      "indexPath": "index/python-map/04-conc.md",
+      "originalSha256": "0217d212013b7da692bbd3e5715413b23bd66d8d96bbf6a6160617117f485620",
+      "indexSha256": "847282e229116e66b68986149bc6bf282023fca1cd4ad7cf9683a34adf8e4498",
+      "characters": 10589,
+      "chunkCount": 35,
+      "unitCount": 10,
+      "units": [
+        {
+          "sourceId": "python-map/conc/meta",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 并发与异步 > 资料说明",
+          "sha256": "3a92a13d30d108917fb9f407896485c774cf814bbbf1443cd9456939d16fc81c"
+        },
+        {
+          "sourceId": "python-map/conc",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 并发与异步",
+          "sha256": "a3fe8163f7662d7fac053dc94b2649617e7c9cbe4c4f5316e1477c4605bb01ca"
+        },
+        {
+          "sourceId": "python-map/conc-gil",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 并发与异步 > GIL：为什么线程跑不满多核",
+          "sha256": "4619b39bd5cfa0757a9e4a5f17b2a729ccc41eccfbe918fc32b4e0d82f54ecef"
+        },
+        {
+          "sourceId": "python-map/conc-thread",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 并发与异步 > 线程：IO 并发的基本盘",
+          "sha256": "ea776c51300b2ea870d29c3b8a7df463f7a6ca89473bdc87fd3c6f5dce34bd53"
+        },
+        {
+          "sourceId": "python-map/conc-thread-local",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 并发与异步 > 线程：IO 并发的基本盘 > 线程局部存储与常见坑",
+          "sha256": "5cfe394bdbf87ef6ae6b4c16d9e829244eeba1537199b2c6f1a4094cca65c0e0"
+        },
+        {
+          "sourceId": "python-map/conc-process",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 并发与异步 > 多进程：真正的并行",
+          "sha256": "8bc4168790d4fca51a9bc651b7fbb12240c25f323394f027edcc9265cde7dac1"
+        },
+        {
+          "sourceId": "python-map/conc-asyncio",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 并发与异步 > asyncio：单线程并发 IO",
+          "sha256": "52a16f9eb321ce78b0867b50e369f71b3f72a78fd87d964ec37384abb96f2fed"
+        },
+        {
+          "sourceId": "python-map/conc-asyncio-block",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 并发与异步 > asyncio：单线程并发 IO > 阻塞事件循环：从 Node 转过来最容易踩的",
+          "sha256": "6b064e4bc06964198ccfc3844c72d5d32b05f7bd0d779245119627e70be566e9"
+        },
+        {
+          "sourceId": "python-map/conc-asyncio-cancel",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 并发与异步 > asyncio：单线程并发 IO > 取消、超时与生命周期",
+          "sha256": "2492ee52d895785d30830df5d065c2d0db5c585aba50871e39a69c06ca5d0b56"
+        },
+        {
+          "sourceId": "python-map/conc-pick",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 并发与异步 > 怎么选：一张图定模型",
+          "sha256": "a9a1953a4bbc392693e87751945e8b1461908cee5d9ab59e3b41ebb81d0717a3"
+        }
+      ]
+    },
+    {
+      "key": "python-map/05-eng",
+      "title": "fqx · Python 知识体系 · 工程实践",
+      "sourceUrl": "https://fqx.lx.ci/python-map/",
+      "originalPath": "originals/python-map/05-eng.md",
+      "indexPath": "index/python-map/05-eng.md",
+      "originalSha256": "1168728640951c4ba421442d6aa3719b27800f38ebcde8083ba67ddd80560d4c",
+      "indexSha256": "0e715d8551e7da10aea4d3e96ddf80146ff2fec73367123451145947e8fb89e7",
+      "characters": 8809,
+      "chunkCount": 30,
+      "unitCount": 8,
+      "units": [
+        {
+          "sourceId": "python-map/eng/meta",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 工程实践 > 资料说明",
+          "sha256": "3a92a13d30d108917fb9f407896485c774cf814bbbf1443cd9456939d16fc81c"
+        },
+        {
+          "sourceId": "python-map/eng",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 工程实践",
+          "sha256": "3a992b8458d254fd62deaf65cb3ab87797983cc188606f52bd754bb889f84743"
+        },
+        {
+          "sourceId": "python-map/eng-env",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 工程实践 > 虚拟环境与包管理",
+          "sha256": "f18b4bbdbc2d8857ff9364a312e1e9b42486253e2a399f199d2cf17c9c2fa217"
+        },
+        {
+          "sourceId": "python-map/eng-env-import",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 工程实践 > 虚拟环境与包管理 > 模块、包与导入路径",
+          "sha256": "0bee08bcc83558b61040084029972dbaa130ccfabfe349af8e8c7a96cce69564"
+        },
+        {
+          "sourceId": "python-map/eng-style",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 工程实践 > 代码风格与类型检查",
+          "sha256": "41f9076e14899f9fa9d476f81804a902c9290fd227821bc3b853aa4b9676140a"
+        },
+        {
+          "sourceId": "python-map/eng-test",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 工程实践 > 测试：pytest 就够了",
+          "sha256": "35a9c88acb703aa3bc59745e7315aac7f6de65a2a325e146c331d95953e83841"
+        },
+        {
+          "sourceId": "python-map/eng-log",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 工程实践 > 日志、配置与错误处理",
+          "sha256": "c2d74877cb0eca354da830c1f19cde47b71db5c98ded6dec1b23dfdd372f8592"
+        },
+        {
+          "sourceId": "python-map/eng-ship",
+          "sourceUrl": "https://fqx.lx.ci/python-map/",
+          "heading": "Python 3.11+ > 工程实践 > 打包、发布与 Docker",
+          "sha256": "8d49487d2fd2bbaa03432a5c8f5717519b4de1d68083a4157c1c94c868d31940"
+        }
+      ]
+    },
+    {
+      "key": "node-map/01-rt",
+      "title": "fqx · Node.js 知识体系 · 运行时与事件循环",
+      "sourceUrl": "https://fqx.lx.ci/node-map/",
+      "originalPath": "originals/node-map/01-rt.md",
+      "indexPath": "index/node-map/01-rt.md",
+      "originalSha256": "b503507b1dbf009aaafc697ec173c18fbf607e02a9fb41c214c891190c5526b6",
+      "indexSha256": "fd237d0df34609c2e8161c580330e9416761d9e368e6bfe4c73fb812d73610dc",
+      "characters": 9068,
+      "chunkCount": 29,
+      "unitCount": 8,
+      "units": [
+        {
+          "sourceId": "node-map/rt/meta",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 运行时与事件循环 > 资料说明",
+          "sha256": "4e5b7af5773946d1173205a6949810a1f51f4fa225099d0bd0742f7246a6a203"
+        },
+        {
+          "sourceId": "node-map/rt",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 运行时与事件循环",
+          "sha256": "7f304334bba8d10c9999cc6978197444cee1f9767cd0e51e839a8c9c753d2751"
+        },
+        {
+          "sourceId": "node-map/rt-arch",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 运行时与事件循环 > Node 的组成：V8 + libuv",
+          "sha256": "9ccb43cbb662cdbc3caaa12982d7d9cbab9af4de437051bd5f398c5e27e8e3ae"
+        },
+        {
+          "sourceId": "node-map/rt-loop",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 运行时与事件循环 > 事件循环的六个阶段",
+          "sha256": "4bb18d9fd87f712036472682841d74a8c129bd0ab0a5d5c3ed97b8dde47b9088"
+        },
+        {
+          "sourceId": "node-map/rt-loop-micro",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 运行时与事件循环 > 事件循环的六个阶段 > 微任务：Promise 和 process.nextTick 的插队",
+          "sha256": "cd47f7dbbd8ca3d931348c15ad1904615a26ef7ecb97263192fe1364029a5f82"
+        },
+        {
+          "sourceId": "node-map/rt-loop-block",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 运行时与事件循环 > 事件循环的六个阶段 > 不要阻塞事件循环",
+          "sha256": "c05fd7ea98358cfce43998db8e0bb82a0d30caee40053e75f3d0a3e0ecbb1504"
+        },
+        {
+          "sourceId": "node-map/rt-mem",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 运行时与事件循环 > 内存与垃圾回收",
+          "sha256": "7e67141a7b6c935443d14a64b8d93d4b856c80ad64ba85d830de4c35e106c4bb"
+        },
+        {
+          "sourceId": "node-map/rt-proc",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 运行时与事件循环 > 进程：环境变量、信号与退出",
+          "sha256": "326172065270f676d711c0438a195bf7dddaabd31bf7e9219316945b50cbdd73"
+        }
+      ]
+    },
+    {
+      "key": "node-map/02-mod",
+      "title": "fqx · Node.js 知识体系 · 模块系统与依赖",
+      "sourceUrl": "https://fqx.lx.ci/node-map/",
+      "originalPath": "originals/node-map/02-mod.md",
+      "indexPath": "index/node-map/02-mod.md",
+      "originalSha256": "caacb588ca7b9f81b74e35606c87faf71f673f5c40ae6c272d390b7f2222b91a",
+      "indexSha256": "01657fb2fb2a23025b9a69cd747f55d90479edd9a922e87d6247674737d1805c",
+      "characters": 7179,
+      "chunkCount": 23,
+      "unitCount": 7,
+      "units": [
+        {
+          "sourceId": "node-map/mod/meta",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 模块系统与依赖 > 资料说明",
+          "sha256": "328fc5a9eabe70173db33d8ff0668504bb637d7473750569959a42be1d7adc86"
+        },
+        {
+          "sourceId": "node-map/mod",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 模块系统与依赖",
+          "sha256": "90c9fe5eee6f1e117327ea2fbd81c044f7cd8a314dceca2eeab497f9bc70d61a"
+        },
+        {
+          "sourceId": "node-map/mod-cjs-esm",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 模块系统与依赖 > CJS 与 ESM 的本质差异",
+          "sha256": "0d125ff6a979f838c0975be0beb0b4f4a4c56e98979e9aa8b618860f8f5bb2e0"
+        },
+        {
+          "sourceId": "node-map/mod-cjs-esm-interop",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 模块系统与依赖 > CJS 与 ESM 的本质差异 > 互操作：谁能加载谁",
+          "sha256": "9fa59cb39543fa9855af56bd24807103eeac7d6626651dc94ee7c57f0d4c0cb7"
+        },
+        {
+          "sourceId": "node-map/mod-cjs-esm-cycle",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 模块系统与依赖 > CJS 与 ESM 的本质差异 > 循环依赖的两种行为",
+          "sha256": "e328e49edc50f749f5fe518b4c9af4fda967edd25ecd852f469c0d706053303d"
+        },
+        {
+          "sourceId": "node-map/mod-resolve",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 模块系统与依赖 > 模块解析与 package.json 字段",
+          "sha256": "2b2903727be4dca19c17146d182899cb4ad18d9a07036765229858d1d6588ca4"
+        },
+        {
+          "sourceId": "node-map/mod-dep",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 模块系统与依赖 > 依赖管理与安全",
+          "sha256": "09178fb2e9f460ff82b56d9a103b3da2d1373fab7ce700aaff8c98622e6410b5"
+        }
+      ]
+    },
+    {
+      "key": "node-map/03-async",
+      "title": "fqx · Node.js 知识体系 · 异步编程与流",
+      "sourceUrl": "https://fqx.lx.ci/node-map/",
+      "originalPath": "originals/node-map/03-async.md",
+      "indexPath": "index/node-map/03-async.md",
+      "originalSha256": "72e835b71591bb21c6aba1c43b50208c22e2742ae4ce73f23d4ed38587467fd7",
+      "indexSha256": "bbe5817bcf645e06402e29e2a924ac88db792de6d7d3b6763a74c1c763f7db07",
+      "characters": 11230,
+      "chunkCount": 36,
+      "unitCount": 9,
+      "units": [
+        {
+          "sourceId": "node-map/async/meta",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 异步编程与流 > 资料说明",
+          "sha256": "328fc5a9eabe70173db33d8ff0668504bb637d7473750569959a42be1d7adc86"
+        },
+        {
+          "sourceId": "node-map/async",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 异步编程与流",
+          "sha256": "91678c50863ff562581b05874dd5bf8af65368451bda31e8a4fe3f2f5fc99075"
+        },
+        {
+          "sourceId": "node-map/async-promise",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 异步编程与流 > Promise 与 async/await",
+          "sha256": "20330ae48bf134bf5713b822249ad7b0ad95bade56c1c9325eafd59b05558f25"
+        },
+        {
+          "sourceId": "node-map/async-promise-err",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 异步编程与流 > Promise 与 async/await > 错误处理的边界",
+          "sha256": "da1dfb5287ff3dc1c02291fdcb9b60cbaa752fef23c15d245ea84378d6601120"
+        },
+        {
+          "sourceId": "node-map/async-promise-cancel",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 异步编程与流 > Promise 与 async/await > 取消：AbortController",
+          "sha256": "e25060c1be28e39b61f7d4aedd144db8c786458c5534319c76c831b6b1394909"
+        },
+        {
+          "sourceId": "node-map/async-stream",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 异步编程与流 > 流与背压",
+          "sha256": "73811dfd0061dcd13db6609cbe783834c102b64ab2685c9d16147df2f5649e8b"
+        },
+        {
+          "sourceId": "node-map/async-stream-buffer",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 异步编程与流 > 流与背压 > Buffer 与编码",
+          "sha256": "7693d25598f8e00c71c7711acbe0c33145d7af787b200e468b60feadc1552d37"
+        },
+        {
+          "sourceId": "node-map/async-stream-web",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 异步编程与流 > 流与背压 > Web Streams 与互操作",
+          "sha256": "1c17bb511138497e3e76d721699f60e150255b31f7404511346a03e00b84dad6"
+        },
+        {
+          "sourceId": "node-map/async-events",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 异步编程与流 > EventEmitter 与异步迭代",
+          "sha256": "ad9f787c6fe8e7a8a0cf5815ab7cebbc46e73170586db4c19c0225244bdd1aa7"
+        }
+      ]
+    },
+    {
+      "key": "node-map/04-srv",
+      "title": "fqx · Node.js 知识体系 · HTTP 服务端",
+      "sourceUrl": "https://fqx.lx.ci/node-map/",
+      "originalPath": "originals/node-map/04-srv.md",
+      "indexPath": "index/node-map/04-srv.md",
+      "originalSha256": "8d6b9dd9017e7fa935706565bda72f6a529b0042115250ed669567c08ba1db24",
+      "indexSha256": "485f207908dac576f9e8d66816a372950f7159d4e1159d2c4c09ffca69e1f0ac",
+      "characters": 11378,
+      "chunkCount": 38,
+      "unitCount": 10,
+      "units": [
+        {
+          "sourceId": "node-map/srv/meta",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > HTTP 服务端 > 资料说明",
+          "sha256": "328fc5a9eabe70173db33d8ff0668504bb637d7473750569959a42be1d7adc86"
+        },
+        {
+          "sourceId": "node-map/srv",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > HTTP 服务端",
+          "sha256": "d5841effcc0cd18441005db2154809bbc6a381f868c7855f860c9940e7ab04df"
+        },
+        {
+          "sourceId": "node-map/srv-http",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > HTTP 服务端 > HTTP 本身：先把协议钉死",
+          "sha256": "623afef4342c79634e3929a4c642783ce85303ab6a37c0baab5326aecaa6150b"
+        },
+        {
+          "sourceId": "node-map/srv-http-body",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > HTTP 服务端 > HTTP 本身：先把协议钉死 > 读 body：大小限制与 Content-Type",
+          "sha256": "17ff52e9d09d29649d1dc11e329a4ec54a97acd605e76d0568af699c3e86f2d3"
+        },
+        {
+          "sourceId": "node-map/srv-fastify",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > HTTP 服务端 > Fastify：封装、插件与 schema",
+          "sha256": "3d0cf1916f1fd2056923f4396f95d504388924d45bc439b47bfe52dc571acf6d"
+        },
+        {
+          "sourceId": "node-map/srv-fastify-hook",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > HTTP 服务端 > Fastify：封装、插件与 schema > Hook 顺序与错误处理",
+          "sha256": "e0c9becc96c3e0097aeea06d1344f4a871ac3f66237494b5944e36c63293fa7d"
+        },
+        {
+          "sourceId": "node-map/srv-fastify-listen",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > HTTP 服务端 > Fastify：封装、插件与 schema > 启动、关闭与插件加载顺序",
+          "sha256": "fb5f6fc3b2a62f536cd4b22f2d5c6c10bebc9157f580d9caa69588c3963982f5"
+        },
+        {
+          "sourceId": "node-map/srv-db",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > HTTP 服务端 > 和数据库打交道",
+          "sha256": "f7b6b7cec4f2a9510434e2313022bc6de320f6b5e369aa1d251720644ac65351"
+        },
+        {
+          "sourceId": "node-map/srv-db-orm",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > HTTP 服务端 > 和数据库打交道 > 要不要上 ORM",
+          "sha256": "51e2677f7ce7d5e0c99afaaf67ac606559cf6631bba7575fd6e563149c2d7017"
+        },
+        {
+          "sourceId": "node-map/srv-sec",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > HTTP 服务端 > Web 安全清单",
+          "sha256": "7915503a9c8c8faddd4adff60121fc18b61b7a0cb4fab7c3a64b19d00d60dd15"
+        }
+      ]
+    },
+    {
+      "key": "node-map/05-ops",
+      "title": "fqx · Node.js 知识体系 · 测试、调试与交付",
+      "sourceUrl": "https://fqx.lx.ci/node-map/",
+      "originalPath": "originals/node-map/05-ops.md",
+      "indexPath": "index/node-map/05-ops.md",
+      "originalSha256": "ecc729e1b54d60cbe329a0fcf251cc68ec26be2bea4bbf817f95ce0210eacacc",
+      "indexSha256": "70a4c3c5648a36de91f7223e57faf27e515cde06a1567c98133e9cb0deeef1c2",
+      "characters": 9219,
+      "chunkCount": 30,
+      "unitCount": 7,
+      "units": [
+        {
+          "sourceId": "node-map/ops/meta",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 测试、调试与交付 > 资料说明",
+          "sha256": "328fc5a9eabe70173db33d8ff0668504bb637d7473750569959a42be1d7adc86"
+        },
+        {
+          "sourceId": "node-map/ops",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 测试、调试与交付",
+          "sha256": "db6e5ad9a6ae4e2e790fa1083d93c8d0c355028efa4ae4ef1ea1ab46cdba485a"
+        },
+        {
+          "sourceId": "node-map/ops-test",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 测试、调试与交付 > 测试：内置 test runner 就够",
+          "sha256": "b3b6e502b69d6ddc9838c00388240036adae3a8587ed47ec1eaa29909fb18c0d"
+        },
+        {
+          "sourceId": "node-map/ops-debug",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 测试、调试与交付 > 调试与线上排障",
+          "sha256": "4117277c4bf1a286998e312fed86dc7f9693b689702dcbb8b944e74ae94129cf"
+        },
+        {
+          "sourceId": "node-map/ops-perf",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 测试、调试与交付 > 性能：先量再改",
+          "sha256": "9749b179835a3d0f90862020c70117e65c13cde239ed1556019274c350f964ef"
+        },
+        {
+          "sourceId": "node-map/ops-docker",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 测试、调试与交付 > Docker 与部署",
+          "sha256": "aa7555d73ac5e7f74c295b203dddc50433cc67899347c5a077e049867c124768"
+        },
+        {
+          "sourceId": "node-map/ops-electron",
+          "sourceUrl": "https://fqx.lx.ci/node-map/",
+          "heading": "Node 20 / 22 > 测试、调试与交付 > Electron：把 Web 应用变桌面端",
+          "sha256": "90377fe254f1f996a0e01840571b5f871a8e7e37b92deaddf93c32bf6cf2a82a"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/01-frontend",
+      "title": "fqx · 面试 01 · Vue / React / AI 前端交互",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html",
+      "originalPath": "originals/interview-prep/01-frontend.md",
+      "indexPath": "index/interview-prep/01-frontend.md",
+      "originalSha256": "44e2f91459f60932ad143ffaaf1a1d8a9fb3bd980d256a8665e850f734512b06",
+      "indexSha256": "f4ff91caea0c46ba460c07a9d1435cb8bc896a49aac003bc8aabab5d0f327553",
+      "characters": 30821,
+      "chunkCount": 103,
+      "unitCount": 22,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/01-frontend.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 说明",
+          "sha256": "f4e3b23c7fb7e9577508a8e53bec8c89f8fe38b9bbc7007f3fd9846051293eb6"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q1",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > Vue 3 响应式怎么实现的，ref 和 reactive 怎么选",
+          "sha256": "0de6a05790d5e9c33e4eee992d7881cf9c89855b808b76b51cd59f7f0bbaf137"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q2",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > computed / watch / watchEffect 怎么选",
+          "sha256": "99371616451fe053e01395a6f5f8b88ccb85c6dc7359f4970aeae7acff56c7ce"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q3",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > Vue 的编译时优化做了什么",
+          "sha256": "3eb703be3a61a9cecbbed1ff559f008792bdf66d7710a8ece8059ec2ed15ebe1"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q4",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 改了状态 DOM 不立刻更新，异步更新队列怎么跑的",
+          "sha256": "e0b114d8f76fad2a8dc5f5b05c984128b83b5ed7eac6306bca01cda61f06c36d"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q5",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 什么状态该放 Pinia，SSR 下有什么坑",
+          "sha256": "8b44e18bc62f0ca5f6bb22e5d5c8c3abb5e816ad2b3b4a13efe91f9e01eefffa"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q6",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > useEffect 的依赖、清理函数、以及为什么会执行两次",
+          "sha256": "c5dcf3cf4e3f9ca894b50b8567a5949f026c93e1b431d25dfc00ba7e9392095d"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q7",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 为什么会拿到旧的 state，怎么修",
+          "sha256": "918bd91146ebf454180953d599fab3a5229c151588c1094d4c449cf5e2441920"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q8",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 重渲染是怎么触发的，memo 三兄弟什么时候真有用",
+          "sha256": "c23633121f8219f51ab58659f1ae5e9961013f36575531fe24bc26a96b1bde40"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q9",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 并发渲染到底解决了什么问题",
+          "sha256": "4edb0bebae0b69257ebe707eeb7c3984cfe8cc501aa5f37fada04ab0eea980f2"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q10",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 用 useEffect 拉数据有什么问题",
+          "sha256": "a8080112b9491ff5a269914b1c9031f2576b730357e1a3d9ced52d1396a5c21e"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q11",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q11",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > Core Web Vitals 怎么定位和优化",
+          "sha256": "e3e8635a8f827384d70713b2e6b6168adc29e3e6c7862831164a7ae681264311"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q12",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q12",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 长列表虚拟化，动态高度怎么处理",
+          "sha256": "ba50bbebadd3f8cfee100c966dd8691eb3143296ec0bd3a457d35c76480ec5f5"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q13",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q13",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 流式输出前端怎么接，SSE / fetch 流 / WebSocket 怎么选",
+          "sha256": "2df15742137c13f50b2b1712a9615891d3dc16c0c9af719034a73e2438f649f7"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q14",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q14",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 流式 Markdown 渲染的闪烁和性能问题怎么解",
+          "sha256": "79fee24346938a6596c8ccb73123d41dc821244aad6c66a7e8b33a97e46ba75c"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q15",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q15",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 自动滚到底和用户手动上滑怎么共存",
+          "sha256": "4ecc2b60ff3702220273f1dce80705053b95030d731c9581c086a42ce1f978b5"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q16",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q16",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 中断、重试、断线续传怎么做",
+          "sha256": "daa12c664076dd96c51d74b4c2c853e755c1edd0d73fbf745fe8319450e60673"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q17",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q17",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 渲染模型输出，前端的安全边界在哪",
+          "sha256": "9231514da994582c060b550a236191f671088087111438d5764206615cc2a1be"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q18",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q18",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > AI 功能的感知性能和不确定性 UX 怎么做",
+          "sha256": "df9183ad5bbab69e4f20e31ed0a7fd9cac10cfee7ccbe55696adb460653a2279"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q19",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q19",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 为什么 Vite 启动比 Webpack 快",
+          "sha256": "45a1ebf2b596fffb57dd359e80338cd603bfe33191f913a8c10a3a783bc48456"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q20",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q20",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > 你项目里的分包策略是怎么定的",
+          "sha256": "89d91d7cc5b52397c78030cff2bb80210dd70f0979f25edf8d80829a158c1b6f"
+        },
+        {
+          "sourceId": "interview-prep/01-frontend.html#q21",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/01-frontend.html#q21",
+          "heading": "面试 01 · Vue / React / AI 前端交互 > WebSocket 断线以后你怎么重连",
+          "sha256": "8e93616649017b4b198ed854f42095ef883171d46a5305f43448379d2b9bebdf"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/02-node-java",
+      "title": "fqx · 面试 02 · Node / Java 后端",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html",
+      "originalPath": "originals/interview-prep/02-node-java.md",
+      "indexPath": "index/interview-prep/02-node-java.md",
+      "originalSha256": "66d09f1422f15d4abddfb4afb6c283a5a19edab80b4ce12c4938e5f226308eb7",
+      "indexSha256": "02899d371899e7c49e8be1cc83a6d6c492792b74f1279b80da0fedd6e61ee9cc",
+      "characters": 14194,
+      "chunkCount": 46,
+      "unitCount": 17,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/02-node-java.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html",
+          "heading": "面试 02 · Node / Java 后端 > 说明",
+          "sha256": "c045bf742b20e26696eea0de59d1afe3d928dfce5dd7d9fad6e25b08d8bd4f63"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q1",
+          "heading": "面试 02 · Node / Java 后端 > Node 事件循环的阶段和微任务时机",
+          "sha256": "b732b20a83881ba0e220f23a58aa86de9669c808abb9925df485e61fed56c80f"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q2",
+          "heading": "面试 02 · Node / Java 后端 > Stream 背压是什么，转发 LLM 流不做背压会怎样",
+          "sha256": "adb0957e3ace79eedf08a02b4dfc869afb53094613606b3a8e06d2b0ddc60b35"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q3",
+          "heading": "面试 02 · Node / Java 后端 > Node 遇到 CPU 密集任务怎么办",
+          "sha256": "3965f854e70f05bc2b0739c280d177e34aa467b0a89da67d9fae9bd35c941937"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q4",
+          "heading": "面试 02 · Node / Java 后端 > Node 内存泄漏怎么定位",
+          "sha256": "b96371f1a21561ed41c6f538698cf930fbbe52adbd28f09ebb6c53c507fbd771"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q5",
+          "heading": "面试 02 · Node / Java 后端 > 未捕获异常和未处理 Promise 该怎么处理",
+          "sha256": "376f04b464970e12a41500183395fbdb7812e8f12e2af05d5ed01f30ba70dc16"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q6",
+          "heading": "面试 02 · Node / Java 后端 > Node 做 LLM 网关，超时和连接池怎么配",
+          "sha256": "763cdf397d1e92940eca3b9acbc2cc97515d27b6e8e05aec621ea117dfa63721"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q7",
+          "heading": "面试 02 · Node / Java 后端 > JVM 内存分区和 GC 大致怎么工作",
+          "sha256": "9855939e3fa7734021516bb222b86ca0a7a8f7fa0ea664c28dec87afaba9dba6"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q8",
+          "heading": "面试 02 · Node / Java 后端 > 线程池参数怎么定，拒绝策略怎么选",
+          "sha256": "3f89ccde318be379782c46d9dbe4feec45213db476ecb7189695c7cd9c5a5d12"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q9",
+          "heading": "面试 02 · Node / Java 后端 > synchronized 和 ReentrantLock 怎么选",
+          "sha256": "bc481d7879396e008e14fc1eabe0d038987e891fb51d146ad95e0dd18bb7c2cd"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q10",
+          "heading": "面试 02 · Node / Java 后端 > @Transactional 什么情况下会失效",
+          "sha256": "666d7e9ec81bfd9c4e88450314a9acd0ad69605435d64de1b9afc8b001b4d522"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q11",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q11",
+          "heading": "面试 02 · Node / Java 后端 > ThreadLocal 为什么会内存泄漏",
+          "sha256": "a0e89d9cecbcbf90db4f81b968f1ff99bebe9e77803b49148930cc8e8dfdba06"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q12",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q12",
+          "heading": "面试 02 · Node / Java 后端 > CompletableFuture 怎么编排多个 LLM 调用",
+          "sha256": "11008de07e88b5f29b8ef827efa27687f9a63a1161d719a19cf32e3ab986a612"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q13",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q13",
+          "heading": "面试 02 · Node / Java 后端 > 幂等性怎么设计",
+          "sha256": "d3ea0b5c94f9caa0aa44335f18e48f0e8c7d416480ccbbddabc9d1227789e94f"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q14",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q14",
+          "heading": "面试 02 · Node / Java 后端 > 限流算法怎么选，LLM 的双限流怎么做",
+          "sha256": "b8378d0abaaa3ae68d82dfa799a1039f16d561ef67a6d3c61e51c8f93f03accf"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q15",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q15",
+          "heading": "面试 02 · Node / Java 后端 > 分布式锁的正确性边界在哪",
+          "sha256": "8fd39d42ff5e10ebca3e1cf6aaee6a280ee527ae4d64fa4997e691674377a4a4"
+        },
+        {
+          "sourceId": "interview-prep/02-node-java.html#q16",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/02-node-java.html#q16",
+          "heading": "面试 02 · Node / Java 后端 > 长耗时请求的架构怎么选",
+          "sha256": "236e6c8d2b725df7fa2ab457a04e7969f0f683189a45cd65e0bad50e3f718d3f"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/03-sql",
+      "title": "fqx · 面试 03 · SQL / 索引 / 向量检索",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html",
+      "originalPath": "originals/interview-prep/03-sql.md",
+      "indexPath": "index/interview-prep/03-sql.md",
+      "originalSha256": "b9163d609fa29ae49b2246e27fc60224baf42b47564db7cc322c5908367b7d45",
+      "indexSha256": "cb9dec33c1e5d540cb9d2144e54f9cf37f84c533efa45648b6b44ee8fde9c7dd",
+      "characters": 16936,
+      "chunkCount": 51,
+      "unitCount": 15,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/03-sql.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 说明",
+          "sha256": "363344594324516cff18589f45cec4676ce5472936a82b37f0508e5e52d6f09c"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q1",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 为什么用 B+ 树而不是 B 树或哈希",
+          "sha256": "7878aacbcc49cc7d58bfd1fd1234243a6a8ba5247e77605b2f311b6d3056c784"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q2",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 联合索引的最左前缀和索引下推",
+          "sha256": "f53677c49dd88e9677fdee9cc8dbc511b3d56b4fab6219b1dcf75b6772326ed1"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q3",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 什么情况下索引失效",
+          "sha256": "d010a031678e0b9f5b6a5b61c480d83e235de4c239c29660339084e170f7c9fe"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q4",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 覆盖索引和回表是怎么回事",
+          "sha256": "c4410e7befa4987dc69cfa144266846bdb9fb0b2c4a6aa23b4acdabf22bf8799"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q5",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > EXPLAIN 的关键字段怎么读",
+          "sha256": "0ac7c02df61ca72df464b241f5bcb38fb463cf5a774d1c2b3a18d9c5084add05"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q6",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 四种隔离级别各自防什么",
+          "sha256": "5f9260cf3baf4633c040e951f2d13e8b776f220b9dc541cbbd9525bae314c273"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q7",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > MVCC 的快照读和当前读",
+          "sha256": "4d6f947533ab1dbb0b3bdc7e05826eb40cfb3a16c5b6cbb1b626f6b1d0270079"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q8",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 间隙锁和死锁的常见来源",
+          "sha256": "ae379b2e5c72c964618d2a4036b3653e49c2290399f616cff2aaf0b769932e96"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q9",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 深分页为什么慢，怎么优化",
+          "sha256": "73dd2c662028b918ae491a59dfce3008bf50e63ec7948f608c91a4fbd035559e"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q10",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > HNSW 和 IVF-Flat 怎么取舍",
+          "sha256": "42a9f9c814bf0fe9f9457dd1a51ab7ea74e8f6eaa006b5bc2a30839c3f278380"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q11",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q11",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 为什么向量检索是近似的",
+          "sha256": "071a3aca4f4235780ec275513f41b29bfd9ee75dbe4d2b42c667b8a1c1945499"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q12",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q12",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > pgvector 和专用向量库怎么选",
+          "sha256": "210daae38020da85011769532de2faf80e6921db7e136bcae56df0f0de920886"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q13",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q13",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 混合检索的结果怎么融合",
+          "sha256": "17e320c6e440bda2fa06c722b22181366c5ed672f65956348ef61603c9a1f985"
+        },
+        {
+          "sourceId": "interview-prep/03-sql.html#q14",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/03-sql.html#q14",
+          "heading": "面试 03 · SQL / 索引 / 向量检索 > 向量库的多租户和权限过滤怎么做",
+          "sha256": "7a1ab29be4ca0c009149d0d37eb81d2df96f50a65341dacda429f764c506ab0c"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/04-ai",
+      "title": "fqx · 面试 04 · RAG / Agent / 评估 / 成本 / 安全",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html",
+      "originalPath": "originals/interview-prep/04-ai.md",
+      "indexPath": "index/interview-prep/04-ai.md",
+      "originalSha256": "9b87130e515f48cb7aaf93293219399825675cad1d7be1747cc5b2d9dced7ee6",
+      "indexSha256": "44cf3d1842059806ca84ec0f5359d6bb6e1463d9a6351cbcde5dc5f9f2ed99c4",
+      "characters": 16276,
+      "chunkCount": 76,
+      "unitCount": 51,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/04-ai.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 说明",
+          "sha256": "cd53e1c97603d09b8c45f1048fd542cde86267e27f153ec52d6f7c203b07a31c"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q1",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 把 LLM 接进业务系统，接口契约怎么定",
+          "sha256": "08536b0aa71f9508631798db07ad28bb917b3a47e8e8147c5d5a348b4e91d2c1"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q2",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > structured output 保证 JSON 合法，还需要校验吗",
+          "sha256": "e0fc7db8676e25d9680c967a30db8f491e38b671b73734d79d0136fd47ed0261"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q3",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 一次 LLM 调用要记录哪些东西才能复现事故",
+          "sha256": "0a1a7aaadd4cc32f821ed7da02352906251d01f4d54c743569a7cc22a84d2296"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q4",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > temperature / top_p 怎么调",
+          "sha256": "8d26e71c791b628dd6d792452b83297a0522967b4ca4a08cc44dba92ec6afdce"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q5",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 文档怎么分块",
+          "sha256": "6e2c9e38b7028d84e78669c4bf20dfe8712bf988f281c99090ab824ad4c5ab32"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q6",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 为什么要做 query 改写",
+          "sha256": "93fbd908a81cc99f575944c5430f7f91d7724f50b1fb15e841a44908d815f767"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q7",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 向量检索召回不够，怎么补",
+          "sha256": "d38a5c83a1b1ddc330ee6e6e9d00dec4a76fbc66ade6887efe29cd0d94bad006"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q8",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > rerank 是什么",
+          "sha256": "081fc5278b06c76454c9a20fbd6dc200aed2653115f8ef07f9e301aae0f85e42"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q9",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 文档在库里但答案还是错，怎么排查",
+          "sha256": "963aa2d3c5216657506666132a128db06e15c4846895fee971e63eb7af4a7a0e"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q10",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 上下文放多少条检索结果",
+          "sha256": "5a366821ae9cea3e8a27d347483a59da6cd9e8900068a14fcdabd8127f7357fb"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q11",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q11",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 引用溯源怎么做到可信",
+          "sha256": "82a9173717566c33a581e2d44d8254cbb70ed84a64a99a1a5a120cc33e03d52c"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q12",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q12",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 文档更新后索引怎么增量同步",
+          "sha256": "3635f7df02fae8f362e4df27a62b5425456a55694b98bb53fd02aa5264ef2862"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q13",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q13",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 什么时候该上 Agent",
+          "sha256": "07a59e1d120f8934a48e891d08714533f031745604cccc772ec62fba76385cd8"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q14",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q14",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 工具 schema 怎么写",
+          "sha256": "c3c795b4429f17287d5e3bffc8a3173a82435be455a50b922ef3e027b4b9e047"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q15",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q15",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 工具调用失败怎么处理",
+          "sha256": "34f5b81adaca1188af85adfce6a1363a2054b37e7464ed99626babd4bd77ac41"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q16",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q16",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > Agent 陷入循环怎么办",
+          "sha256": "0aba500def493ed51d1ebd6f0381cec7016142cc75dafac69dd6e4f941ff8a97"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q17",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q17",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 多 Agent 什么时候反而更差",
+          "sha256": "e83b53e77b6c6b752f0f70b06be3611cce01421f98d2336c82e51ecab644bc70"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q18",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q18",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > Agent 说做完了，你信吗",
+          "sha256": "f90d919a589fc7747925283be6f7f12bb2e4d9cc016e7eb3352698170b42a227"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q19",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q19",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > Agent 记忆分几种",
+          "sha256": "fd76869bea6b129782d59efd32322dedefa8ad7a757173a038f7ccef392358d7"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q20",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q20",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > eval 集从哪来",
+          "sha256": "ae95bc2985fc7092cf887d8efc4316bd7834e2bf8bf73b83bd3cbf16bcbe1f58"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q21",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q21",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > LLM-as-judge 能信吗",
+          "sha256": "f5ab489a1dec6e15d1f3278aacb4cf170b17c2c3a80e3f79e816b70b04ed332f"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q22",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q22",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 幻觉在线上怎么量化",
+          "sha256": "414f88cb8979a973cacdf28781af9eea837c5ea69c1fca14d388c029116bec63"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q23",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q23",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > prompt 改动怎么上线",
+          "sha256": "0a9ef4977596b8bb86654c65771eff8983692c4f0007d137a4dbdb6aa1785ca5"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q24",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q24",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 质量上升但延迟和成本崩了怎么办",
+          "sha256": "c6729e54e1ac88d999da50721f7792f8e79a28c3970a1c686768828a97af5a0f"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q25",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q25",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 语义缓存怎么做",
+          "sha256": "98b4e1fe8f1266c8d90fed89ed41fcaae6595fd54f4229b099e12bea2aed7dd8"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q26",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q26",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > RAG / Agent 安全边界怎么划",
+          "sha256": "b396df2a2ed5925df68cd01dc9b7a03d4f204c4b0f2df9b1efb01477a7d29c9b"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q27",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q27",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > MCP 和普通 function calling 有什么区别",
+          "sha256": "5984db3963d11d3e18bcbd4bb3e35d862d20c136e3c735b2de9214d4dac521ce"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q28",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q28",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > MCP 工具投毒和权限怎么防",
+          "sha256": "1c22771f09f6aa5bb6ef08ed90fb910e6700fd50d448ca6ef3c55b072a3a2c14"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q29",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q29",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > RAG 如何保证多租户隔离",
+          "sha256": "3adb5c55303aacb3e9d41d8aa0ff3260b72026f606f5db50fed3352178ef424d"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q30",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q30",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 检索前过滤和检索后过滤有什么区别",
+          "sha256": "8d3f26188c6e7cfd62bdaaceb6e38aadb48d9833235f7120d96b7a3339fb3216"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q31",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q31",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > OCR、表格和图片怎么接入 RAG",
+          "sha256": "026b425050c6415ba6dcadf8ed843240d5bd82883f3fe6d01bbc975d65b34949"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q32",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q32",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 多模态 RAG 如何评估解析质量",
+          "sha256": "392951a86216f11d1c94dce1f618c192e8d3102d3002870f90acc80ebfc10d5a"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q33",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q33",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > Agent 执行循环具体怎么实现",
+          "sha256": "aea6fa5adeae74db97770c8de617836aafbb4364f0527c1da79c513a0b1d4208"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q34",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q34",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 上百个工具/Skills，怎么让模型选对",
+          "sha256": "5af364af814bb0fbdafb357b93b8d08e77fc67a3033618d1c0d505a4d941f255"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q35",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q35",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 语义缓存命中率 99% 可信吗",
+          "sha256": "e91ec5e314220e1bc0b23d9881427a251b30851ccddca54b7dfe7faf891b9a70"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q36",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q36",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > ReAct 和 Plan-and-Execute 怎么选",
+          "sha256": "f298e2a761fcd799cbb0ac180b4c0bcbf998375038345778cc7120322d35b711"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q37",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q37",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 「成功率从 45% 提到 82%」这个数怎么来的",
+          "sha256": "c1c27eb05316c12b8f1bbb899553de768081a67fbec85af25fe92d39f5226f02"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q38",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q38",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 多个 LLM 供应商怎么接入和切换",
+          "sha256": "e0146a3ea5c24332b69061ae3edae82ef34d25cffe631bc1d04d3403bb2b4fd2"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q39",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q39",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > SDD 是什么，为什么能降低 AI Coding 的不确定性",
+          "sha256": "a4a862952fa7130599b90cecfd01bf0ad98e7a094919bd661b4a08144c74bfb4"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q40",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q40",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > Harness Engineering 是什么，和 Agent 有什么关系",
+          "sha256": "3d362976d7e1942d6f47a56c500e3cb74c1e01514afd9bf8773bb6dab5c233ae"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q41",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q41",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 上下文超过 context window 怎么处理",
+          "sha256": "f236e37062b79b5ef156dd4117281c09a14589f92df0ec5f8b203273ee13bc26"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q42",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q42",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > Skill 里应该沉淀什么，怎么验证它真的有效",
+          "sha256": "c5bafacea2f2f4ef6d8aace825e2958e2a468670a4f40527c4bba275a4e6e053"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q43",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q43",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > Agent 为什么需要 Tool Calling",
+          "sha256": "8681660bf8201c4719b7f89a54ccb465d241180dfe438e6379dc06b4012cdea7"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q44",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q44",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > LangChain 和 LangGraph 分别解决什么问题",
+          "sha256": "aa395050eb75724d9bfc84e18f2aeeaa91395f1235060d660204ab5bc4f5828f"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q45",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q45",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > Chatbot、Workflow、Agent 有什么区别",
+          "sha256": "b47bd197f7ce0a6ab06e309df8ebf27910105b49eb588a5d2ddcf67f0ffd05af"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q46",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q46",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > AI 修复代码，怎么保证没把项目改坏",
+          "sha256": "ac85388559ca7b16926338b42278d0257550bab7ee426525fc88f3f40564a5a9"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q47",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q47",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 模型是怎么发现并调用 MCP 服务的",
+          "sha256": "1dbe3a582003b678644e92199bf3c23150a2d5299ce3bae062890f28c888a060"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q48",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q48",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > Agent 为什么不能直接写数据库",
+          "sha256": "a6f01d72c5299bb3d4dda04a12d55af210aba5654c182cd7eaed810e5b0a2b3e"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q49",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q49",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > 「AI 出码精准生成率 90%」怎么计算",
+          "sha256": "b8b9114ed2989d3cdd6d27b752a3fc05c742be6124f40c3040684337d85c0ee9"
+        },
+        {
+          "sourceId": "interview-prep/04-ai.html#q50",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/04-ai.html#q50",
+          "heading": "面试 04 · RAG / Agent / 评估 / 成本 / 安全 > AI Coding 你用什么模型，Agent 用什么",
+          "sha256": "951a8c09699a66aa09314b14c1fb5506e9a4245240f7460d50234afeb7a8cd73"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/05-design-coding",
+      "title": "fqx · 面试 05 · 系统设计 + 手写题",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html",
+      "originalPath": "originals/interview-prep/05-design-coding.md",
+      "indexPath": "index/interview-prep/05-design-coding.md",
+      "originalSha256": "283e643a26b5c8d9dc4de5237a74920b58c60744295d35045000be164b9c59c8",
+      "indexSha256": "3308cd5bad6052c7e509091cd4773839994a74e53bad314e172c4cbb1a97ac96",
+      "characters": 50833,
+      "chunkCount": 144,
+      "unitCount": 11,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/05-design-coding.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html",
+          "heading": "面试 05 · 系统设计 + 手写题 > 说明",
+          "sha256": "6d91a88084b11f12faa50c396a76c53e6f3b006d559aa6cb5783235a5ebf9d94"
+        },
+        {
+          "sourceId": "interview-prep/05-design-coding.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q1",
+          "heading": "面试 05 · 系统设计 + 手写题 > 设计一个企业知识库问答系统（RAG 全链路：接入、切分、索引、检索、重排、生成、引用）",
+          "sha256": "e2bdf237d8056ba81959c16d41c009d3e98f1ddf6f3ae0f1687ff333dcb21205"
+        },
+        {
+          "sourceId": "interview-prep/05-design-coding.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q2",
+          "heading": "面试 05 · 系统设计 + 手写题 > 设计一个支持流式输出的对话服务（SSE 与 WebSocket 取舍、断连恢复、多端同步、取消）",
+          "sha256": "c1e1a2aa945899c0b6014f6aae8db0e395dbf06455bdda76d9901b79978f7a2c"
+        },
+        {
+          "sourceId": "interview-prep/05-design-coding.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q3",
+          "heading": "面试 05 · 系统设计 + 手写题 > 设计一个 Agent 任务编排系统（长耗时、可中断续跑、状态持久化、幂等重试）",
+          "sha256": "6884ebf2f848ad525c3361d036effaccc64c12d283ce66c51eade338dac802b6"
+        },
+        {
+          "sourceId": "interview-prep/05-design-coding.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q4",
+          "heading": "面试 05 · 系统设计 + 手写题 > 设计 LLM 网关（多供应商路由、限流、超时降级、成本核算与配额）",
+          "sha256": "af82427819d709a4f8bba208e8a5f89af75a9bda5349fcb13ad903e114575d53"
+        },
+        {
+          "sourceId": "interview-prep/05-design-coding.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q5",
+          "heading": "面试 05 · 系统设计 + 手写题 > 设计评估流水线（离线 eval 集、线上抽样、回归防护、指标看板）",
+          "sha256": "5647c5f0c8b77fb227bf1241bcea3df6cf94eb7514e21c065eb95967d7480525"
+        },
+        {
+          "sourceId": "interview-prep/05-design-coding.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q6",
+          "heading": "面试 05 · 系统设计 + 手写题 > 手写带并发上限、超时和指数退避重试的批量 LLM 调用",
+          "sha256": "cb3f6b895cc4e6e2f4ec426ac0e8c68cb2cf14e3aa870b692790cd9e4266fbda"
+        },
+        {
+          "sourceId": "interview-prep/05-design-coding.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q7",
+          "heading": "面试 05 · 系统设计 + 手写题 > 手写 SSE 流式响应解析器（处理分片、跨 chunk 的半行、[DONE] 终止、错误帧）",
+          "sha256": "18864cd8aa7cfcec30d5047302f83e3cd3b830c069577e4ea52aa06c4f4808bd"
+        },
+        {
+          "sourceId": "interview-prep/05-design-coding.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q8",
+          "heading": "面试 05 · 系统设计 + 手写题 > 手写上下文裁剪：给定 token 预算，保留 system 与最近 N 轮，中间做摘要占位",
+          "sha256": "6e138ce681ee75883155699f9a96b519a8044c041d97b6201f88ce3b3b0d64c6"
+        },
+        {
+          "sourceId": "interview-prep/05-design-coding.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q9",
+          "heading": "面试 05 · 系统设计 + 手写题 > 手写多路检索结果的 RRF 融合与去重",
+          "sha256": "d9427a5dd4a5df71134092ba7d086e6cf20795f6bf042f0b2ca4c729fb484ea8"
+        },
+        {
+          "sourceId": "interview-prep/05-design-coding.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/05-design-coding.html#q10",
+          "heading": "面试 05 · 系统设计 + 手写题 > 设计一个低代码搭建产物转 React/Vue 代码的「出码」方案",
+          "sha256": "1a5e79a37f6535e85385206ab7a1fc3a7897f07fc540c31f485f2bb6fcc80ce3"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/06-narrative",
+      "title": "fqx · 面试 06 · 转岗叙事与反问",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/06-narrative.html",
+      "originalPath": "originals/interview-prep/06-narrative.md",
+      "indexPath": "index/interview-prep/06-narrative.md",
+      "originalSha256": "8fd339da1b406c6c6f104cff24609ce6a72c89fa2fe9b84810744cccb9edbee5",
+      "indexSha256": "f7f03ccd10863fc529bc3c014055c412a800f96225b2392fa7b6160bf5899916",
+      "characters": 15991,
+      "chunkCount": 50,
+      "unitCount": 11,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/06-narrative.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/06-narrative.html",
+          "heading": "面试 06 · 转岗叙事与反问 > 说明",
+          "sha256": "d518b7f6349f13eafa5e2c3842ea5083ffe5b955e87bbf891cab0d26d8cae037"
+        },
+        {
+          "sourceId": "interview-prep/06-narrative.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/06-narrative.html#q1",
+          "heading": "面试 06 · 转岗叙事与反问 > 为什么从前端转 AI 全栈",
+          "sha256": "71f6c8d86f6c34004ba2280d0963ca5882c96bff823235b4b8be9a4973525c35"
+        },
+        {
+          "sourceId": "interview-prep/06-narrative.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/06-narrative.html#q2",
+          "heading": "面试 06 · 转岗叙事与反问 > 你的 AI 项目具体你做了什么，哪部分是你独立完成的",
+          "sha256": "b4e405c0564aac643f8959324f3a7318441d3a49488f8cd50b4de2bbf814919e"
+        },
+        {
+          "sourceId": "interview-prep/06-narrative.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/06-narrative.html#q3",
+          "heading": "面试 06 · 转岗叙事与反问 > 前端背景在这个岗位是优势还是短板",
+          "sha256": "6abb4157019eedf04d74985aaeec90fbe6106a48ac2e3d030ead59cea2c54da6"
+        },
+        {
+          "sourceId": "interview-prep/06-narrative.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/06-narrative.html#q4",
+          "heading": "面试 06 · 转岗叙事与反问 > 后端和 AI 都不是你的主线，凭什么认为你能补上",
+          "sha256": "230e085ff08c634797132321f56b53fb0485f9ed93a01d4fb6d3e3c43f3a3109"
+        },
+        {
+          "sourceId": "interview-prep/06-narrative.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/06-narrative.html#q5",
+          "heading": "面试 06 · 转岗叙事与反问 > 讲一个你做过的最难的技术决策",
+          "sha256": "5ad63b3d6c3086de1a8fc68b64c3f604f61796ad5c3f96a6868f2bb459ad74d3"
+        },
+        {
+          "sourceId": "interview-prep/06-narrative.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/06-narrative.html#q6",
+          "heading": "面试 06 · 转岗叙事与反问 > 你怎么跟上 AI 领域的变化",
+          "sha256": "d723ac92e9df8e268a069cd9a0c72db4f539b2d2d41d5e729c7d21715ad2b9d4"
+        },
+        {
+          "sourceId": "interview-prep/06-narrative.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/06-narrative.html#q7",
+          "heading": "面试 06 · 转岗叙事与反问 > 面试结尾你反问什么",
+          "sha256": "ef4cd4b2d4893bf264c2a9f62bf095207b33d0d49e94bfd41a11635de9d132fc"
+        },
+        {
+          "sourceId": "interview-prep/06-narrative.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/06-narrative.html#q8",
+          "heading": "面试 06 · 转岗叙事与反问 > 薪资和 offer 怎么谈",
+          "sha256": "0430cf422a03e5bca01e6ddf827f28eabb4f61923e8a9cc337f3e9af72c87240"
+        },
+        {
+          "sourceId": "interview-prep/06-narrative.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/06-narrative.html#q9",
+          "heading": "面试 06 · 转岗叙事与反问 > 简历上有一段空窗期，怎么解释，多久算安全",
+          "sha256": "a214035a4b9d53d6e38ab47c894db6a219ed2c32c08a65957561af48f923c5ad"
+        },
+        {
+          "sourceId": "interview-prep/06-narrative.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/06-narrative.html#q10",
+          "heading": "面试 06 · 转岗叙事与反问 > 技术问题被追深就懵，怎么练到能接住",
+          "sha256": "2ec37c10fe323c17577572f792c7f4ae95310e3050b9aa4213115dc51a905316"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/07-vue",
+      "title": "fqx · 面试 07 · Vue 深挖",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html",
+      "originalPath": "originals/interview-prep/07-vue.md",
+      "indexPath": "index/interview-prep/07-vue.md",
+      "originalSha256": "83ca8ecfc9346f9fc89c5c6dc02fc4a21eef1b8dd2c5b24d9160d10edc69f6d1",
+      "indexSha256": "c482c52782ab3d637385354739b3e658270ecfe0855325648ec06eeb4f2e8789",
+      "characters": 58849,
+      "chunkCount": 188,
+      "unitCount": 31,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/07-vue.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html",
+          "heading": "面试 07 · Vue 深挖 > 说明",
+          "sha256": "f6dea2cd7beeb457547cf55cf1e3145040dcca542037104042f2519d52dc50ce"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q1",
+          "heading": "面试 07 · Vue 深挖 > Vue 2 和 Vue 3 的响应式差在哪，换成 Proxy 解决了什么",
+          "sha256": "37126e2303c140dc76d40002c47fbe781533c4d57528413c17585416eadfbcdd"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q2",
+          "heading": "面试 07 · Vue 深挖 > 响应式是怎么知道「谁用了这个数据」的",
+          "sha256": "ec755e927e1fc24c6a2d7cc500f29bdcdc4cb4adb28154a46c9ab6373db36f37"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q3",
+          "heading": "面试 07 · Vue 深挖 > computed 和 watch 的区别，watchEffect 什么时候用",
+          "sha256": "70a8855abc713e2de8397e3234ce8e4203352c1d1a2e25e7a69e30f130e838d7"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q4",
+          "heading": "面试 07 · Vue 深挖 > ref 和 reactive 怎么选，为什么 ref 要 .value",
+          "sha256": "f5a612a2ddf95ce7aefd45d070e7fdf148f1cee9af5dd0479928f2818344dcc5"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q5",
+          "heading": "面试 07 · Vue 深挖 > Composition API 比 Options API 好在哪，什么时候不该用",
+          "sha256": "05333676813359ef5755aa08e05d705ba565610e419acc0d49a326f783b687ef"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q6",
+          "heading": "面试 07 · Vue 深挖 > 组件生命周期有哪些，请求该放哪个钩子",
+          "sha256": "a79bf1c0cb6ff61bed683714de7e35deaedbb4b3602d3488178dd7d8532e2b0a"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q7",
+          "heading": "面试 07 · Vue 深挖 > nextTick 是干什么的，原理是什么",
+          "sha256": "73d36a175b227c5f60f6d84a700e66b3a4e63d69375a12ef7a3a61aafdf762c5"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q8",
+          "heading": "面试 07 · Vue 深挖 > key 的作用是什么，为什么不能用 index",
+          "sha256": "c3ae6abd03ac99acaf85b1244120d11c99c3ce0d88c3dddaaa1657d591a099dd"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q9",
+          "heading": "面试 07 · Vue 深挖 > 后端菜单驱动的动态路由，具体怎么实现",
+          "sha256": "48b029b29254aa0951ded7398c7a6a781d5b259089e923dbb9b66746f78212c8"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q10",
+          "heading": "面试 07 · Vue 深挖 > 路由守卫有哪几个，鉴权逻辑放哪里",
+          "sha256": "ae7ffe3053a566a3aea67bf3e50bb59ae4d02e00aeb0860a78dad1d5bbefc977"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q11",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q11",
+          "heading": "面试 07 · Vue 深挖 > 按钮级权限怎么做，自定义指令和 v-if 怎么选",
+          "sha256": "4b6e329b29a1cd8f16cc54694a48ee2e40517c0ae0e75c85ec951407789cbda2"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q12",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q12",
+          "heading": "面试 07 · Vue 深挖 > Axios 请求层你怎么封装的",
+          "sha256": "4650d0f4363684664375a2ec2626a92baee4d28aa2ebc322f19f1eb32fe82c02"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q13",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q13",
+          "heading": "面试 07 · Vue 深挖 > refresh_token 无感续期，多个请求同时 401 怎么办",
+          "sha256": "f2dc10983902f4d5a49b006f9e1c3b13bbff89302084f9cf216e3401d64a1ce6"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q14",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q14",
+          "heading": "面试 07 · Vue 深挖 > Vuex 和 Pinia 的区别，什么时候根本不需要状态管理",
+          "sha256": "a9bc789a1578355c581acac76f4af0077adca49f0b7fdc514912761dfb855da2"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q15",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q15",
+          "heading": "面试 07 · Vue 深挖 > 组件通信有哪些方式，大项目里怎么组织",
+          "sha256": "f0f2fba789278c616c45e666ccb87a8588a997ba9ab03a6d0ecc0ae99c1ac7a7"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q16",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q16",
+          "heading": "面试 07 · Vue 深挖 > keep-alive 怎么用，缓存了但数据要刷新怎么办",
+          "sha256": "12ff9ec1ce9c5a2f0c67cb07882ef3ff46c96dfdf90e62ebe3a110b7c4bb5c14"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q17",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q17",
+          "heading": "面试 07 · Vue 深挖 > deep watch 的代价是什么，怎么避免",
+          "sha256": "c54d213df3d9cedb933477f4ecafd55d4101ea4aea709de727d67c46f45d8135"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q18",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q18",
+          "heading": "面试 07 · Vue 深挖 > 图表在标签页或弹窗里尺寸不对，怎么解决",
+          "sha256": "9b2091e878b1a769cf8b992ad1340b5f3e9137b519b36d201a332e24e049ce6f"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q19",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q19",
+          "heading": "面试 07 · Vue 深挖 > 大数据量表格性能怎么优化",
+          "sha256": "32d9ba849ca59cd56d4511cbd976f9539147cef8598d93d923d61c6a69c2c7c1"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q20",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q20",
+          "heading": "面试 07 · Vue 深挖 > Vue 3 编译期做了哪些优化，为什么比 Vue 2 快",
+          "sha256": "13590bcd0b106fd67000a9c7d1d32b13be7e46f0ece7b699b9461ea91dc863ae"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q21",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q21",
+          "heading": "面试 07 · Vue 深挖 > 发布后浏览器还在加载旧版本，怎么定位",
+          "sha256": "d26029c79aacebec63543a332d4a30094a39779d4657670fe0abfc8e2c0221d8"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q22",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q22",
+          "heading": "面试 07 · Vue 深挖 > 代码分割和首屏优化怎么做",
+          "sha256": "520c5239ea324b31b8d90c5a7b2e837bb345e58097ebf4d3fff9f45d5ab4b27c"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q23",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q23",
+          "heading": "面试 07 · Vue 深挖 > Vue 项目里内存泄漏一般出在哪，怎么查",
+          "sha256": "2905d187b881812343b662043dd280335ee09311b52f994a2a36a19d6288f822"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q24",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q24",
+          "heading": "面试 07 · Vue 深挖 > 通用组件的 API 你怎么设计",
+          "sha256": "c0ee6cb613010e73947a17c32b5bf983d4b90f0d8bae0416e9e23c5043e5024a"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q25",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q25",
+          "heading": "面试 07 · Vue 深挖 > 怎么保证团队代码质量一致，Code Review 看什么",
+          "sha256": "e980b39817758c8dbe31715fbe163688090d3bde8e0a30f4ec09701655f3541f"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q26",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q26",
+          "heading": "面试 07 · Vue 深挖 > 怎么给 Vue 项目写测试，测什么不测什么",
+          "sha256": "d576e0920c69fb71136f9129506194b9118b41702b88ed9aa749fe807bee1085"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q27",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q27",
+          "heading": "面试 07 · Vue 深挖 > 支付场景怎么防止用户重复提交订单",
+          "sha256": "78b1558a875160b471682c3a27ae7038848ff678126f17132a382cf8d2e68703"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q28",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q28",
+          "heading": "面试 07 · Vue 深挖 > 瀑布流怎么实现，难点在哪",
+          "sha256": "e559e83aee98274bd110eaea64844e822e8ff2dceaa5af2070c5c7adab5a2d8a"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q29",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q29",
+          "heading": "面试 07 · Vue 深挖 > 白屏问题一般是什么原因，怎么排查",
+          "sha256": "b977a2f7a290be301dd04bf5bf7216c5732a7150a8817cae8b58f92c4869fc40"
+        },
+        {
+          "sourceId": "interview-prep/07-vue.html#q30",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/07-vue.html#q30",
+          "heading": "面试 07 · Vue 深挖 > 图片懒加载是怎么实现的",
+          "sha256": "1202a3448ddc09dcdb798eee9f9ed87f9a2f2ae2129590c35430ae76d7daccd7"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/08-react",
+      "title": "fqx · 面试 08 · React 机制层",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html",
+      "originalPath": "originals/interview-prep/08-react.md",
+      "indexPath": "index/interview-prep/08-react.md",
+      "originalSha256": "bf24a207958e99df8b388aedf26248de55c8ad3595d4b7923bd9e47b65d759b4",
+      "indexSha256": "e378a9bcdf7e6cdc5aa857a8b36c44a325cf5b5bf1379666fc1575c034e13eb6",
+      "characters": 37950,
+      "chunkCount": 115,
+      "unitCount": 22,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/08-react.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html",
+          "heading": "面试 08 · React 机制层 > 说明",
+          "sha256": "15b103c459619962ed5a8ffa7c2f67f85cb60f5c8d06b352461b80d3173145bc"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q1",
+          "heading": "面试 08 · React 机制层 > React 和 Vue 最根本的区别是什么",
+          "sha256": "d7f11a9c23c9381bf7a4be41d191e9f6b0a0bd6af1b5cd911b82340c53a7912e"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q2",
+          "heading": "面试 08 · React 机制层 > useState 的更新是同步还是异步，为什么",
+          "sha256": "327bce81933c096efec25ad1249d0b7a702eaef9a55a7eaf192e26d3bb7f31c1"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q3",
+          "heading": "面试 08 · React 机制层 > useEffect 的执行时机和清理函数什么时候跑",
+          "sha256": "9e5242186be780fb4d2e724410f724ed59d26ed4e9bf27387d42aca6663c2a54"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q4",
+          "heading": "面试 08 · React 机制层 > 什么是闭包陷阱，为什么 Vue 里没有这个问题",
+          "sha256": "4fccbd7e38fcbc860230dd6f80ef4638a650cefd720a533e2489c564d9b72102"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q5",
+          "heading": "面试 08 · React 机制层 > useCallback / useMemo / React.memo 三个各管什么",
+          "sha256": "c4eb888e5cc01542f7e553c6619318093fa21f6bf11b689963b31b538ef83b6c"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q6",
+          "heading": "面试 08 · React 机制层 > useRef 有哪两种用途",
+          "sha256": "6de140710b87e758ac0d96dca7cfbd4e42e780432391f5aa4bb3ccf9fcf4be2a"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q7",
+          "heading": "面试 08 · React 机制层 > 受控组件和非受控组件的区别，表单怎么选",
+          "sha256": "50ee37baf595ef18376ca5bffb14c1ee8617df401d9e1675e5244b301ecc279f"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q8",
+          "heading": "面试 08 · React 机制层 > React 里 key 除了 diff 还有什么用",
+          "sha256": "cd4317f28300f008da9c87a0ab3e9ca8744471a02ebdeeda118354d907a4168d"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q9",
+          "heading": "面试 08 · React 机制层 > 状态管理怎么选，Context 的性能问题是什么",
+          "sha256": "3a55739874b5314e3db2ecb97066c2b27bf582ef6e6ac20217a200fae5e38299"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q10",
+          "heading": "面试 08 · React 机制层 > 自定义 Hook 怎么设计，有什么规则",
+          "sha256": "cb6d4d89b9619b32cdb8172325b717cccfdb12804b0bd97aa2d8433bd1cafa31"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q11",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q11",
+          "heading": "面试 08 · React 机制层 > useLayoutEffect 和 useEffect 什么区别",
+          "sha256": "5f39ba696e4f2d59c814789e85766c72b8c2ae88ff4c5c1abe0a6a3869b5321e"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q12",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q12",
+          "heading": "面试 08 · React 机制层 > 虚拟 DOM 和 Fiber 是什么关系",
+          "sha256": "51b19715b1d1aefb6914f7d06821a1d673c102af230aca735f3a6cf688a79e56"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q13",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q13",
+          "heading": "面试 08 · React 机制层 > React 18 的并发特性有哪些，解决什么问题",
+          "sha256": "822e78cc5984468a9219a5eb9f9c1b427f8b9445696342090ec9bc275f64adb1"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q14",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q14",
+          "heading": "面试 08 · React 机制层 > 长列表怎么优化",
+          "sha256": "ce5303b5aea63461dcaba70f926a4fed991f84eab4f48b6b4bd30278f431db45"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q15",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q15",
+          "heading": "面试 08 · React 机制层 > 错误边界是什么，能捕获哪些错误",
+          "sha256": "8a7ec0f717323eca60feaa08687c193e13e48dc91f140915ed55ce2a4893f3ea"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q16",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q16",
+          "heading": "面试 08 · React 机制层 > SSR 解决什么问题，Next.js 的渲染模式有哪几种",
+          "sha256": "299042b3bfca2edd2311cc321f032f9d22897561f8a6e6988a6e53ca614dd4a1"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q17",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q17",
+          "heading": "面试 08 · React 机制层 > React 里怎么做数据请求，为什么现在推荐用库",
+          "sha256": "0c00d1488a8f6aa8bdd7b5fc74e7b0ede643d37e9ae65a855150590323399c83"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q18",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q18",
+          "heading": "面试 08 · React 机制层 > 从 Vue 转过来写 React，最容易犯哪些错",
+          "sha256": "2d974bceeff511b01096062a385a3d13cd80d2aee7fe8f81068e3cadd33ca290"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q19",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q19",
+          "heading": "面试 08 · React 机制层 > 你简历上都是 Vue 项目，React 你实际写过多少",
+          "sha256": "4f0e3f42859648fe1acc3cfc17c2896c02733b074e28d6245a5696b40f671a70"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q20",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q20",
+          "heading": "面试 08 · React 机制层 > React 中为什么必须用 setState 来改值",
+          "sha256": "39721bb25f2313cf7b9c1e3f047a506d5c73902cc5183a6da85b80c390038517"
+        },
+        {
+          "sourceId": "interview-prep/08-react.html#q21",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/08-react.html#q21",
+          "heading": "面试 08 · React 机制层 > useEffect 的第二个参数是干什么的，三种写法分别怎么跑",
+          "sha256": "3ca217d2061f82e8d2319ceac45b1bde8d68da85dda0a6020076983da9f3a10b"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/09-database",
+      "title": "fqx · 面试 09 · 数据库实战",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html",
+      "originalPath": "originals/interview-prep/09-database.md",
+      "indexPath": "index/interview-prep/09-database.md",
+      "originalSha256": "b59a3e4ac1d4cb7cf4e80e75bb93b671d0f4a305bd7b9e947a3f57936175e78b",
+      "indexSha256": "5cb6a837d08f7953fac38cc0f118463de6622dd7096b4e551916d1d8507c7120",
+      "characters": 27531,
+      "chunkCount": 78,
+      "unitCount": 22,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/09-database.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html",
+          "heading": "面试 09 · 数据库实战 > 说明",
+          "sha256": "524ce8d54faa92a8c761b7c0dff7563957ffce4c891b3f382aca96699a06be46"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q1",
+          "heading": "面试 09 · 数据库实战 > 一条 SQL 很慢，你怎么排查",
+          "sha256": "2aa7097da5ec752a43bf279e79735208d629076455427b96da78ae721d7f6427"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q2",
+          "heading": "面试 09 · 数据库实战 > 索引在什么情况下会失效",
+          "sha256": "a790f5ebd08de88baf803c4b0a106fe5432ea17a8cdf77bb2332a87b2ce9f4de"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q3",
+          "heading": "面试 09 · 数据库实战 > 复合索引的顺序怎么定",
+          "sha256": "817558879c63554a0c19d8edc9ec2c860207d45923ac68815cc2e9f5632cc622"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q4",
+          "heading": "面试 09 · 数据库实战 > 聚簇索引和二级索引的区别，什么是回表",
+          "sha256": "8111be43a3b7869ca975176c1871249d8b46ce7de8409e5162e1e31b9b6d0cbc"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q5",
+          "heading": "面试 09 · 数据库实战 > 什么是 N+1 查询，怎么解决",
+          "sha256": "766b4f4a2e7273e3ccb9ef82f4f63547b519851091f553f6665f9dc639d133d7"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q6",
+          "heading": "面试 09 · 数据库实战 > 事务的四个隔离级别，MySQL 默认是哪个",
+          "sha256": "c47838b2e4d5bd2d57260e2317c1aba69ae6a7cadd82aa5e813cca0fa2e98410"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q7",
+          "heading": "面试 09 · 数据库实战 > 分页到第一万页很慢，怎么优化",
+          "sha256": "facecd211e4ad14417e48c31f7653355e7b471f0e1481989923c4ec59e089d43"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q8",
+          "heading": "面试 09 · 数据库实战 > 死锁是怎么产生的，怎么排查和避免",
+          "sha256": "4a775a56c42bde93d2a39bb3527144cc0d7e73f1ae1c1fdec640c0b544064bcc"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q9",
+          "heading": "面试 09 · 数据库实战 > 并发更新同一行，乐观锁还是悲观锁",
+          "sha256": "31d60b726c117a538b483aec7c3f1dc2c4eedc70a46bc9b045c913ceabaeac22"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q10",
+          "heading": "面试 09 · 数据库实战 > JOIN 有哪几种，大表 JOIN 慢怎么办",
+          "sha256": "f3c161c3f127377459b1c43e0c75945bfb396055a07b49580ed478f07e4b2801"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q11",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q11",
+          "heading": "面试 09 · 数据库实战 > 对话历史的表怎么设计",
+          "sha256": "26424be743a2f497385b872b7c23bf2f2aebc11ee7f4476fab15735042e2444e"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q12",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q12",
+          "heading": "面试 09 · 数据库实战 > MySQL 和 PostgreSQL 怎么选",
+          "sha256": "0c4a5e7f7668bee19e6c31d0bd6a91b055345edd9b5579899f9caaaa598a5110"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q13",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q13",
+          "heading": "面试 09 · 数据库实战 > Redis 在架构里做什么",
+          "sha256": "2d88d4800547eb604bbfdb661ad747031ee8d4b6f4d152b6fb8aa1397dfe40be"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q14",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q14",
+          "heading": "面试 09 · 数据库实战 > 缓存和数据库怎么保持一致",
+          "sha256": "dfed0bf8ef8fb0a39c3d81deebe463b6a9f878eb45fea4b9df665fce8584dc05"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q15",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q15",
+          "heading": "面试 09 · 数据库实战 > 缓存穿透、击穿、雪崩分别怎么处理",
+          "sha256": "7daa201875b19b1da68d1e9d9592592436719638f057b2f8a94fd721b9149a31"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q16",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q16",
+          "heading": "面试 09 · 数据库实战 > 连接池怎么配，配大了会怎样",
+          "sha256": "75f83d4836a1db987e2743267c485cfc1056d15c73ec95f78cccac9cd2002bf0"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q17",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q17",
+          "heading": "面试 09 · 数据库实战 > 什么时候该反范式化",
+          "sha256": "94eac7ba1428be8590c9344128c60d4fa3fb0c7f54f70d4150e89222bd733711"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q18",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q18",
+          "heading": "面试 09 · 数据库实战 > 数据库变更怎么管，线上加字段要注意什么",
+          "sha256": "fa498c4e1bd17b5005ba991edd6b3f731fbf587097ebde2b627bd36f663e591d"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q19",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q19",
+          "heading": "面试 09 · 数据库实战 > 什么时候需要分库分表",
+          "sha256": "96a4fc72f605e19176834348a59e63f811400bbd6df96903909153e7b8047aae"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q20",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q20",
+          "heading": "面试 09 · 数据库实战 > 软删除还是硬删除，RAG 场景有什么特别的",
+          "sha256": "1a67539caca67993769da9a8b6bbe976f84996cc62e34eb03a1c50e28302373e"
+        },
+        {
+          "sourceId": "interview-prep/09-database.html#q21",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/09-database.html#q21",
+          "heading": "面试 09 · 数据库实战 > 用 ORM 有什么坑，什么时候该写原生 SQL",
+          "sha256": "ff281934da8481141f1a0fdc6700286fd90a47c5abcd27ed067f2870a01e037a"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/10-node",
+      "title": "fqx · 面试 10 · Node 服务端",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html",
+      "originalPath": "originals/interview-prep/10-node.md",
+      "indexPath": "index/interview-prep/10-node.md",
+      "originalSha256": "1a83e9d6ec20e39bb70c8a48d603ab7bb29d9bbdb8c52dbc7b32fa654a7b4204",
+      "indexSha256": "620c8b292561ad2782b95a2e80baaf1699fd9a43a456a6965dff8823e6c30379",
+      "characters": 55380,
+      "chunkCount": 184,
+      "unitCount": 23,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/10-node.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html",
+          "heading": "面试 10 · Node 服务端 > 说明",
+          "sha256": "ae3d5752c6fb23690df6bd2c3629f10c1e9d0c3858fd54cfb8c16185cc87c73d"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q1",
+          "heading": "面试 10 · Node 服务端 > Node 的事件循环有哪几个阶段，和浏览器有什么不同",
+          "sha256": "1d328314de95f4017b11d13f96d63e6630fb378e9a2eb7fef569b2a88407f1c7"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q2",
+          "heading": "面试 10 · Node 服务端 > 什么会阻塞事件循环，怎么处理",
+          "sha256": "581d15a7b1d1152641455f4360cbc8932ca49a1d41315be3411b4722c83b4c69"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q3",
+          "heading": "面试 10 · Node 服务端 > Express 的中间件模型是什么，错误怎么处理",
+          "sha256": "f024378a4922c292b8289fd8c7a37235220a51e851e76fec6cc0145c2f5caebe"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q4",
+          "heading": "面试 10 · Node 服务端 > SSE 流式接口，服务端有哪些坑",
+          "sha256": "f74c04eb9b151d48362dc9d7c9af8ac113fe2931054328fb1572222acf0838eb"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q5",
+          "heading": "面试 10 · Node 服务端 > Stream 是什么，背压怎么理解",
+          "sha256": "bfd401cafdd1c68e0c59cd6fae6a34aa7d6844854fd4b181f780979ccb26f247"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q6",
+          "heading": "面试 10 · Node 服务端 > 未捕获异常怎么办，优雅关闭要做什么",
+          "sha256": "0485ad01ab91fb5b7200d22caa628e2c2f19cfa676367809cfd762270192c623"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q7",
+          "heading": "面试 10 · Node 服务端 > 单进程怎么扩展，cluster 和 PM2 什么关系",
+          "sha256": "f4604313cd9e7b6f62d56db3a8cc7794e8e37c56e5be31a393cc137dd3041721"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q8",
+          "heading": "面试 10 · Node 服务端 > CommonJS 和 ESM 的区别，混用会有什么问题",
+          "sha256": "01fa2ee92a2d55eb4833e92d0fd65f4b233aed01997337d7c7ccdd1c406c5aa5"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q9",
+          "heading": "面试 10 · Node 服务端 > 接口幂等怎么做，AI 场景为什么更需要",
+          "sha256": "3553e5c645df81128f3aaf4cf986729c8c6973cb980133c888fbd2660121c93a"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q10",
+          "heading": "面试 10 · Node 服务端 > 鉴权怎么做，JWT 和 Session 选哪个",
+          "sha256": "9b12224da6dd65387de15780d6dd07a55648be8a219787ea365074e6048fe6c8"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q11",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q11",
+          "heading": "面试 10 · Node 服务端 > 参数校验怎么做，为什么不能信前端",
+          "sha256": "5dfc0564453e6fbc3ef6405de302f8b9ded0c3ea637efe4c7f0dc5466ac451e9"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q12",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q12",
+          "heading": "面试 10 · Node 服务端 > 接口变慢了，你怎么定位",
+          "sha256": "24ec71ec1307f907ec80ccbafb7448154e2b1ba601d02a7cfdb88de69b6f6e98"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q13",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q13",
+          "heading": "面试 10 · Node 服务端 > 日志和可观测怎么做",
+          "sha256": "8c000b5824edd50e7e0afa273b53e92bef8f83769f211372c665cbdd95c4c069"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q14",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q14",
+          "heading": "面试 10 · Node 服务端 > 原子写文件是怎么做的，为什么需要",
+          "sha256": "e8f42cf29d3895e39f7cfcc35091624fae2ac289fa4be448f1b082c1cf1d5fc8"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q15",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q15",
+          "heading": "面试 10 · Node 服务端 > Node 服务的内存泄漏怎么查",
+          "sha256": "73350e612fe8afc88c8c7afcee4543006abf025ae36f0f8306b726158cd42877"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q16",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q16",
+          "heading": "面试 10 · Node 服务端 > worker_threads 什么时候用，和多进程怎么选",
+          "sha256": "fb6d413006f0d7961462f6b7e6b132625fe1c56e36c4e32858d234fb70811725"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q17",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q17",
+          "heading": "面试 10 · Node 服务端 > 耗时几十秒的任务，接口怎么设计",
+          "sha256": "225567bcd9b62e18b599c4aca28123b2be0cefb77e7a57cbcd4e436f7a37fd5a"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q18",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q18",
+          "heading": "面试 10 · Node 服务端 > 文件上传怎么做，大文件怎么处理",
+          "sha256": "02c8fadf5eb118d506adebc09556f5e9d7893296b157c24747b4accc3dc05b97"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q19",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q19",
+          "heading": "面试 10 · Node 服务端 > 模型接口不稳定，怎么保证服务可用",
+          "sha256": "7df5f8d19561881ad5c799856e742c148cb6703aff5c5c98699cbdf2e0956961"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q20",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q20",
+          "heading": "面试 10 · Node 服务端 > Koa 的中间件运作原理是什么，和 Express 有什么区别",
+          "sha256": "96195915d81b6bfcb81bd501071a20fa62d9732837eda9b7a0f6617e9300f6c9"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q21",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q21",
+          "heading": "面试 10 · Node 服务端 > IM 聊天室断开连接要如何处理，重连策略怎么设计",
+          "sha256": "d59deaca82d3581ebbb719dfa203bb96f583e45192aa6c67a741b6da6e346c63"
+        },
+        {
+          "sourceId": "interview-prep/10-node.html#q22",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/10-node.html#q22",
+          "heading": "面试 10 · Node 服务端 > IM 聊天室内容变多后变卡，虚拟列表的难点在哪",
+          "sha256": "858aa5fb42355f2f1d679c608eec983ce39162134ac37365fa6b7bed0b4606b8"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/11-java",
+      "title": "fqx · 面试 11 · Java",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html",
+      "originalPath": "originals/interview-prep/11-java.md",
+      "indexPath": "index/interview-prep/11-java.md",
+      "originalSha256": "727bc39e810d75b9b3fd09567d4c91fceb52669f524f9325c0156787d736ea3b",
+      "indexSha256": "27d8a64b2b67000f78eac6348c55037caaae749d3f91a8bbf5b1e6e3d205922d",
+      "characters": 38126,
+      "chunkCount": 119,
+      "unitCount": 20,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/11-java.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html",
+          "heading": "面试 11 · Java > 说明",
+          "sha256": "d9c784cea03955b95398e486e65ba89b90f5d67768eaf817f3883bf81b481445"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q1",
+          "heading": "面试 11 · Java > Spring 的 IoC 和 DI 解决了什么问题",
+          "sha256": "d9393dc6c61e65c5fd40f66ec63ec1289578cc1019f1455d0fd52135c4b2a80b"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q2",
+          "heading": "面试 11 · Java > @Transactional 为什么会失效，怎么确认它真的生效了",
+          "sha256": "9bc5ccf13abebf3c69dcea8a1d271bd74e3cbee56517f8c7bd6b04a21ff67c4d"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q3",
+          "heading": "面试 11 · Java > AOP 是什么，Spring 用什么实现",
+          "sha256": "61890b2915845afc241e355f05edff6a5e5bba33429a38b26e73041a4112234a"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q4",
+          "heading": "面试 11 · Java > HashMap 的原理和它为什么线程不安全",
+          "sha256": "305080cc4bd21e8c8e10206e82c2e1122522047e9d4a07db60977a9d455467d0"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q5",
+          "heading": "面试 11 · Java > 线程池为什么先进队列再扩线程",
+          "sha256": "2d42afaf2dfc60eb64b724b8d50bfc08d62f6936fdbf4af410746c96f44e84a0"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q6",
+          "heading": "面试 11 · Java > JVM 内存结构，哪些线程私有，各自怎么 OOM",
+          "sha256": "549fa89ca32327cb6eef22d4ae4354c81809f3cb85f290b4ca6c76ce89fae882"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q7",
+          "heading": "面试 11 · Java > GC 怎么判断对象该回收，收集器怎么选",
+          "sha256": "d6ae1f0805fa7d90b515dab10ca566c5c9ae85b6b0eb77c5172f24d6aeae143f"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q8",
+          "heading": "面试 11 · Java > 线上 OOM 和 CPU 飙高的排查顺序",
+          "sha256": "7c6769dfefc6aa87cc9db924115bf7c89df6436733e5042de9d3738efb261227"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q9",
+          "heading": "面试 11 · Java > synchronized 的锁升级还在吗，什么时候必须换 ReentrantLock",
+          "sha256": "66b2e8b449ae5a5de6eff1335e54152927ed976d76a43c278d032b7402fb188d"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q10",
+          "heading": "面试 11 · Java > volatile 保证什么，不保证什么",
+          "sha256": "8f87e517f9b86832ff1e6772c91c598addab81a58d8a333e00c210d1cd01d535"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q11",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q11",
+          "heading": "面试 11 · Java > ArrayList 和 LinkedList 实际怎么选",
+          "sha256": "910da4a89c22b7584322c5e6ee448ae96f45086b9eba6c82c04606e0b4816df2"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q12",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q12",
+          "heading": "面试 11 · Java > equals 和 hashCode 为什么必须一起重写",
+          "sha256": "4b332cf2091b00f62b16811984ec8d3a4c8e57aeca7ff595158db45751aed256"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q13",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q13",
+          "heading": "面试 11 · Java > MyBatis 的 #{} 和 ${} 有什么区别",
+          "sha256": "8136dfd96aa1474de44f8b63ef4cf8c5c5acb24f852c5663f325cca92b7cc88e"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q14",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q14",
+          "heading": "面试 11 · Java > Spring Boot 的自动配置是怎么实现的",
+          "sha256": "aed4bd94ccd6105439102a157097200c78d43a451f17983ac5625f479ed6a4e4"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q15",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q15",
+          "heading": "面试 11 · Java > Bean 的作用域和生命周期，单例最容易出什么 bug",
+          "sha256": "c10cdb71ccb83dff1a01c502905f33fb1794d00fa83cd80ee4d432cf68863d16"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q16",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q16",
+          "heading": "面试 11 · Java > Stream 和 Optional 什么时候不该用",
+          "sha256": "934fc81b7d7122d755e7268731afa3fb71c28915e8f41811c537fbcdb432432f"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q17",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q17",
+          "heading": "面试 11 · Java > Java 的线程模型和 Node 差在哪，虚拟线程改变了什么",
+          "sha256": "cee272352b380d8c09fa0a9da4a057ce96d671742c34069e506e708636b7992f"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q18",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q18",
+          "heading": "面试 11 · Java > AI 应用里 Java 和 Node/Python 怎么分工",
+          "sha256": "e9947d486c56933224fbc875ae82827ddef04c7ed55ec2585f105140df6c5e1e"
+        },
+        {
+          "sourceId": "interview-prep/11-java.html#q19",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/11-java.html#q19",
+          "heading": "面试 11 · Java > 你简历上都是前端和 Node，Java 实际写过多少",
+          "sha256": "6a445da57be8722338fc6a6f00e211446c71b13c5524051d52013e1a4f1f53d9"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/12-code-traps",
+      "title": "fqx · 面试 12 · 代码陷阱题",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html",
+      "originalPath": "originals/interview-prep/12-code-traps.md",
+      "indexPath": "index/interview-prep/12-code-traps.md",
+      "originalSha256": "e7c1acce454bd644cc52708de848ecff19594088f80067a52aa55eeea72adeb8",
+      "indexSha256": "f5d6ca146e0e7b4d503b316a5ad91d32664084ac6d730ddec6caa6ff37187a9b",
+      "characters": 38879,
+      "chunkCount": 136,
+      "unitCount": 11,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/12-code-traps.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html",
+          "heading": "面试 12 · 代码陷阱题 > 说明",
+          "sha256": "3dd711da4f177111fe5c321406c3b626bdee814529a359d8ca2a9d3f53eb599a"
+        },
+        {
+          "sourceId": "interview-prep/12-code-traps.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q1",
+          "heading": "面试 12 · 代码陷阱题 > 这段代码 n() 输出什么，怎么调用才能输出 200",
+          "sha256": "39fe5192a052fa4fc558545349a7f7259d07bafd67ebaa348b9dedb9eaf59cc0"
+        },
+        {
+          "sourceId": "interview-prep/12-code-traps.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q2",
+          "heading": "面试 12 · 代码陷阱题 > AI 写的 isEmpty 判空，Symbol 键会返回 true 还是 false",
+          "sha256": "ba4b967599846e4b7d201a17fd61fb89695fe7880effdfb320e660bc6f1aa83a"
+        },
+        {
+          "sourceId": "interview-prep/12-code-traps.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q3",
+          "heading": "面试 12 · 代码陷阱题 > await 一个 Proxy，为什么会打印 then",
+          "sha256": "ced242e9413372767736c606d6fd496de5d4cbcb443ac040dbbfab25b5ea4c0a"
+        },
+        {
+          "sourceId": "interview-prep/12-code-traps.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q4",
+          "heading": "面试 12 · 代码陷阱题 > 这两段改对象的代码分别输出什么",
+          "sha256": "ff844f49629fe066a8ec7ce3b30eeb05f03e805b1c6b43fdadacdb33817af022"
+        },
+        {
+          "sourceId": "interview-prep/12-code-traps.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q5",
+          "heading": "面试 12 · 代码陷阱题 > AI 用 list.length = 0 清空数组，你会让它改吗",
+          "sha256": "58db63171200270b9c6436d35f2b1942c7b1c16c97ac6daef6970ed77a5cd035"
+        },
+        {
+          "sourceId": "interview-prep/12-code-traps.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q6",
+          "heading": "面试 12 · 代码陷阱题 > 这个 reduce 去重函数不传初始值会怎样",
+          "sha256": "e293144fd643c7b5c67c870d4eea63ccf0bfac8593dcef88808406b660407e08"
+        },
+        {
+          "sourceId": "interview-prep/12-code-traps.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q7",
+          "heading": "面试 12 · 代码陷阱题 > 为什么键名一致的这组对象访问更快",
+          "sha256": "ffab818df0e21f95365c70e935d19024b126eeb08daa9b7ada064d1334ad032c"
+        },
+        {
+          "sourceId": "interview-prep/12-code-traps.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q8",
+          "heading": "面试 12 · 代码陷阱题 > console.log 被第三方代码重写了，怎么还原",
+          "sha256": "d0ad15399e8f8b0940f22f2ca8e075131aa95b1499d26c3f3513140b4193a778"
+        },
+        {
+          "sourceId": "interview-prep/12-code-traps.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q9",
+          "heading": "面试 12 · 代码陷阱题 > 反转字符串有几种写法，哪种在真实文本上是对的",
+          "sha256": "4782ecd255528cfcf18edb023b376a967637711e186afc15fcdc3d95ae60d86d"
+        },
+        {
+          "sourceId": "interview-prep/12-code-traps.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/12-code-traps.html#q10",
+          "heading": "面试 12 · 代码陷阱题 > 这段 6 个 log 的输出顺序是什么",
+          "sha256": "bfe6fbf7375d4f61f931203873ac4aa31ac1a9c1319e3fb5774ee389e8f4bee8"
+        }
+      ]
+    },
+    {
+      "key": "interview-prep/13-python",
+      "title": "fqx · 面试 13 · Python",
+      "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html",
+      "originalPath": "originals/interview-prep/13-python.md",
+      "indexPath": "index/interview-prep/13-python.md",
+      "originalSha256": "6be18961f9625bcf8298635978f8c6636501d22c916ddc68ae39cd343ee43a6e",
+      "indexSha256": "622cbb9d2db37232b632681cf08be01c152771f57bcd32d35ccc83b3b9d2e81a",
+      "characters": 20809,
+      "chunkCount": 64,
+      "unitCount": 23,
+      "units": [
+        {
+          "sourceId": "https://fqx.lx.ci/interview-prep/13-python.html/meta",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html",
+          "heading": "面试 13 · Python > 说明",
+          "sha256": "9dcfdde531459ba7043c4e973aba1fcf6ea31047372e57789061a42e1217d207"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q1",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q1",
+          "heading": "面试 13 · Python > 可变默认参数为什么是坑",
+          "sha256": "a213b3485dfe3abd37437e5720aadb39b7f44b1903ea2e1f6931783e72f705f8"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q2",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q2",
+          "heading": "面试 13 · Python > 深拷贝和浅拷贝的区别",
+          "sha256": "8d97809b32e6ae521dd2b1cd4b3e9ef0011382f75715cddf9e8caf145a0764ae"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q3",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q3",
+          "heading": "面试 13 · Python > 装饰器怎么写，functools.wraps 为什么必须加",
+          "sha256": "30d57addcc8f2e7a086d71e94fd1432bcc53586ab6fc487f4f7919f73f33ef7b"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q4",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q4",
+          "heading": "面试 13 · Python > 生成器解决什么问题",
+          "sha256": "2b0230c3882b6898603f9842fe24e2a65e863ab120a479b414b0c887c568b128"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q5",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q5",
+          "heading": "面试 13 · Python > 闭包在循环里为什么拿到的都是最后一个值",
+          "sha256": "e8f4160a337d68c5280b3c29bf5d77cd66f0c67ba8c7b0e41798f9239897e441"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q6",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q6",
+          "heading": "面试 13 · Python > is 和 == 有什么区别",
+          "sha256": "df836a9772ed69bcf811bbbc0cf4dc67fb18d08e125a89a8e498983488fc20bc"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q7",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q7",
+          "heading": "面试 13 · Python > with 语句背后是什么",
+          "sha256": "d77456cf815281356ba334ba957235f711c9ca489307c225996858f6945f84ca"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q8",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q8",
+          "heading": "面试 13 · Python > finally 里 return 会发生什么",
+          "sha256": "33272a3a4ca9c87b1a5405b61d8809f72a692cf9d387608269b26e3bf844e2ee"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q9",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q9",
+          "heading": "面试 13 · Python > GIL 是什么，现在还存在吗",
+          "sha256": "dc9dcec4c5123258a2680b4eec991ca58d16565097374ebc400fc477a512c17d"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q10",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q10",
+          "heading": "面试 13 · Python > 多线程、多进程、协程怎么选",
+          "sha256": "6ad3f633be4471606976210ae65907d26ac85540019781754a651823f1ea07fe"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q11",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q11",
+          "heading": "面试 13 · Python > asyncio 里混进一个阻塞调用会怎样",
+          "sha256": "37394dd73edf1e60ea0f3f0d2039ad4ee0a028acc53d62516aa2d0598d9fe18d"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q12",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q12",
+          "heading": "面试 13 · Python > asyncio 和 Node 事件循环有什么不同",
+          "sha256": "0765c8e5e134d0fb1593c9c9a983ff0a290bfac50ab92854c8dd6dbfe6ba04a5"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q13",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q13",
+          "heading": "面试 13 · Python > 怎么并发发起 100 个 LLM 请求并限流",
+          "sha256": "2ffd361a93f6b5381eeaedf1af5bd83c8b7cb3fe336bd572aaad40e4aa635edd"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q14",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q14",
+          "heading": "面试 13 · Python > 类型注解在运行时起作用吗",
+          "sha256": "a86da5279fa1b357e0d2fceec62d9aae3b406c5452f2fa57c9b091f882ef4f7c"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q15",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q15",
+          "heading": "面试 13 · Python > pydantic 和 dataclass 怎么选",
+          "sha256": "15ae214628ce0586b70a85ab967040587aa7ac525bf769a84671f7cacc52ba4a"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q16",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q16",
+          "heading": "面试 13 · Python > __slots__ 有什么用",
+          "sha256": "ce4a620daf17afed373d1fa7be5f592152abdd4c97cdc32877d40402b73fc8df"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q17",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q17",
+          "heading": "面试 13 · Python > FastAPI 路由用 def 还是 async def",
+          "sha256": "5d662c97c9dbc9e765e414e231c054ea4075aa7f216b0c03fb0c13b09e4e29da"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q18",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q18",
+          "heading": "面试 13 · Python > 流式返回 LLM 输出怎么实现",
+          "sha256": "665b8a57c1ed541a01cd0dad4fa9989f55f55c9d14c5adcc884fad460ae3ce63"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q19",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q19",
+          "heading": "面试 13 · Python > LLM 调用的超时和重试怎么写",
+          "sha256": "048d614727d50fceb9f9330241f0aed68aeb3120f2fc6fb95814398a64341cf4"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q20",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q20",
+          "heading": "面试 13 · Python > 处理大文件怎么不把内存打满",
+          "sha256": "5b81bbe5193c692a79e11b3ca9a31b00d7d6f6dcdd993e9939368c9b14b2d98d"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q21",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q21",
+          "heading": "面试 13 · Python > 依赖怎么管、怎么保证可复现",
+          "sha256": "8b89bbb06b8ae6e441532fcdeb7286a1c718b0864f20ab6c8c0dbd2fc92fc581"
+        },
+        {
+          "sourceId": "interview-prep/13-python.html#q22",
+          "sourceUrl": "https://fqx.lx.ci/interview-prep/13-python.html#q22",
+          "heading": "面试 13 · Python > 怎么给带 LLM 调用的代码写测试",
+          "sha256": "77b175514db73e1914ac4bbbae8edba00744ff2eeacbd1453a00d4aff5154e6f"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "mapSections": 28,
+    "mapKnowledgeNodes": 175,
+    "interviewQuestions": 266,
+    "documents": 41,
+    "chunks": 1985,
+    "adaptedUnits": 45
+  },
+  "exclusions": [
+    {
+      "url": "https://fqx.lx.ci/kb/",
+      "reason": "iframe 聚合入口，内容已按 5 个知识地图导入"
+    },
+    {
+      "url": "https://fqx.lx.ci/supermarket-pos/",
+      "reason": "业务演示应用，非知识资料"
+    },
+    {
+      "url": "https://fqx.lx.ci/gis/",
+      "reason": "用户明确要求不导入 GIS"
+    }
+  ]
+}

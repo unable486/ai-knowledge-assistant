@@ -1,0 +1,55 @@
+{
+  "auditedAt": "2026-09-29T12:28:23.570Z",
+  "projectExport": "D:/fontentDevelop/ai-knowledge-assistant/docs/knowledge/fqx",
+  "manifestSha256": "b8bcf92ead221ab5fe515d4c3bf52f4d1dc65dcaf65feecfa6ff1ff2ea83edc8",
+  "sourceMaps": "C:/Users/18475/Documents/Codex/2026-09-29/new-chat-3/work/site-maps/maps.json",
+  "sourceInterviews": "C:/Users/18475/Documents/Codex/2026-09-29/new-chat-3/work/site-inspection/interview-records.json",
+  "documents": 41,
+  "chunkCount": 1985,
+  "adaptedUnits": 45,
+  "sourceChecks": {
+    "exactFields": 794,
+    "checkedCharacters": 531303,
+    "mapBodies": 175,
+    "mapSummaries": 28,
+    "interviewAnswers": 266,
+    "mapIntroAndFooterChecks": 33,
+    "missingFields": 0
+  },
+  "indexedMarkdownChecks": {
+    "originalFencedCodeBlocks": 539,
+    "indexedFencedCodeBlocks": 553,
+    "originalNonemptyCodeLines": 3534,
+    "indexedNonemptyCodeLines": 3534,
+    "allCodeLinesPreservedInOrder": true,
+    "originalTables": 91,
+    "indexedTables": 91,
+    "originalTableRows": 490,
+    "indexedTableRows": 490,
+    "allTableRowsPreserved": true,
+    "originalInlineCodes": 4573,
+    "indexedInlineCodes": 4611,
+    "allOriginalInlineCodesPreserved": true,
+    "manifestHashMismatches": 0
+  },
+  "codeExcerptReview": {
+    "splitOriginalCodeBlocks": 4,
+    "resultingExcerpts": 18,
+    "document": "interview-prep/05-design-coding",
+    "sourceQuestions": [
+      "q6",
+      "q7",
+      "q8",
+      "q9"
+    ],
+    "conclusion": "The excerpts retain whole source lines in order. Each part has a numbered continuation notice, the original question URL, and contextual introduction. Notices explicitly state that code parts must be combined and cannot run independently. No substantive truncation or context problem found."
+  },
+  "methods": [
+    "Exact unmodified source-field substring checks against each corresponding originals Markdown document.",
+    "Independent markdown-it parsing of every original and index file; compare ordered nonempty code lines, table-row multisets, and inline-code multisets.",
+    "SHA-256 verification of every original and index document against manifest.",
+    "Read-only inspection of all 18 code continuation snippets generated from the four oversized original code blocks."
+  ],
+  "issues": [],
+  "conclusion": "The current exported originals completely preserve all checked map and interview source fields. Indexed code and tables remain readable, with no missing source code lines or table rows. This audit checks export integrity and does not measure retrieval quality."
+}
