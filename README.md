@@ -1,5 +1,7 @@
 # AI 知识答疑
 
+**初学者先看 [learning 最小学习版](learning/README.md)**：运行 `npm run dev:learn`，打开 <http://localhost:5174>。核心流程集中在 `App.vue`、`server/index.ts`、`server/knowledge.ts` 三个文件，先用关键词检索理解 RAG，再回来看下面的完整版。
+
 Vue 3 + TypeScript + Vite + Pinia 的 Claude 实时对话界面。前端负责聊天交互，Node 服务端负责安全地调用 Anthropic API；API Key 不会进入浏览器或 Vite 构建产物。
 
 ## 快速开始
